@@ -18,8 +18,12 @@
 
 <%= simple_form_for rails_admin.content_builder_url(@abstract_model.to_param, id: @object.id), remote: false do |f| %>
   <div class="news__controls">
-    <%= f.button :submit, t('admin.actions.content_builder.button.save'), remote: true, class: 'btn btn-block btn-primary' %>
-    <%= f.button :submit, t('admin.actions.content_builder.button.publish'), remote: true, class: 'btn btn-block btn-default' %>
+    <%= f.button :submit, t('admin.actions.content_builder.button.save'), class: 'btn btn-block btn-primary' %>
+    <% if @object.status %>
+      <%= f.button :submit, t('admin.actions.content_builder.button.unpublish'), class: 'btn btn-block btn-danger' %>
+    <% else %>
+      <%= f.button :submit, t('admin.actions.content_builder.button.publish'), class: 'btn btn-block btn-success' %>
+    <% end %>
   </div>
 
   <div class="news__container">
