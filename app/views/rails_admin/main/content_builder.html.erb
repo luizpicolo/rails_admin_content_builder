@@ -18,13 +18,14 @@
 
 <%= simple_form_for rails_admin.content_builder_url(@abstract_model.to_param, id: @object.id), remote: false do |f| %>
   <div class="news__controls">
-    <%= f.button :submit, 'Salvar', remote: true, class: 'btn btn-block btn-primary' %>
-    <%= link_to 'Publicar', '#', class: 'btn btn-block btn-default' %>
+    <%= f.button :submit, t('admin.actions.content_builder.button.save'), remote: true, class: 'btn btn-block btn-primary' %>
+    <%= f.button :submit, t('admin.actions.content_builder.button.publish'), remote: true, class: 'btn btn-block btn-default' %>
   </div>
 
   <div class="news__container">
     <%= @object.content.try(:html_safe) %>
   </div>
+
   <%= f.input :id, as: :hidden, :input_html => { :name => "id", :value => @object.id } %>
   <%= f.input :content, as: :hidden, :input_html => { :name => "content", :id => "content", :value => @object.content } %>
 <% end %>

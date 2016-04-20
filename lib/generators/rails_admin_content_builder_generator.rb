@@ -8,31 +8,20 @@ class RailsAdminContentBuilderGenerator < Rails::Generators::Base
   end
 
   def self.next_migration_number(dirname)
-    unless @prev_migration_nr
-      @prev_migration_nr = Time.now.utc.strftime("%Y%m%d%H%M%S").to_i
+    unless @migration
+      @migration = Time.now.utc.strftime("%Y%m%d%H%M%S").to_i
     else
-      @prev_migration_nr += 1
+      @migration += 1
     end
-    @prev_migration_nr.to_s
-  end
-
-  def create_model_content_builder_model
-    template "content_builder.rb", "app/models/content_builder.rb"
-  end
-
-  def create_model_content_builder_image_model
-    template "content_builder_image.rb", "app/models/content_builder_image.rb"
+    @migration.to_s
   end
 
   def create_uploader_content_builder_image_model
     template "content_builder_image_uploader.rb", "app/uploaders/content_builder_image_uploader.rb"
   end
 
-  def create_content_builder_migration
+  def create_migrations
     migration_template "create_content_builder_migration.rb", File.join('db/migrate', "create_content_builders.rb")
-  end
-
-  def create_content_builder_image_migration
     migration_template "create_content_builder_image_migration.rb", File.join('db/migrate', "create_content_builder_images.rb")
   end
 end

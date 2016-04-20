@@ -1,10 +1,10 @@
 RailsAdmin.config do |config|
   config.actions do
     content_builder do
-      only ['ContentBuilder']
+      only ['RailsAdminContentBuilder::ContentBuilder']
     end
 
-    config.model 'ContentBuilder' do
+    config.model 'RailsAdminContentBuilder::ContentBuilder' do
       list do
         field :id
         field :title
@@ -15,6 +15,10 @@ RailsAdmin.config do |config|
         field :title
         field :date_publish
       end
+    end
+
+    config.model 'RailsAdminContentBuilder::ContentBuilderImage' do
+      visible false
     end
   end
 end

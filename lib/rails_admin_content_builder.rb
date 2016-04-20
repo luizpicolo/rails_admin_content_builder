@@ -30,9 +30,9 @@ module RailsAdmin
             if request.post?
               if params.present?
                 if @object.update(content: params[:content])
-                  flash[:success] = 'Atualizado com sucesso'
+                  flash[:success] = t('admin.actions.content_builder.success_save')
                 else
-                  flash[:error] = 'Atualizado sem sucesso'
+                  flash[:error] = t('admin.actions.content_builder.error_save')
                 end
               end
             end
