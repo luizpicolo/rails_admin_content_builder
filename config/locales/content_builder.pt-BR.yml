@@ -9,3 +9,4 @@ pt-BR:
         button:
           save: "Salvar"
           publish: "Publicar"
+          unpublish: 'Despublicar'

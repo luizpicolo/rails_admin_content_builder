@@ -29,7 +29,16 @@ module RailsAdmin
 
             if request.post?
               if params.present?
-                if @object.update(content: params[:content])
+
+                if params[:commit] == 'Publish'
+                  status = true
+                elsif params[:commit] == 'Unpublish'
+                  status = false
+                elsif params[:commit] == 'Save'
+                  status = @object.status
+                end
+
+                if @object.update(content: params[:content], status: status)
                   flash[:success] = t('admin.actions.content_builder.success_save')
                 else
                   flash[:error] = t('admin.actions.content_builder.error_save')
