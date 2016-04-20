@@ -7,5 +7,5 @@
 /pkg/
 /spec/reports/
 /tmp/
-/.idea/*gs
-
+/.idea/*
+/test_app/*
