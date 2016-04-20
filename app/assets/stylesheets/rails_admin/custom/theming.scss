@@ -1,0 +1,178 @@
+@import 'medium-editor/medium-editor';
+@import 'medium-editor/themes/bootstrap';
+
+html {
+  font-size: 16px;
+}
+
+
+// news admin
+
+.news__nav {
+  position: fixed;
+  top: 50px;
+  bottom: 103px;
+  right: 0;
+
+  width: 16rem;
+
+  padding: 1rem;
+
+  background: #f8f8f8;
+  border-left: solid 1px rgba(0,0,0,.1);
+
+  overflow: hidden;
+  overflow-y: scroll;
+}
+
+.news__controls {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+
+  width: 16rem;
+
+  padding: 1rem;
+
+  background: #f8f8f8;
+  border-left: solid 1px rgba(0,0,0,.1);
+}
+
+
+.news-snippet {
+  display: block;
+  text-decoration: none;
+  margin-bottom: 1rem;
+}
+
+.news-snippet__image {
+  width: 100%;
+}
+
+
+.news__container {
+  @include box-sizing(border-box);
+  padding: 0 18rem 0 3rem;
+}
+
+.news__row {
+  position: relative;
+  max-width: 100%;
+  height: auto !important;
+
+  &:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+  }
+}
+
+
+.news__content {
+  line-height: 1.6;
+
+  color: rgba(0,0,0,.8);
+  font-size: 1rem;
+
+  margin-bottom: 2rem;
+
+  p {
+    margin: 0 0 1rem;
+
+    &:last-of-type {
+      margin: 0;
+    }
+  }
+}
+
+
+.news-tools {
+  position: absolute;
+  top: 0;
+  left: -3rem;
+
+  border-radius: .4rem;
+  background: darken(#fff, 7%);
+
+  overflow: hidden;
+}
+
+.news-tools__btn {
+  display: block;
+
+  font-size: .8rem;
+  text-align: center;
+  text-transform: uppercase;
+
+  padding: .8rem;
+
+  &:hover,
+  &:focus {
+    background: rgba(0,0,0,.05);
+    text-decoration: none;
+  }
+}
+
+.news-tools__input {
+  
+}
+
+.news-tools__input--upload {
+  display: none !important;
+}
+
+
+.news__figure {
+  position: relative;
+
+  .news-tools {
+    top: 50%;
+    left: 50%;
+
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+
+  img {
+    width: 100%;
+  }
+}
+
+.news__figure--left {
+  float: left;
+  width: 50%;
+  margin: .4rem 2rem 1rem 0;
+}
+
+.news__figure--right {
+  float: right;
+  width: 50%;
+  margin: .4rem 0 1rem 2rem;
+}
+
+.news__figure--center {
+  margin: 0 0 2rem;
+}
+
+.news__figcaption {
+  color: rgba(0,0,0,.6);
+
+  font-size: .9rem;
+
+  margin-top: .25rem;
+  padding: .4rem 1rem;
+
+  background: rgba(0,0,0,.05);
+}
+
+.ui-sortable-placeholder {
+  margin: 1rem 0;
+  height: 5rem;
+
+  background: rgba(0,0,0,.05);
+  border: dashed .2rem rgba(0,0,0,.05);
+}

@@ -1,0 +1,8 @@
+en:
+  admin:
+    actions:
+      content_builder:
+        title: "Create News"
+        menu: "Create New"
+        breadcrumb: "Create New"
+        delete_block: "Do you want to remove this content?"

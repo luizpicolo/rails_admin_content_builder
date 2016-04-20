@@ -1,0 +1,30 @@
+<div class="news__nav">
+  <%= link_to '#', class: 'news-snippet', data: {snippet: '1'} do %>
+    <%= image_tag 'a01.png', class: 'news-snippet__image' %>
+  <% end %>
+
+  <%= link_to '#', class: 'news-snippet', data: {snippet: '2'} do %>
+    <%= image_tag 'g02.png', class: 'news-snippet__image' %>
+  <% end %>
+
+  <%= link_to '#', class: 'news-snippet', data: {snippet: '3'} do %>
+    <%= image_tag 'g03.png', class: 'news-snippet__image' %>
+  <% end %>
+
+  <%= link_to '#', class: 'news-snippet', data: {snippet: '4'} do %>
+    <%= image_tag 'o01.png', class: 'news-snippet__image' %>
+  <% end %>
+</div>
+
+<%= simple_form_for rails_admin.content_builder_url(@abstract_model.to_param, id: @object.id), remote: false do |f| %>
+  <div class="news__controls">
+    <%= f.button :submit, 'Salvar', remote: true, class: 'btn btn-block btn-primary' %>
+    <%= link_to 'Publicar', '#', class: 'btn btn-block btn-default' %>
+  </div>
+
+  <div class="news__container">
+    <%= @object.content.try(:html_safe) %>
+  </div>
+  <%= f.input :id, as: :hidden, :input_html => { :name => "id", :value => @object.id } %>
+  <%= f.input :content, as: :hidden, :input_html => { :name => "content", :id => "content", :value => @object.content } %>
+<% end %>

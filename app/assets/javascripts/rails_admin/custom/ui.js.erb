@@ -1,0 +1,224 @@
+//= require medium-editor
+
+$(document).on('rails_admin.dom_ready', function() {
+  $('form').on('submit', function(e){
+    var content = $('.news__container').html();
+    $('#content').attr('value', content);
+  });
+
+  $("input:file").each(function(input){
+    addEventToInputFile($(this).attr('id'));
+  });
+});
+
+
+$(function() {
+  // news
+  $('.news__container').sortable({
+    revert: true,
+    placeholder: 'ui-sortable-placeholder',
+    handle: '.news-tools__btn--move',
+    cursor: 'move',
+  });
+});
+
+$(document).on('click', '.news-tools__btn--delete', function(){
+  var resp = confirm('<%= I18n.t('ad$(min.actions.news_admin.delete_block')%>');
+
+  if(resp) {
+    $($(this).attr('href')).remove();
+  }
+});
+
+$(document).on('click', '.news-tools__btn--upload', function(){
+  $(this).next().trigger('click');
+});
+
+$(document).on('click', '.news-tools__btn', function(e){
+  e.preventDefault();
+});
+
+$(document).on('click', '.news-snippet', function(e){
+  e.preventDefault();
+
+  var snippet = $(this).attr('data-snippet');
+  var container = $('.news__container');
+  var rows = $('.news__row').length + 1;
+
+  switch (snippet){
+    case '1':
+    var element = '<div id="'+ rows + '" class="news__row">';
+
+    element += '<div class="news-tools">';
+    element += '<a class="news-tools__btn news-tools__btn--move fa fa-arrows" href="#"></a>';
+    element += '<a class="news-tools__btn news-tools__btn--delete fa fa-trash" href="#'+ rows + '"></a>';
+    element += '</div>';
+
+    element += '<div class="news__content">';
+    element += '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque molestie odio vel turpis sollicitudin, id porta mauris aliquet. Fusce dui tellus, suscipit in turpis vitae, mattis pellentesque enim. Pellentesque suscipit eleifend massa sit amet luctus. Integer rutrum venenatis purus, sed pulvinar lorem venenatis nec. Ut a blandit dui, quis tempor ex. Ut tristique pulvinar nibh, vel semper lectus condimentum non. Duis aliquam varius nisl, vel sodales leo molestie nec. Proin porttitor nunc nisl, quis laoreet ligula ultrices id. Donec eget sapien porta, porta tortor eu, elementum eros. Vivamus hendrerit, lectus a mollis semper, enim ipsum tincidunt lacus, ut tristique odio erat vel eros. Sed sagittis finibus odio nec facilisis. Nunc pulvinar posuere aliquam. Praesent tristique fermentum turpis, et tempor lacus blandit quis.</p>';
+    element += '</div>';
+
+    element += '</div>';
+
+    container.append(element);
+    scroll('#' + rows);
+    break;
+
+    case '2':
+    var element = '<div id="'+ rows + '" class="news__row">';
+
+    element += '<div class="news-tools">';
+    element += '<a class="news-tools__btn news-tools__btn--move fa fa-arrows" href="#"></a>';
+    element += '<a class="news-tools__btn news-tools__btn--delete fa fa-trash" href="#'+ rows + '"></a>';
+    element += '</div>';
+
+    element += '<figure class="news__figure news__figure--left">';
+    element += '<%= image_tag('beach-1236581_960_720.jpg') %>';
+    element += '<figcaption class="news__figcaption">Lorem ipsum dolor sit amet</figcaption>';
+    element += '<div class="news-tools">';
+    element += '<a class="news-tools__btn news-tools__btn--upload fa fa-camera" href="#"></a>';
+    element += '<input class="filePicker news-tools__input news-tools__input--upload" type="file" name="news_image" id="'+rows+'">';
+    element += '</div>';
+    element += '</figure>';
+
+    element += '<div class="news__content">';
+    element += '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque molestie odio vel turpis sollicitudin, id porta mauris aliquet. Fusce dui tellus, suscipit in turpis vitae, mattis pellentesque enim. Pellentesque suscipit eleifend massa sit amet luctus. Integer rutrum venenatis purus, sed pulvinar lorem venenatis nec. Ut a blandit dui, quis tempor ex. Ut tristique pulvinar nibh, vel semper lectus condimentum non. Duis aliquam varius nisl, vel sodales leo molestie nec. Proin porttitor nunc nisl, quis laoreet ligula ultrices id. Donec eget sapien porta, porta tortor eu, elementum eros. Vivamus hendrerit, lectus a mollis semper, enim ipsum tincidunt lacus, ut tristique odio erat vel eros. Sed sagittis finibus odio nec facilisis. Nunc pulvinar posuere aliquam. Praesent tristique fermentum turpis, et tempor lacus blandit quis.</p>';
+    element += '</div>';
+
+    element += '</div>';
+
+    container.append(element);
+    addEventToInputFile(rows);
+    scroll('#' + rows);
+    break;
+
+    case '3':
+    var element = '<div id="'+ rows + '" class="news__row">';
+
+    element += '<div class="news-tools">';
+    element += '<a class="news-tools__btn news-tools__btn--move fa fa-arrows" href="#"></a>';
+    element += '<a class="news-tools__btn news-tools__btn--delete fa fa-trash" href="#'+ rows + '"></a>';
+    element += '</div>';
+
+    element += '<figure class="news__figure news__figure--right">';
+    element += '<%= image_tag('beach-1236581_960_720.jpg') %>';
+    element += '<figcaption class="news__figcaption">Lorem ipsum dolor sit amet</figcaption>';
+    element += '<div class="news-tools">';
+    element += '<a class="news-tools__btn news-tools__btn--upload fa fa-camera" href="#"></a>';
+    element += '<input class="filePicker news-tools__input news-tools__input--upload" type="file" name="news_image" id="'+rows+'">';
+    element += '</div>';
+    element += '</figure>';
+
+
+    element += '<div class="news__content">';
+    element += '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque molestie odio vel turpis sollicitudin, id porta mauris aliquet. Fusce dui tellus, suscipit in turpis vitae, mattis pellentesque enim. Pellentesque suscipit eleifend massa sit amet luctus. Integer rutrum venenatis purus, sed pulvinar lorem venenatis nec. Ut a blandit dui, quis tempor ex. Ut tristique pulvinar nibh, vel semper lectus condimentum non. Duis aliquam varius nisl, vel sodales leo molestie nec. Proin porttitor nunc nisl, quis laoreet ligula ultrices id. Donec eget sapien porta, porta tortor eu, elementum eros. Vivamus hendrerit, lectus a mollis semper, enim ipsum tincidunt lacus, ut tristique odio erat vel eros. Sed sagittis finibus odio nec facilisis. Nunc pulvinar posuere aliquam. Praesent tristique fermentum turpis, et tempor lacus blandit quis.</p>';
+    element += '</div>';
+
+    element += '</div>';
+
+    container.append(element);
+    addEventToInputFile(rows);
+    scroll('#' + rows);
+    break;
+
+    case '4':
+    var element = '<div id="'+ rows + '" class="news__row">';
+
+    element += '<div class="news-tools">';
+    element += '<a class="news-tools__btn news-tools__btn--move fa fa-arrows" href="#"></a>';
+    element += '<a class="news-tools__btn news-tools__btn--delete fa fa-trash" href="#'+ rows + '"></a>';
+    element += '</div>';
+
+    element += '<figure class="news__figure news__figure--center">';
+    element += '<%= image_tag('beach-1236581_960_720.jpg') %>';
+    element += '<figcaption class="news__figcaption">Lorem ipsum dolor sit amets</figcaption>';
+    element += '<div class="news-tools">';
+    element += '<a class="news-tools__btn news-tools__btn--upload fa fa-camera" href="#"></a>';
+    element += '<input class="filePicker news-tools__input news-tools__input--upload" type="file" name="news_image" id="'+rows+'">';
+    element += '</div>';
+    element += '</figure>';
+
+    element += '</div>';
+
+    container.append(element);
+
+    addEventToInputFile(rows);
+    scroll('#' + rows);
+    break;
+
+    default:
+  };
+
+  var editor = new MediumEditor('.news__content', {
+    placeholder: {
+      text: '',
+      hideOnClick: true
+    },
+
+    toolbar: {
+      buttons: ['bold', 'italic', 'underline', 'anchor']
+    },
+
+    anchor: {
+      placeholderText: 'Ex: http://site.com'
+    },
+
+    anchorPreview: false,
+
+    paste: {
+      cleanPastedHTML: true
+    }
+  });
+
+  $('.news__figcaption').attr('contenteditable', 'true');
+});
+
+var scroll = function(id) {
+  $('html, body').animate({
+    scrollTop: $(id).offset().top
+  }, 400);
+}
+
+// Add event FileSelectAndUpload listener for input file
+// Input#input_id
+var addEventToInputFile = function(id){
+  document.getElementById(id).addEventListener('change', FileSelectAndUpload, false);
+}
+
+// Event Listener
+var FileSelectAndUpload = function(evt) {
+  var files = evt.target.files;
+  var file = files[0];
+
+  if (files && file) {
+    var formData = new FormData(), $input = $('#' + evt.target.id);
+    formData.append('content_builder_image', file);
+
+    $.ajax({
+      url: 'create_images',
+      data: formData,
+      cache: false,
+      contentType: false,
+      processData: false,
+      type: 'PUT'
+    }).done(function(e) {
+      // bad practice :(
+      p = $('#' + evt.target.id).find('figure').attr('class').split("-").pop();
+      $('#' + evt.target.id).find('img').attr('src', GetPosition(p, e));
+    }).fail(function(e) {
+      alert( "error: " + e );
+    });
+  }
+};
+
+var GetPosition = function(position, e){
+  switch(position) {
+    case 'left':
+    case 'right':
+      return e.image.left_or_right.url;
+      break;
+    case 'center':
+      return e.image.center.url;
+      break;
+  }
+}

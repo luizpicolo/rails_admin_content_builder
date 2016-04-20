@@ -1,0 +1,8 @@
+pt-BR:
+  admin:
+    actions:
+      content_builder:
+        title: "Criar Notícia"
+        menu: "Criar Notícia"
+        breadcrumb: "Criar Notícia"
+        delete_block: "Deseja mesmo remover esse conteúdo?"
