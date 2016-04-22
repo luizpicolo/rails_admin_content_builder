@@ -14,6 +14,10 @@
   <%= link_to '#', class: 'news-snippet__btn', data: {snippet: '4'} do %>
     <%= image_tag 'snippet-image.png', class: 'news-snippet__image' %>
   <% end %>
+
+  <%= link_to '#', class: 'news-snippet__btn', data: {snippet: '5'} do %>
+    <%= image_tag 'snippet-image.png', class: 'news-snippet__image' %>
+  <% end %>
 </div>
 
 <%= simple_form_for rails_admin.content_builder_url(@abstract_model.to_param, id: @object.id), html: { class: 'news-form' }, remote: false do |f| %>

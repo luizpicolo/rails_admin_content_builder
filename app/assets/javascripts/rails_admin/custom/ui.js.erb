@@ -33,14 +33,25 @@
     }
   });
 
-  // when click on upload button
-  $(document).on('click', '.news-tools__btn--upload', function() {
-    $(this).next().trigger('click');
-  });
-
   // when click on tools buttons
   $(document).on('click', '.news-tools__btn', function(e) {
     e.preventDefault();
+  });
+
+  // when click on upload button
+  $(document).on('click', '.news-tools__btn--upload', function() {
+    $($(this).attr('href')).find('input').trigger('click');
+  });
+
+  // when click on youtube buttons
+  $(document).on('click', '.news-tools__btn--youtube', function() {
+    var resp = prompt('Cole a url do YouTube', '');
+    resp = youtubeParser(resp);
+
+    if(resp) {
+      var href = $(this).attr('href');
+      $(href).find('iframe').attr('src', 'https://www.youtube.com/embed/' + resp + '?rel=0&amp;showinfo=0');
+    }
   });
 
   // when click on snippet buttons
@@ -74,6 +85,7 @@
       var element = '<div id="'+ id + '" class="news__row">';
 
       element += '<div class="news-tools">';
+      element += '<a class="news-tools__btn news-tools__btn--upload fa fa-camera" href="#'+ id + '"></a>';
       element += '<a class="news-tools__btn news-tools__btn--move fa fa-arrows" href="#"></a>';
       element += '<a class="news-tools__btn news-tools__btn--delete fa fa-trash" href="#'+ id + '"></a>';
       element += '</div>';
@@ -82,7 +94,6 @@
       element += '<%= image_tag('default.jpg') %>';
       element += '<figcaption class="news__figcaption">Lorem ipsum dolor sit amet</figcaption>';
       element += '<div class="news-tools">';
-      element += '<a class="news-tools__btn news-tools__btn--upload fa fa-camera" href="#"></a>';
       element += '<input id="'+ id +'" data-position="left" class="filePicker news-tools__input news-tools__input--upload" type="file" name="news_image">';
       element += '</div>';
       element += '</figure>';
@@ -102,6 +113,7 @@
       var element = '<div id="'+ id + '" class="news__row">';
 
       element += '<div class="news-tools">';
+      element += '<a class="news-tools__btn news-tools__btn--upload fa fa-camera" href="#'+ id + '"></a>';
       element += '<a class="news-tools__btn news-tools__btn--move fa fa-arrows" href="#"></a>';
       element += '<a class="news-tools__btn news-tools__btn--delete fa fa-trash" href="#'+ id + '"></a>';
       element += '</div>';
@@ -110,7 +122,6 @@
       element += '<%= image_tag('default.jpg') %>';
       element += '<figcaption class="news__figcaption">Lorem ipsum dolor sit amet</figcaption>';
       element += '<div class="news-tools">';
-      element += '<a class="news-tools__btn news-tools__btn--upload fa fa-camera" href="#"></a>';
       element += '<input id="'+ id +'" data-position="right" class="filePicker news-tools__input news-tools__input--upload" type="file" name="news_image">';
       element += '</div>';
       element += '</figure>';
@@ -131,6 +142,7 @@
       var element = '<div id="'+ id + '" class="news__row">';
 
       element += '<div class="news-tools">';
+      element += '<a class="news-tools__btn news-tools__btn--upload fa fa-camera" href="#'+ id + '"></a>';
       element += '<a class="news-tools__btn news-tools__btn--move fa fa-arrows" href="#"></a>';
       element += '<a class="news-tools__btn news-tools__btn--delete fa fa-trash" href="#'+ id + '"></a>';
       element += '</div>';
@@ -139,10 +151,31 @@
       element += '<%= image_tag('default.jpg') %>';
       element += '<figcaption class="news__figcaption">Lorem ipsum dolor sit amets</figcaption>';
       element += '<div class="news-tools">';
-      element += '<a class="news-tools__btn news-tools__btn--upload fa fa-camera" href="#"></a>';
       element += '<input id="'+ id +'" data-position="center" class="filePicker news-tools__input news-tools__input--upload" type="file" name="news_image">';
       element += '</div>';
       element += '</figure>';
+
+      element += '</div>';
+
+      container.append(element);
+      addEventToInputFile(id);
+      scrollTo(id);
+      break;
+
+      case '5':
+      var element = '<div id="'+ id + '" class="news__row">';
+
+      element += '<div class="news-tools">';
+      element += '<a class="news-tools__btn news-tools__btn--move fa fa-arrows" href="#"></a>';
+      element += '<a class="news-tools__btn news-tools__btn--delete fa fa-trash" href="#'+ id + '"></a>';
+      element += '</div>';
+
+      element += '<div class="news__video news__video--center">';
+      element += '<iframe id="' + id + '" width="560" height="500" src="" frameborder="0" allowfullscreen></iframe>';
+      element += '<div class="news-tools">';
+      element += '<a href="#' + id + '" class="news-tools__btn news-tools__btn--youtube fa fa-video-camera"></a>';
+      element += '</div>';
+      element += '</div>';
 
       element += '</div>';
 
@@ -237,6 +270,18 @@
     });
 
     $('.news__figcaption').attr('contenteditable', 'true');
+  };
+
+  // parse url by youtube using expression regular
+  var youtubeParser = function(url) {
+    var regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#\&\?]*).*/;
+    var match = url.match(regExp);
+
+    if(match&&match[7].length==11) {
+      return b=match[7];
+    } else {
+      alert('Ops! Você não informou uma url válida.');
+    }
   };
 
 })();
