@@ -1,22 +1,22 @@
-<div class="news__nav">
-  <%= link_to '#', class: 'news-snippet', data: {snippet: '1'} do %>
-    <%= image_tag 'a01.png', class: 'news-snippet__image' %>
+<div class="news-snippet">
+  <%= link_to '#', class: 'news-snippet__btn', data: {snippet: '1'} do %>
+    <%= image_tag 'snippet-text.png', class: 'news-snippet__image' %>
   <% end %>
 
-  <%= link_to '#', class: 'news-snippet', data: {snippet: '2'} do %>
-    <%= image_tag 'g02.png', class: 'news-snippet__image' %>
+  <%= link_to '#', class: 'news-snippet__btn', data: {snippet: '2'} do %>
+    <%= image_tag 'snippet-image-text.png', class: 'news-snippet__image' %>
   <% end %>
 
-  <%= link_to '#', class: 'news-snippet', data: {snippet: '3'} do %>
-    <%= image_tag 'g03.png', class: 'news-snippet__image' %>
+  <%= link_to '#', class: 'news-snippet__btn', data: {snippet: '3'} do %>
+    <%= image_tag 'snippet-text-image.png', class: 'news-snippet__image' %>
   <% end %>
 
-  <%= link_to '#', class: 'news-snippet', data: {snippet: '4'} do %>
-    <%= image_tag 'o01.png', class: 'news-snippet__image' %>
+  <%= link_to '#', class: 'news-snippet__btn', data: {snippet: '4'} do %>
+    <%= image_tag 'snippet-image.png', class: 'news-snippet__image' %>
   <% end %>
 </div>
 
-<%= simple_form_for rails_admin.content_builder_url(@abstract_model.to_param, id: @object.id), remote: false do |f| %>
+<%= simple_form_for rails_admin.content_builder_url(@abstract_model.to_param, id: @object.id), html: { class: 'news-form' }, remote: false do |f| %>
   <div class="news__controls">
     <%= f.button :submit, t('admin.actions.content_builder.button.save'), class: 'btn btn-block btn-primary' %>
     <% if @object.status %>

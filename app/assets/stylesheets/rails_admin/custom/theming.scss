@@ -3,10 +3,10 @@
 
 // news admin
 
-.news__nav {
+.news-snippet {
   position: fixed;
   top: 50px;
-  bottom: 103px;
+  bottom: 110px;
   right: 0;
 
   width: 200px;
@@ -34,7 +34,7 @@
 }
 
 
-.news-snippet {
+.news-snippet__btn {
   display: block;
   text-decoration: none;
   margin-bottom: 20px;
