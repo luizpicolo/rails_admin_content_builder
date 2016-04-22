@@ -272,6 +272,7 @@
     $('.news__figcaption').attr('contenteditable', 'true');
   };
 
+  // parse url by youtube using expression regular
   var youtubeParser = function(url) {
     var regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#\&\?]*).*/;
     var match = url.match(regExp);
