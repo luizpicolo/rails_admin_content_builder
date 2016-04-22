@@ -1,4 +1,3 @@
-
 module RailsAdminContentBuilder
   class ContentBuilderController < ::ApplicationController
     def create_images
