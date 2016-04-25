@@ -223,7 +223,7 @@
         var p = evt.target.getAttribute('data-position');
         $('#' + evt.target.id).find('img').attr('src', getImageOfPosition(p, e));
       }).fail(function(e) {
-        alert( "error: " + e );
+        alert('error: ' + e);
       });
     }
   };
@@ -235,6 +235,7 @@
       case 'right':
       return e.image.left_or_right.url;
       break;
+
       case 'center':
       return e.image.center.url;
       break;
@@ -277,8 +278,8 @@
     var regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#\&\?]*).*/;
     var match = url.match(regExp);
 
-    if(match&&match[7].length==11) {
-      return b=match[7];
+    if(match && match[7].length == 11) {
+      return b = match[7];
     } else {
       alert('Ops! Você não informou uma url válida.');
     }
