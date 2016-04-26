@@ -1,5 +1,7 @@
 module RailsAdminContentBuilder
   class ContentBuilderImage < ActiveRecord::Base
+    self.table_name = 'content_builder_images'
+
     mount_uploader :image, ContentBuilderImageUploader
 
     validates :image, presence: true

@@ -1,0 +1,10 @@
+source 'https://rubygems.org'
+
+group :development, :test do
+  gem 'rspec-rails'
+  gem 'factory_girl_rails'
+  gem 'sqlite3'
+  gem 'rails_admin'
+  gem 'rails_admin_content_builder', path: '../../'
+end
+

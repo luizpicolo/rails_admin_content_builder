@@ -1,15 +1,19 @@
-ENV["RAILS_ENV"] = "test"
+ENV['RAILS_ENV'] ||= 'test'
 
-require 'rails'
-require 'action_controller'
-require 'action_controller/base'
-require 'action_controller/test_case'
+require File.expand_path("../dummy/config/environment.rb", __FILE__)
 require 'rspec/rails'
-require 'rails_admin_content_builder'
+require 'faker'
+require 'factory_girl_rails'
 
-class ApplicationController < ActionController::Base; end
+Rails.backtrace_cleaner.remove_silencers!
 
-require_relative '../app/controllers/rails_admin_content_builder/content_builder_controller'
+# Load support files
+Dir["#{File.dirname(__FILE__)}/support/**/*.rb"].each { |f| require f }
 
 RSpec.configure do |config|
+ config.mock_with :rspec
+ config.before(:suite) { FactoryGirl.reload }
+ config.use_transactional_fixtures = true
+ config.infer_base_class_for_anonymous_controllers = false
+ config.order = "random"
 end
