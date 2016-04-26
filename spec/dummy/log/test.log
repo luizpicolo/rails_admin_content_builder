@@ -1234,3 +1234,327 @@ Processing by RailsAdminContentBuilder::ContentBuilderController#create_images a
   [1m[36mRailsAdminContentBuilder::ContentBuilderImage Load (0.1ms)[0m  [1mSELECT  "content_builder_images".* FROM "content_builder_images" WHERE "content_builder_images"."id" = ? LIMIT 1[0m  [["id", 1]]
 Completed 200 OK in 111ms (Views: 0.1ms | ActiveRecord: 0.5ms)
   [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "content_builders" ("title", "date_publish", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Krystel Abbott DDS"], ["date_publish", "2016-04-26 18:45:43.067600"], ["created_at", "2016-04-26 18:45:43.069156"], ["updated_at", "2016-04-26 18:45:43.069156"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by RailsAdminContentBuilder::ContentBuilderController#create_images as HTML
+  Parameters: {"content_builder_image"=>#<Rack::Test::UploadedFile:0x000000038d0560 @content_type="text/plain", @original_filename="example.jpg", @tempfile=#<Tempfile:/tmp/example.jpg20160426-18487-lv0nf1>>, "id"=>"1"}
+  [1m[36mRailsAdminContentBuilder::ContentBuilder Load (0.1ms)[0m  [1mSELECT  "content_builders".* FROM "content_builders" WHERE "content_builders"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "content_builder_images" ("image", "content_builder_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["image", "example.jpg"], ["content_builder_id", 1], ["created_at", "2016-04-26 18:45:43.204619"], ["updated_at", "2016-04-26 18:45:43.204619"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mRailsAdminContentBuilder::ContentBuilderImage Load (0.1ms)[0m  [1mSELECT  "content_builder_images".* FROM "content_builder_images" WHERE "content_builder_images"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 134ms (Views: 0.1ms | ActiveRecord: 0.6ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "content_builders" ("title", "date_publish", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Aurelio Murazik"], ["date_publish", "2016-04-26 18:48:11.351308"], ["created_at", "2016-04-26 18:48:11.352855"], ["updated_at", "2016-04-26 18:48:11.352855"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by RailsAdminContentBuilder::ContentBuilderController#create_images as HTML
+  Parameters: {"content_builder_image"=>#<Rack::Test::UploadedFile:0x0000000616bfb0 @content_type="text/plain", @original_filename="example.jpg", @tempfile=#<Tempfile:/tmp/example.jpg20160426-18602-awlblv>>, "id"=>"1"}
+  [1m[36mRailsAdminContentBuilder::ContentBuilder Load (0.1ms)[0m  [1mSELECT  "content_builders".* FROM "content_builders" WHERE "content_builders"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "content_builder_images" ("image", "content_builder_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["image", "example.jpg"], ["content_builder_id", 1], ["created_at", "2016-04-26 18:48:11.469860"], ["updated_at", "2016-04-26 18:48:11.469860"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mRailsAdminContentBuilder::ContentBuilderImage Load (0.1ms)[0m  [1mSELECT  "content_builder_images".* FROM "content_builder_images" WHERE "content_builder_images"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 116ms (Views: 0.1ms | ActiveRecord: 0.6ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "content_builders" ("title", "date_publish", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Dr. Kiera Spinka"], ["date_publish", "2016-04-26 18:49:25.269138"], ["created_at", "2016-04-26 18:49:25.269509"], ["updated_at", "2016-04-26 18:49:25.269509"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by RailsAdminContentBuilder::ContentBuilderController#create_images as HTML
+  Parameters: {"content_builder_image"=>#<Rack::Test::UploadedFile:0x0000000311de08 @content_type="text/plain", @original_filename="example.jpg", @tempfile=#<Tempfile:/tmp/example.jpg20160426-18701-1dwoz8p>>, "id"=>"1"}
+  [1m[36mRailsAdminContentBuilder::ContentBuilder Load (0.1ms)[0m  [1mSELECT  "content_builders".* FROM "content_builders" WHERE "content_builders"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "content_builder_images" ("image", "content_builder_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["image", "example.jpg"], ["content_builder_id", 1], ["created_at", "2016-04-26 18:49:25.385821"], ["updated_at", "2016-04-26 18:49:25.385821"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mRailsAdminContentBuilder::ContentBuilderImage Load (0.1ms)[0m  [1mSELECT  "content_builder_images".* FROM "content_builder_images" WHERE "content_builder_images"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 115ms (Views: 0.1ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "content_builders" ("title", "date_publish", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Margret DuBuque"], ["date_publish", "2016-04-26 18:50:30.268257"], ["created_at", "2016-04-26 18:50:30.268645"], ["updated_at", "2016-04-26 18:50:30.268645"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by RailsAdminContentBuilder::ContentBuilderController#create_images as HTML
+  Parameters: {"content_builder_image"=>#<Rack::Test::UploadedFile:0x00000004f36250 @content_type="text/plain", @original_filename="example.jpg", @tempfile=#<Tempfile:/tmp/example.jpg20160426-18783-s64e98>>, "id"=>"1"}
+  [1m[36mRailsAdminContentBuilder::ContentBuilder Load (0.1ms)[0m  [1mSELECT  "content_builders".* FROM "content_builders" WHERE "content_builders"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "content_builder_images" ("image", "content_builder_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["image", "example.jpg"], ["content_builder_id", 1], ["created_at", "2016-04-26 18:50:30.387983"], ["updated_at", "2016-04-26 18:50:30.387983"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mRailsAdminContentBuilder::ContentBuilderImage Load (0.1ms)[0m  [1mSELECT  "content_builder_images".* FROM "content_builder_images" WHERE "content_builder_images"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 119ms (Views: 0.1ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "content_builders" ("title", "date_publish", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Ollie Klocko"], ["date_publish", "2016-04-26 19:33:48.620587"], ["created_at", "2016-04-26 19:33:48.620988"], ["updated_at", "2016-04-26 19:33:48.620988"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by RailsAdminContentBuilder::ContentBuilderController#create_images as HTML
+  Parameters: {"content_builder_image"=>#<Rack::Test::UploadedFile:0x00000006263008 @content_type="text/plain", @original_filename="example.jpg", @tempfile=#<Tempfile:/tmp/example.jpg20160426-20928-5sv09w>>, "id"=>"1"}
+  [1m[36mRailsAdminContentBuilder::ContentBuilder Load (0.1ms)[0m  [1mSELECT  "content_builders".* FROM "content_builders" WHERE "content_builders"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "content_builder_images" ("image", "content_builder_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["image", "example.jpg"], ["content_builder_id", 1], ["created_at", "2016-04-26 19:33:48.784891"], ["updated_at", "2016-04-26 19:33:48.784891"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mRailsAdminContentBuilder::ContentBuilderImage Load (0.1ms)[0m  [1mSELECT  "content_builder_images".* FROM "content_builder_images" WHERE "content_builder_images"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 161ms (Views: 0.1ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "content_builders" ("title", "date_publish", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Tiana Medhurst"], ["date_publish", "2016-04-26 19:34:47.810000"], ["created_at", "2016-04-26 19:34:47.810389"], ["updated_at", "2016-04-26 19:34:47.810389"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by RailsAdminContentBuilder::ContentBuilderController#create_images as HTML
+  Parameters: {"content_builder_image"=>#<Rack::Test::UploadedFile:0x0000000805da18 @content_type="text/plain", @original_filename="example.jpg", @tempfile=#<Tempfile:/tmp/example.jpg20160426-21016-yltcs5>>, "id"=>"1"}
+  [1m[36mRailsAdminContentBuilder::ContentBuilder Load (0.1ms)[0m  [1mSELECT  "content_builders".* FROM "content_builders" WHERE "content_builders"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "content_builder_images" ("image", "content_builder_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["image", "example.jpg"], ["content_builder_id", 1], ["created_at", "2016-04-26 19:34:47.933537"], ["updated_at", "2016-04-26 19:34:47.933537"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mRailsAdminContentBuilder::ContentBuilderImage Load (0.1ms)[0m  [1mSELECT  "content_builder_images".* FROM "content_builder_images" WHERE "content_builder_images"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 122ms (Views: 0.1ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "content_builders" ("title", "date_publish", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Dr. Dominic Reichert"], ["date_publish", "2016-04-26 19:35:44.804326"], ["created_at", "2016-04-26 19:35:44.804749"], ["updated_at", "2016-04-26 19:35:44.804749"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by RailsAdminContentBuilder::ContentBuilderController#create_images as HTML
+  Parameters: {"content_builder_image"=>#<Rack::Test::UploadedFile:0x00000006648010 @content_type="text/plain", @original_filename="example.jpg", @tempfile=#<Tempfile:/tmp/example.jpg20160426-21107-1wb6e3d>>, "id"=>"1"}
+  [1m[36mRailsAdminContentBuilder::ContentBuilder Load (0.1ms)[0m  [1mSELECT  "content_builders".* FROM "content_builders" WHERE "content_builders"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "content_builder_images" ("image", "content_builder_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["image", "example.jpg"], ["content_builder_id", 1], ["created_at", "2016-04-26 19:35:44.931510"], ["updated_at", "2016-04-26 19:35:44.931510"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mRailsAdminContentBuilder::ContentBuilderImage Load (0.1ms)[0m  [1mSELECT  "content_builder_images".* FROM "content_builder_images" WHERE "content_builder_images"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 126ms (Views: 0.1ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "content_builders" ("title", "date_publish", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Ms. Brandt Emard"], ["date_publish", "2016-04-26 19:36:13.805789"], ["created_at", "2016-04-26 19:36:13.807524"], ["updated_at", "2016-04-26 19:36:13.807524"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by RailsAdminContentBuilder::ContentBuilderController#create_images as HTML
+  Parameters: {"content_builder_image"=>#<Rack::Test::UploadedFile:0x0000000488cf58 @content_type="text/plain", @original_filename="example.jpg", @tempfile=#<Tempfile:/tmp/example.jpg20160426-21163-1ni69d7>>, "id"=>"1"}
+  [1m[36mRailsAdminContentBuilder::ContentBuilder Load (0.1ms)[0m  [1mSELECT  "content_builders".* FROM "content_builders" WHERE "content_builders"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "content_builder_images" ("image", "content_builder_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["image", "example.jpg"], ["content_builder_id", 1], ["created_at", "2016-04-26 19:36:13.923048"], ["updated_at", "2016-04-26 19:36:13.923048"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mRailsAdminContentBuilder::ContentBuilderImage Load (0.1ms)[0m  [1mSELECT  "content_builder_images".* FROM "content_builder_images" WHERE "content_builder_images"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 114ms (Views: 0.2ms | ActiveRecord: 0.6ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "content_builders" ("title", "date_publish", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Rashad Bernhard"], ["date_publish", "2016-04-26 19:36:25.929876"], ["created_at", "2016-04-26 19:36:25.931414"], ["updated_at", "2016-04-26 19:36:25.931414"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by RailsAdminContentBuilder::ContentBuilderController#create_images as HTML
+  Parameters: {"content_builder_image"=>#<Rack::Test::UploadedFile:0x00000006488b08 @content_type="text/plain", @original_filename="example.jpg", @tempfile=#<Tempfile:/tmp/example.jpg20160426-21213-12m9xq7>>, "id"=>"1"}
+  [1m[36mRailsAdminContentBuilder::ContentBuilder Load (0.1ms)[0m  [1mSELECT  "content_builders".* FROM "content_builders" WHERE "content_builders"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "content_builder_images" ("image", "content_builder_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["image", "example.jpg"], ["content_builder_id", 1], ["created_at", "2016-04-26 19:36:26.052069"], ["updated_at", "2016-04-26 19:36:26.052069"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mRailsAdminContentBuilder::ContentBuilderImage Load (0.1ms)[0m  [1mSELECT  "content_builder_images".* FROM "content_builder_images" WHERE "content_builder_images"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 126ms (Views: 0.2ms | ActiveRecord: 0.6ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "content_builders" ("title", "date_publish", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Immanuel Herman"], ["date_publish", "2016-04-26 19:36:45.878197"], ["created_at", "2016-04-26 19:36:45.878698"], ["updated_at", "2016-04-26 19:36:45.878698"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by RailsAdminContentBuilder::ContentBuilderController#create_images as HTML
+  Parameters: {"content_builder_image"=>#<Rack::Test::UploadedFile:0x0000000807aed8 @content_type="text/plain", @original_filename="example.jpg", @tempfile=#<Tempfile:/tmp/example.jpg20160426-21275-1keyjji>>, "id"=>"1"}
+  [1m[36mRailsAdminContentBuilder::ContentBuilder Load (0.1ms)[0m  [1mSELECT  "content_builders".* FROM "content_builders" WHERE "content_builders"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "content_builder_images" ("image", "content_builder_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["image", "example.jpg"], ["content_builder_id", 1], ["created_at", "2016-04-26 19:36:45.997919"], ["updated_at", "2016-04-26 19:36:45.997919"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mRailsAdminContentBuilder::ContentBuilderImage Load (0.1ms)[0m  [1mSELECT  "content_builder_images".* FROM "content_builder_images" WHERE "content_builder_images"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 119ms (Views: 0.1ms | ActiveRecord: 0.6ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "content_builders" ("title", "date_publish", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Mrs. Conner Hyatt"], ["date_publish", "2016-04-26 19:37:33.531475"], ["created_at", "2016-04-26 19:37:33.531875"], ["updated_at", "2016-04-26 19:37:33.531875"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by RailsAdminContentBuilder::ContentBuilderController#create_images as HTML
+  Parameters: {"content_builder_image"=>#<Rack::Test::UploadedFile:0x00000003b2da88 @content_type="text/plain", @original_filename="example.jpg", @tempfile=#<Tempfile:/tmp/example.jpg20160426-21341-9prn4h>>, "id"=>"1"}
+  [1m[36mRailsAdminContentBuilder::ContentBuilder Load (0.1ms)[0m  [1mSELECT  "content_builders".* FROM "content_builders" WHERE "content_builders"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "content_builder_images" ("image", "content_builder_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["image", "example.jpg"], ["content_builder_id", 1], ["created_at", "2016-04-26 19:37:33.648594"], ["updated_at", "2016-04-26 19:37:33.648594"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mRailsAdminContentBuilder::ContentBuilderImage Load (0.1ms)[0m  [1mSELECT  "content_builder_images".* FROM "content_builder_images" WHERE "content_builder_images"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 115ms (Views: 0.1ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "content_builders" ("title", "date_publish", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Herbert Gutkowski"], ["date_publish", "2016-04-26 19:38:01.479783"], ["created_at", "2016-04-26 19:38:01.481325"], ["updated_at", "2016-04-26 19:38:01.481325"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by RailsAdminContentBuilder::ContentBuilderController#create_images as HTML
+  Parameters: {"content_builder_image"=>#<Rack::Test::UploadedFile:0x000000042454b0 @content_type="text/plain", @original_filename="example.jpg", @tempfile=#<Tempfile:/tmp/example.jpg20160426-21400-146l26x>>, "id"=>"1"}
+  [1m[36mRailsAdminContentBuilder::ContentBuilder Load (0.1ms)[0m  [1mSELECT  "content_builders".* FROM "content_builders" WHERE "content_builders"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "content_builder_images" ("image", "content_builder_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["image", "example.jpg"], ["content_builder_id", 1], ["created_at", "2016-04-26 19:38:01.606900"], ["updated_at", "2016-04-26 19:38:01.606900"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mRailsAdminContentBuilder::ContentBuilderImage Load (0.1ms)[0m  [1mSELECT  "content_builder_images".* FROM "content_builder_images" WHERE "content_builder_images"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 125ms (Views: 0.1ms | ActiveRecord: 0.6ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Started GET "/" for 127.0.0.1 at 2016-04-26 15:38:01 -0400
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.4ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "content_builders" ("title", "date_publish", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Adolfo Bashirian Sr."], ["date_publish", "2016-04-26 19:39:17.308640"], ["created_at", "2016-04-26 19:39:17.309079"], ["updated_at", "2016-04-26 19:39:17.309079"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by RailsAdminContentBuilder::ContentBuilderController#create_images as HTML
+  Parameters: {"content_builder_image"=>#<Rack::Test::UploadedFile:0x00000003eeab58 @content_type="text/plain", @original_filename="example.jpg", @tempfile=#<Tempfile:/tmp/example.jpg20160426-21536-ctow95>>, "id"=>"1"}
+  [1m[36mRailsAdminContentBuilder::ContentBuilder Load (0.1ms)[0m  [1mSELECT  "content_builders".* FROM "content_builders" WHERE "content_builders"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "content_builder_images" ("image", "content_builder_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["image", "example.jpg"], ["content_builder_id", 1], ["created_at", "2016-04-26 19:39:17.424611"], ["updated_at", "2016-04-26 19:39:17.424611"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mRailsAdminContentBuilder::ContentBuilderImage Load (0.1ms)[0m  [1mSELECT  "content_builder_images".* FROM "content_builder_images" WHERE "content_builder_images"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 114ms (Views: 0.1ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
