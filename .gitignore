@@ -9,3 +9,5 @@
 /tmp/
 /.idea/*
 /test_app/*
+/spec/dummy/log/*
+
