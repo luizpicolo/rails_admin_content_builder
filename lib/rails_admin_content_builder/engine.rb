@@ -1,6 +1,7 @@
 require 'medium-editor-rails'
 require 'simple_form'
 require 'carrierwave'
+require 'friendly_id'
 
 module RailsAdminContentBuilder
   class Engine < ::Rails::Engine

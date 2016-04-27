@@ -5,7 +5,7 @@ feature 'create content builder', :type => :feature do
   before(:each) do
     @model_name = 'rails_admin_content_builder~content_builder'
   end
-  
+
   scenario 'first step', js: false do
     visit rails_admin.new_path(model_name: @model_name)
 
