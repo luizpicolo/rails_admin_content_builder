@@ -23,7 +23,6 @@ class RailsAdminContentBuilderGenerator < Rails::Generators::Base
   def create_migrations
     migration_template "create_content_builder_migration.rb", File.join('db/migrate', "create_content_builders.rb")
     migration_template "create_content_builder_image_migration.rb", File.join('db/migrate', "create_content_builder_images.rb")
-    migration_template "create_content_builder_related_migration.rb", File.join('db/migrate', "create_content_builder_relateds.rb")
   end
 end
 

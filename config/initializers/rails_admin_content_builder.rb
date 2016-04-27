@@ -14,7 +14,6 @@ RailsAdmin.config do |config|
       edit do
         field :title
         field :date_publish
-        field :content_builder_relateds
       end
     end
 
