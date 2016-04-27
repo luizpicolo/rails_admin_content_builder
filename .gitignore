@@ -9,5 +9,6 @@
 /tmp/
 /.idea/*
 /test_app/*
-/spec/dummy/log/*
+/spec/dummy/tmp/*
+spec/dummy/log/test.log
 
