@@ -37,4 +37,5 @@ Gem::Specification.new do |spec|
   spec.add_dependency "mini_magick", "~> 4.5.1"
   spec.add_dependency "friendly_id", "~> 5.1.0"
   spec.add_dependency "simple_form", "~> 3.2"
+  spec.add_dependency "rails-html-sanitizer"
 end
