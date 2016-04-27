@@ -5,6 +5,7 @@ class CreateContentBuilders < ActiveRecord::Migration
       t.datetime :date_publish
       t.text :content
       t.boolean :status, default: false
+      t.string :slug
 
       t.timestamps null: false
     end

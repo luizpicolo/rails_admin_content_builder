@@ -1,7 +1,7 @@
 module RailsAdminContentBuilder
   class ContentBuilderController < ::ApplicationController
     def create_images
-      @content_builder = ContentBuilder.find(params[:id])
+      @content_builder = ContentBuilder.find_by_slug(params[:id])
       @image = @content_builder.content_builder_images.create(image: params[:content_builder_image])
       if @image
         render json: find_image(@image.id)

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160426125047) do
+ActiveRecord::Schema.define(version: 20160426205620) do
 
   create_table "content_builder_images", force: :cascade do |t|
     t.string   "image"
@@ -22,11 +22,19 @@ ActiveRecord::Schema.define(version: 20160426125047) do
 
   add_index "content_builder_images", ["content_builder_id"], name: "index_content_builder_images_on_content_builder_id"
 
+  create_table "content_builder_relateds", force: :cascade do |t|
+    t.integer  "content_builder_id"
+    t.integer  "content_builder_related_id"
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+  end
+
   create_table "content_builders", force: :cascade do |t|
     t.string   "title"
     t.datetime "date_publish"
     t.text     "content"
     t.boolean  "status",       default: false
+    t.string   "slug"
     t.datetime "created_at",                   null: false
     t.datetime "updated_at",                   null: false
   end

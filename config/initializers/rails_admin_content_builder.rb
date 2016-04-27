@@ -15,6 +15,7 @@ unless Rails.env.test?
         edit do
           field :title
           field :date_publish
+          field :content_builder_relateds
         end
       end
 

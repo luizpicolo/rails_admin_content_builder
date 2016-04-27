@@ -3,6 +3,7 @@ PATH
   specs:
     rails_admin_content_builder (1.0.0)
       carrierwave (~> 0.11.0)
+      friendly_id (~> 5.1.0)
       medium-editor-rails (~> 2.1.0)
       mini_magick (~> 4.5.1)
       simple_form (~> 3.2)
@@ -70,6 +71,8 @@ GEM
       railties (>= 3.0.0)
     font-awesome-rails (4.6.1.0)
       railties (>= 3.2, < 5.1)
+    friendly_id (5.1.0)
+      activerecord (>= 4.0.0)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
     haml (4.0.7)
