@@ -166,15 +166,13 @@
       var element = '<div id="'+ id + '" class="news__row">';
 
       element += '<div class="news-tools">';
+      element += '<a href="#' + id + '" class="news-tools__btn news-tools__btn--youtube fa fa-video-camera"></a>';
       element += '<a class="news-tools__btn news-tools__btn--move fa fa-arrows" href="#"></a>';
       element += '<a class="news-tools__btn news-tools__btn--delete fa fa-trash" href="#'+ id + '"></a>';
       element += '</div>';
 
       element += '<div class="news__video news__video--center">';
       element += '<iframe id="'+ id +'" width="560" height="500" src="" frameborder="0" allowfullscreen></iframe>';
-      element += '<div class="news-tools">';
-      element += '<a href="#' + id + '" class="news-tools__btn news-tools__btn--youtube fa fa-video-camera"></a>';
-      element += '</div>';
       element += '</div>';
 
       element += '</div>';
