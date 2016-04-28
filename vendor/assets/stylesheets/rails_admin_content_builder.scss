@@ -5,7 +5,9 @@
 }
 
 .news__header {
-  margin-bottom: 1.2em;
+  padding-bottom: 1em;
+  margin-bottom: 1em;
+  border-bottom: solid 1px rgba(0,0,0,.05);
 }
 
 .news__title {
@@ -23,6 +25,17 @@
 
   color: rgba(0,0,0,.4);
   font-size: .95em;
+}
+
+.news__info {
+  color: rgba(0,0,0,.5);
+  font-size: .8em;
+
+  margin-bottom: 2em;
+}
+
+.news__date {
+  display: block;
 }
 
 .news__row {
@@ -61,7 +74,7 @@
 
 .news__figure {
   position: relative;
-  margin: .45em 0 1.5em;
+  margin: .3em 0 1.5em;
 
   img {
     width: 100%;
@@ -104,20 +117,24 @@
     font-size: 1em;
   }
 
+  .news__date {
+    float: right;
+  }
+
   .news__figure--left {
     float: left;
     width: 50%;
-    margin: .45em 1.5em 1.5em 0;
+    margin: .3em 1.5em 1.5em 0;
   }
 
   .news__figure--right {
     float: right;
     width: 50%;
-    margin: .45em 0 1.5em 1.5em;
+    margin: .3em 0 1.5em 1.5em;
   }
 
   .news__figure--center {
-    margin: .45em 0 1.5em;
+    margin: .3em 0 1.5em;
   }
 }
 
