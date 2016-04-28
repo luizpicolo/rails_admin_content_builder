@@ -9,8 +9,10 @@ feature 'create content builder', :type => :feature do
   scenario 'first step', js: false do
     visit rails_admin.new_path(model_name: @model_name)
 
-    fill_in('Title', with:  'Aqui vai um nome')
-    fill_in('Date publish', with:  'April 25, 2016 15:48')
+    fill_in('Title', with: Faker::Lorem.characters)
+    fill_in('Date publish', with: 'April 25, 2016 15:48')
+    fill_in('Written by', with: Faker::Internet.url)
+    fill_in('Summary', with: Faker::Lorem.characters)
 
     click_button('Save')
 

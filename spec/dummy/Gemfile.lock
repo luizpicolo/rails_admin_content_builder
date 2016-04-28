@@ -6,6 +6,7 @@ PATH
       friendly_id (~> 5.1.0)
       medium-editor-rails (~> 2.1.0)
       mini_magick (~> 4.5.1)
+      rails-html-sanitizer
       simple_form (~> 3.2)
 
 GEM

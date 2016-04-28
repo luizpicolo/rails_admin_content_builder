@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160426205620) do
+ActiveRecord::Schema.define(version: 20160428144722) do
 
   create_table "content_builder_images", force: :cascade do |t|
     t.string   "image"
@@ -31,6 +31,9 @@ ActiveRecord::Schema.define(version: 20160426205620) do
 
   create_table "content_builders", force: :cascade do |t|
     t.string   "title"
+    t.string   "written_by"
+    t.string   "news_source"
+    t.text     "summary"
     t.datetime "date_publish"
     t.text     "content"
     t.boolean  "status",       default: false
