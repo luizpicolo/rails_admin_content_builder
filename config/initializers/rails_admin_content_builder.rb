@@ -14,6 +14,9 @@ RailsAdmin.config do |config|
       edit do
         field :title
         field :date_publish
+        field :written_by
+        field :news_source
+        field :summary
       end
     end
 

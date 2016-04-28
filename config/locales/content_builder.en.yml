@@ -8,6 +8,9 @@ en:
         delete_block: "Do you want to remove this content?"
         success_save: "Successfully updated"
         error_save: "Error updating"
+        written_by: "Writter By"
+        news_source: "News source"
+        summary: "Summary"
         button:
           save: "Save"
           publish: "Publish"

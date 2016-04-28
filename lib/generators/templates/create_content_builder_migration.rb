@@ -2,6 +2,9 @@ class CreateContentBuilders < ActiveRecord::Migration
   def change
     create_table :content_builders do |t|
       t.string :title
+      t.string :written_by
+      t.string :news_source
+      t.text :summary
       t.datetime :date_publish
       t.text :content
       t.boolean :status, default: false

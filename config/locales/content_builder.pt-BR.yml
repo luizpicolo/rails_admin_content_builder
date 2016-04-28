@@ -8,6 +8,9 @@ pt-BR:
         delete_block: "Deseja mesmo remover esse conteúdo?"
         success_save: "Atualizado com sucesso"
         error_save: "Erro ao atualizar"
+        written_by: "Autor"
+        news_source: "Fonte"
+        summary: "Resumo"
         button:
           save: "Salvar"
           publish: "Publicar"
