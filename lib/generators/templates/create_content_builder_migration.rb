@@ -3,7 +3,6 @@ class CreateContentBuilders < ActiveRecord::Migration
     create_table :content_builders do |t|
       t.string :title
       t.string :written_by
-      t.string :content_source
       t.text :summary
       t.datetime :date_publish
       t.text :content
