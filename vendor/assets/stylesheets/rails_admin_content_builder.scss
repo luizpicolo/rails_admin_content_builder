@@ -28,7 +28,7 @@
 }
 
 .news__date {
-  margin-bottom: .5em;
+  margin: 0 0 .5em;
 
   color: rgba(0,0,0,.5);
   font-size: .64em;
@@ -115,7 +115,15 @@
     font-size: 2em;
   }
 
+  .news__date {
+    font-size: .8em;
+  }
+
   .news__summary {
+    font-size: 1em;
+  }
+
+  .news__content {
     font-size: 1em;
   }
 
@@ -133,6 +141,11 @@
 
   .news__figure--center {
     margin: .4em 0 1.5em;
+  }
+
+  .news__figcaption {
+    font-size: .9em;
+    padding: .4em .8em .5em;
   }
 }
 
