@@ -30,11 +30,11 @@ module RailsAdmin
             if request.post?
               if params.present?
 
-                if params[:commit] == 'Publish'
+                if params[:publish]
                   status = true
-                elsif params[:commit] == 'Unpublish'
+                elsif params[:unpublish]
                   status = false
-                elsif params[:commit] == 'Save'
+                elsif params[:save]
                   status = @object.status
                 end
 
