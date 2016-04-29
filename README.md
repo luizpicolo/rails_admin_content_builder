@@ -2,29 +2,54 @@
 
 [![Build Status](https://travis-ci.com/luizpicolo/rails_admin_content_builder.svg?token=Uyvyn65fG5spYivFAqj5&branch=master)](https://travis-ci.com/luizpicolo/rails_admin_content_builder)
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/rails_admin_content_builder`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Easy way for create contents using [rails_admin](https://github.com/sferik/rails_admin)
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
 ```ruby
+gem 'rails_admin'
 gem 'rails_admin_content_builder'
 ```
 
-And then execute:
+Run the generator and migrations
 
-    $ bundle
+    rails g rails_admin_content_builder
+    rake db:migrate
 
-Or install it yourself as:
+Add styles in app/assets/application.scss
 
-    $ gem install rails_admin_content_builder
+    *= require rails_admin_content_builder
 
 ## Usage
 
-TODO: Write usage instructions here
+```ruby
+# Return all objects contents
+@contents = RailsAdminContentBuilder::ContentBuilder.all
+
+# Return especific object content
+@content = RailsAdminContentBuilder::ContentBuilder.find_by_slug('SLUG-CONTENT')
+
+# Return content
+@content = RailsAdminContentBuilder::ContentBuilder.find_by_slug('SLUG-CONTENT')
+@content.content_sanitized
+```
+
+In your show content view
+
+```html
+<article>
+  <h1><%= @content.title %></h1>
+  <p>
+    <%= @content.written_by %>
+    <%= @content.content_source %>
+  </p>
+  <p><%= @content.summary %></p>
+
+<%= @content.content_sanitized %>
+</article>
+```
 
 ## Development
 
@@ -34,10 +59,9 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/rails_admin_content_builder. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/luizpicolo/rails_admin_content_builder. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 
 ## License
 
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
-
