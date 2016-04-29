@@ -20,6 +20,10 @@ class RailsAdminContentBuilderGenerator < Rails::Generators::Base
     template "content_builder_image_uploader.rb", "app/uploaders/content_builder_image_uploader.rb"
   end
 
+  def create_rails_admin_config_in_initializer
+    template "rails_admin_content_builder.rb", "config/initializers/rails_admin_content_builder.rb"
+  end
+
   def create_migrations
     migration_template "create_content_builder_migration.rb", File.join('db/migrate', "create_content_builders.rb")
     migration_template "create_content_builder_image_migration.rb", File.join('db/migrate', "create_content_builder_images.rb")
