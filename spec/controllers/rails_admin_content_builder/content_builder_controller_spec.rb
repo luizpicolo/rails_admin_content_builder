@@ -3,7 +3,7 @@ require 'json'
 
 describe RailsAdminContentBuilder::ContentBuilderController, type: :controller do
   describe 'PUT #create_images' do
-    it "Should return valid json" do
+    it "Should return valid JSON" do
       content_builder = FactoryGirl.create :content_builder
       put :create_images, id: content_builder.id,
           content_builder_image: Rack::Test::UploadedFile.new(File.join('spec', 'fixtures', 'assets', 'example.jpg'))
