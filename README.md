@@ -24,15 +24,35 @@ Add styles in app/assets/application.scss
 
 ## Usage
 
+Include in your controller
+
+```ruby
+include RailsAdminContentBuilder::ContentBuilderHelpers
+```
+
+Example
+
+```ruby
+class PostsController < ApplicationController
+  include RailsAdminContentBuilder::ContentBuilderHelpers
+
+  def index
+  end
+
+  def show
+  end
+end
+```
+
 ```ruby
 # Return all objects contents
-@contents = RailsAdminContentBuilder::ContentBuilder.all
+@contents = all_contents_created
 
 # Return especific object content
-@content = RailsAdminContentBuilder::ContentBuilder.find_by_slug('SLUG-CONTENT')
+@content = find_content_created_by_slug('your-slug')
 
 # Return content
-@content = RailsAdminContentBuilder::ContentBuilder.find_by_slug('SLUG-CONTENT')
+@content = find_content_created_by_slug('your-slug')
 @content.content_sanitized
 ```
 
@@ -43,7 +63,6 @@ In your show content view
   <h1><%= @content.title %></h1>
   <p>
     <%= @content.written_by %>
-    <%= @content.content_source %>
   </p>
   <p><%= @content.summary %></p>
 
