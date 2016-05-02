@@ -5,11 +5,11 @@ module RailsAdminContentBuilder
     end
 
     def all_contents_created
-      RailsAdminContentBuilder::ContentBuilder.all
+      RailsAdminContentBuilder::ContentBuilder.where(status: true)
     end
 
     def find_content_created_by_slug(slug)
-      RailsAdminContentBuilder::ContentBuilder.find_by_slug(slug)
+      RailsAdminContentBuilder::ContentBuilder.where(status: true, slug: slug).first
     end
   end
 end

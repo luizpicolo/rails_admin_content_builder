@@ -5,3 +5,4 @@ gemspec
 gem 'sqlite3'
 gem 'friendly_id'
 gem 'rails_admin'
+gem 'fuubar'
