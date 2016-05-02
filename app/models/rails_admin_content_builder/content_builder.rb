@@ -5,7 +5,7 @@ module RailsAdminContentBuilder
 
     friendly_id :title, use: :slugged
 
-    validates :title, :date_publish, :written_by, :summary, presence: true
+    validates :title, :date_publish, :written_by, presence: true
     has_many :content_builder_images, inverse_of: :content_builder
 
     def content_sanitized

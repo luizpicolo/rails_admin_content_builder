@@ -12,7 +12,6 @@ feature 'create content builder', :type => :feature do
     fill_in('Title', with: Faker::Lorem.characters)
     fill_in('Date publish', with: 'April 25, 2016 15:48')
     fill_in('Written by', with: Faker::Internet.url)
-    fill_in('Summary', with: Faker::Lorem.characters)
 
     click_button('Save')
 
