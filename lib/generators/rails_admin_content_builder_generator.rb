@@ -7,7 +7,7 @@ class RailsAdminContentBuilderGenerator < Rails::Generators::Base
     @source_root ||= File.expand_path(File.join(File.dirname(__FILE__), 'templates/'))
   end
 
-  def self.next_migration_number(dirname)
+  def self.next_migration_number(*)
     unless @migration
       @migration = Time.now.utc.strftime("%Y%m%d%H%M%S").to_i
     else
@@ -29,5 +29,3 @@ class RailsAdminContentBuilderGenerator < Rails::Generators::Base
     migration_template "create_content_builder_image_migration.rb", File.join('db/migrate', "create_content_builder_images.rb")
   end
 end
-
-
