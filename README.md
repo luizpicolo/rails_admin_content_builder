@@ -1,5 +1,7 @@
 # RailsAdminContentBuilder
 
+![Work in progress](http://messages.hellobits.com/warning.svg?message=Work%20in%20progress)
+
 [![Build Status](https://travis-ci.com/luizpicolo/rails_admin_content_builder.svg?token=Uyvyn65fG5spYivFAqj5&branch=master)](https://travis-ci.com/luizpicolo/rails_admin_content_builder)
 
 Easy way for create contents using [rails_admin](https://github.com/sferik/rails_admin)
