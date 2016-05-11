@@ -8,8 +8,10 @@ require 'rails_admin/config'
 require 'shoulda-matchers'
 require 'factory_girl_rails'
 require "codeclimate-test-reporter"
+require 'simplecov'
 
 CodeClimate::TestReporter.start
+SimpleCov.start
 
 Rails.backtrace_cleaner.remove_silencers!
 
