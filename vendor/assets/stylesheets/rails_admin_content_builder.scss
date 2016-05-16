@@ -14,7 +14,7 @@
   margin: 0 0 .3em;
   line-height: 1.2;
 
-  color: rgba(0,0,0,.75);
+  color: rgba(0,0,0,.74);
   font-size: 1.4em;
   letter-spacing: -.04em;
 }
@@ -102,6 +102,7 @@
 
   iframe {
     width: 100%;
+    height: 208px;
   }
 }
 
@@ -109,6 +110,14 @@
   margin-bottom: 2em;
 }
 
+
+@media screen and (min-width: 468px) {
+  .news__video {
+    iframe {
+      height: 302px;
+    }
+  }
+}
 
 @media screen and (min-width: 768px) {
   .news__title {
@@ -147,6 +156,12 @@
     font-size: .9em;
     padding: .4em .8em .5em;
   }
+
+  .news__video {
+    iframe {
+      height: 405px;
+    }
+  }
 }
 
 @media screen and (min-width: 992px) {
@@ -156,5 +171,19 @@
 
   .news__summary {
     font-size: 1.1em;
+  }
+
+  .news__video {
+    iframe {
+      height: 356px;
+    }
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .news__video {
+    iframe {
+      height: 415px;
+    }
   }
 }
