@@ -161,7 +161,7 @@
 
 .news__video {
   position: relative;
-  background: rgba(0,0,0,.02);
+  background: image_url('video-default.jpg') no-repeat center #e4e4e4;
 
   iframe {
     width: 100%;
