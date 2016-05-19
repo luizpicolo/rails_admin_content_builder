@@ -9,6 +9,10 @@
 
 Easy way for create contents using [rails_admin](https://github.com/sferik/rails_admin)
 
+## Preview
+
+
+
 ## Installation
 
 Add this line to your application's Gemfile:
