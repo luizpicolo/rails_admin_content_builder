@@ -11,7 +11,7 @@ Easy way for create contents using [rails_admin](https://github.com/sferik/rails
 
 ## Preview
 
-
+![preview](https://raw.githubusercontent.com/luizpicolo/rails_admin_content_builder/master/screenshot/image1.png)
 
 ## Installation
 
