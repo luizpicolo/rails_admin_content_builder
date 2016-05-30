@@ -19,7 +19,7 @@ Add this line to your application's Gemfile:
 
 ```ruby
 gem 'rails_admin'
-gem 'rails_admin_content_builder'
+gem 'rails_admin_content_builder', git: 'git://github.com/luizpicolo/rails_admin_content_builder.git'
 ```
 
 Run the generator and migrations

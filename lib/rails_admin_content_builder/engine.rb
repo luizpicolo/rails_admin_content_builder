@@ -9,6 +9,10 @@ module RailsAdminContentBuilder
 
     initializer 'rails_admin_content_builder.load_static_assets' do |app|
       app.middleware.use ::ActionDispatch::Static, "#{root}/vendor"
+      app.config.assets.precompile += %w(
+        rails_admin/content_builder.js
+        rails_admin/content_builder.css
+      )
     end
 
     config.generators do |g|
