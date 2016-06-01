@@ -81,12 +81,14 @@ In your show content view
 
 ## Attributes
 
-"title" : String
-"written_by" : String
-"date_publish" : DateTime
-"content" : Text
-"status" : Boolean                    
-"slug" : String
+```ruby
+"title" : String    
+"written_by" : String    
+"date_publish" : DateTime    
+"content" : Text    
+"status" : Boolean           
+"slug" : String    
+```
 
 ## Development
 
