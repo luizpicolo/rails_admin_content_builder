@@ -29,7 +29,9 @@ Run the generator and migrations
 
 Add styles in app/assets/application.scss
 
-    *= require rails_admin_content_builder
+```ruby
+*= require rails_admin_content_builder
+```
 
 ## Usage
 
@@ -79,15 +81,20 @@ In your show content view
 </article>
 ```
 
-## Attributes
+## Attributes and Methods
 
 ```ruby
+# Attributes
 "title" : String    
 "written_by" : String    
 "date_publish" : DateTime    
 "content" : Text    
 "status" : Boolean           
 "slug" : String    
+
+# Methods
+content_sanitized : Text
+content_builder_images : Object
 ```
 
 ## Development
