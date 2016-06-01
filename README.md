@@ -79,6 +79,15 @@ In your show content view
 </article>
 ```
 
+## Attributes
+
+"title" : String
+"written_by" : String
+"date_publish" : DateTime
+"content" : Text
+"status" : Boolean                    
+"slug" : String
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
