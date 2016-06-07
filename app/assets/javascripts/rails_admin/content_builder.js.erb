@@ -216,7 +216,13 @@
         cache: false,
         contentType: false,
         processData: false,
-        type: 'PUT'
+        type: 'PUT',
+        beforeSend: function(){
+          alert('Enviando...');
+        },
+        complete: function(){
+          alert('Enviado...');
+        }
       }).done(function(e) {
         var p = evt.target.getAttribute('data-position');
         $('#' + evt.target.id).find('img').attr('src', getImageOfPosition(p, e));
