@@ -218,10 +218,10 @@
         processData: false,
         type: 'PUT',
         beforeSend: function(){
-          alert('Enviando...');
+          $('#' + evt.target.id).find('img').attr('src', 'loading.gif');
         },
         complete: function(){
-          alert('Enviado...');
+          //alert('Enviado...');
         }
       }).done(function(e) {
         var p = evt.target.getAttribute('data-position');
