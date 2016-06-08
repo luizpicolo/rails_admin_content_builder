@@ -218,7 +218,7 @@
         processData: false,
         type: 'PUT',
         beforeSend: function(){
-          $('#' + evt.target.id).find('img').attr('src', 'loading.gif');
+          $('#' + evt.target.id).find('img').attr('src', '<%= image_url("loading.gif")%>');
         },
         complete: function(){
           //alert('Enviado...');
