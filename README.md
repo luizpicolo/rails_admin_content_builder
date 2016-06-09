@@ -35,6 +35,8 @@ Add styles in app/assets/application.scss
 
 ## Usage
 
+For custom model, see: [Customizing Model](https://github.com/luizpicolo/rails_admin_content_builder/wiki/Customizing-model)
+
 Include in your controller
 
 ```ruby
