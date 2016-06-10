@@ -217,11 +217,11 @@
         contentType: false,
         processData: false,
         type: 'PUT',
-        beforeSend: function(){
-          $('#' + evt.target.id).find('img').attr('src', '<%= image_url("loading.gif")%>');
+        beforeSend: function() {
+          $('#' + evt.target.id).append('<div class="news-loading"></div>');
         },
         complete: function(){
-          //alert('Enviado...');
+          $('.news-loading').remove();
         }
       }).done(function(e) {
         var p = evt.target.getAttribute('data-position');
