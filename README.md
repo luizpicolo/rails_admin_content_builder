@@ -18,6 +18,7 @@ Easy way for create contents using [rails_admin](https://github.com/sferik/rails
 This gem use gems    
  - carrierwave
  - mini_magick
+ - evaluated only with Postgree (not mongoid)
 
 ## Installation
 
