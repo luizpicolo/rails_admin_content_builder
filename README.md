@@ -15,10 +15,17 @@ Easy way for create contents using [rails_admin](https://github.com/sferik/rails
 
 ## requirements
 
-This gem use gems    
- - carrierwave
- - mini_magick
- - evaluated only with Postgree (not mongoid)
+Dependencies
+
+    MiniMagick
+
+Supported ORM
+
+    ActiveRecord
+
+Supported Asset Plugin
+
+    CarrierWave
 
 ## Installation
 
