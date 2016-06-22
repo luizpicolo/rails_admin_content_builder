@@ -13,6 +13,20 @@ Easy way for create contents using [rails_admin](https://github.com/sferik/rails
 
 ![preview](https://raw.githubusercontent.com/luizpicolo/rails_admin_content_builder/master/screenshot/image1.png)
 
+## Requirements
+
+Dependencies
+
+    MiniMagick
+
+Supported ORM
+
+    ActiveRecord
+
+Supported Asset Plugin
+
+    CarrierWave
+
 ## Installation
 
 Add this line to your application's Gemfile:
@@ -34,6 +48,8 @@ Add styles in app/assets/application.scss
 ```
 
 ## Usage
+
+For custom model, see: [Customizing Model](https://github.com/luizpicolo/rails_admin_content_builder/wiki/Customizing-model)
 
 Include in your controller
 
