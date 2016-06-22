@@ -11,7 +11,7 @@
 }
 
 .news__title {
-  margin: 0 0 .3em;
+  margin: 0;
   line-height: 1.2;
 
   color: rgba(0,0,0,.74);
@@ -20,7 +20,7 @@
 }
 
 .news__summary {
-  margin: 0;
+  margin: .3em 0 0;
   line-height: 1.4;
 
   color: rgba(0,0,0,.4);
@@ -35,10 +35,10 @@
 }
 
 .news__info {
-  margin-bottom: 1em;
+  margin-top: 1em;
 
   color: rgba(0,0,0,.5);
-  font-size: .8em;
+  font-size: .7em;
 }
 
 .news__row {
@@ -130,6 +130,10 @@
 
   .news__summary {
     font-size: 1em;
+  }
+
+  .news__info {
+    font-size: .8em;
   }
 
   .news__content {
