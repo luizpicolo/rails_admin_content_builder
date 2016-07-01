@@ -3,7 +3,7 @@
 // when rails admin ready
 $(document).on('rails_admin.dom_ready', function() {
   $('.news-form').on('submit', function(e){
-    var content = $('.container').html();
+    var content = $('.news__container').html();
     $('#content').attr('value', content);
   });
 
@@ -11,7 +11,7 @@ $(document).on('rails_admin.dom_ready', function() {
     addEventToInputFile($(this).attr('id'));
   });
 
-  $('.container').sortable({
+  $('.news__container').sortable({
     revert: true,
     placeholder: 'ui-sortable-placeholder',
     handle: '.tools__btn--move',
@@ -56,7 +56,7 @@ $(document).on('click', '.snippet__btn', function(e) {
   e.preventDefault();
 
   var snippet = $(this).attr('data-snippet');
-  var container = $('.container');
+  var container = $('.news__container');
   var id = generateID();
 
   switch (snippet) {

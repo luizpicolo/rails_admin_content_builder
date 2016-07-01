@@ -24,7 +24,7 @@
 </div>
 
 <%= simple_form_for rails_admin.content_builder_url(@abstract_model.to_param, id: @object.id), html: { class: 'news-form' }, remote: false do |f| %>
-  <div class="controls">
+  <div class="news__controls">
     <%= f.button :submit, t('admin.actions.content_builder.button.save'), name: 'save', class: 'btn btn-block btn-primary' %>
     <% if @object.status %>
       <%= f.button :submit, t('admin.actions.content_builder.button.unpublish'), name: 'unpublish', class: 'btn btn-block btn-danger' %>
@@ -33,7 +33,7 @@
     <% end %>
   </div>
 
-  <div class="container">
+  <div class="news__container">
     <%= @object.content.try(:html_safe) %>
   </div>
 
