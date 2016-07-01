@@ -1,292 +1,287 @@
 //= require medium-editor
 
-// function anonymous to restrict the context
-;(function(){
-
-  // when rails admin ready
-  $(document).on('rails_admin.dom_ready', function() {
-    $('.news-form').on('submit', function(e){
-      var content = $('.news__container').html();
-      $('#content').attr('value', content);
-    });
-
-    $('.news-tools__input--upload').each(function() {
-      addEventToInputFile($(this).attr('id'));
-    });
-
-    $('.news__container').sortable({
-      revert: true,
-      placeholder: 'ui-sortable-placeholder',
-      handle: '.news-tools__btn--move',
-      cursor: 'move',
-    });
-
-    activeMediumEditor();
+// when rails admin ready
+$(document).on('rails_admin.dom_ready', function() {
+  $('.news-form').on('submit', function(e){
+    var content = $('.news__container').html();
+    $('#content').attr('value', content);
   });
 
-  // when click on delete button
-  $(document).on('click', '.news-tools__btn--delete', function() {
-    var resp = confirm('<%= I18n.t('ad$(min.actions.news_admin.delete_block')%>');
-
-    if(resp) {
-      $($(this).attr('href')).remove();
-    }
+  $('.tools__input--upload').each(function() {
+    addEventToInputFile($(this).attr('id'));
   });
 
-  // when click on tools buttons
-  $(document).on('click', '.news-tools__btn', function(e) {
-    e.preventDefault();
+  $('.news__container').sortable({
+    revert: true,
+    placeholder: 'ui-sortable-placeholder',
+    handle: '.tools__btn--move',
+    cursor: 'move',
   });
 
-  // when click on upload button
-  $(document).on('click', '.news-tools__btn--upload', function() {
-    $($(this).attr('href')).find('input').trigger('click');
-  });
+  activeMediumEditor();
+});
 
-  // when click on youtube buttons
-  $(document).on('click', '.news-tools__btn--youtube', function() {
-    var resp = prompt('Cole a url do YouTube', '');
-    resp = youtubeParser(resp);
+// when click on delete button
+$(document).on('click', '.tools__btn--delete', function() {
+  var resp = confirm('<%= I18n.t('ad$(min.actions.news_admin.delete_block')%>');
 
-    if(resp) {
-      var href = $(this).attr('href');
-      $(href).find('iframe').attr('src', 'https://www.youtube.com/embed/' + resp + '?rel=0&amp;showinfo=0');
-    }
-  });
+  if(resp) {
+    $($(this).attr('href')).remove();
+  }
+});
 
-  // when click on snippet buttons
-  $(document).on('click', '.news-snippet__btn', function(e) {
-    e.preventDefault();
+// when click on tools buttons
+$(document).on('click', '.tools__btn', function(e) {
+  e.preventDefault();
+});
 
-    var snippet = $(this).attr('data-snippet');
-    var container = $('.news__container');
-    var id = generateID();
+// when click on upload button
+$(document).on('click', '.tools__btn--upload', function() {
+  $($(this).attr('href')).find('input').trigger('click');
+});
 
-    switch (snippet) {
-      case '1':
-      var element = '<div id="'+ id + '" class="news__row">';
+// when click on youtube buttons
+$(document).on('click', '.tools__btn--youtube', function() {
+  var resp = prompt('Cole a url do YouTube', '');
+  resp = youtubeParser(resp);
 
-      element += '<div class="news-tools">';
-      element += '<a class="news-tools__btn news-tools__btn--move fa fa-arrows" href="#"></a>';
-      element += '<a class="news-tools__btn news-tools__btn--delete fa fa-trash" href="#'+ id + '"></a>';
-      element += '</div>';
+  if(resp) {
+    var href = $(this).attr('href');
+    $(href).find('iframe').attr('src', 'https://www.youtube.com/embed/' + resp + '?rel=0&amp;showinfo=0');
+  }
+});
 
-      element += '<div class="news__content">';
-      element += '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque molestie odio vel turpis sollicitudin, id porta mauris aliquet. Fusce dui tellus, suscipit in turpis vitae, mattis pellentesque enim. Pellentesque suscipit eleifend massa sit amet luctus. Integer rutrum venenatis purus, sed pulvinar lorem venenatis nec. Ut a blandit dui, quis tempor ex. Ut tristique pulvinar nibh, vel semper lectus condimentum non. Duis aliquam varius nisl, vel sodales leo molestie nec. Proin porttitor nunc nisl, quis laoreet ligula ultrices id. Donec eget sapien porta, porta tortor eu, elementum eros. Vivamus hendrerit, lectus a mollis semper, enim ipsum tincidunt lacus, ut tristique odio erat vel eros. Sed sagittis finibus odio nec facilisis. Nunc pulvinar posuere aliquam. Praesent tristique fermentum turpis, et tempor lacus blandit quis.</p>';
-      element += '</div>';
+// when click on snippet buttons
+$(document).on('click', '.snippet__btn', function(e) {
+  e.preventDefault();
 
-      element += '</div>';
+  var snippet = $(this).attr('data-snippet');
+  var container = $('.news__container');
+  var id = generateID();
 
-      container.append(element);
-      scrollTo(id);
-      break;
+  switch (snippet) {
+    case '1':
+    var element = '<div id="'+ id + '" class="content">';
 
-      case '2':
-      var element = '<div id="'+ id + '" class="news__row">';
+    element += '<div class="tools">';
+    element += '<a class="tools__btn tools__btn--move fa fa-arrows" href="#"></a>';
+    element += '<a class="tools__btn tools__btn--delete fa fa-trash" href="#'+ id + '"></a>';
+    element += '</div>';
 
-      element += '<div class="news-tools">';
-      element += '<a class="news-tools__btn news-tools__btn--upload fa fa-camera" href="#'+ id + '"></a>';
-      element += '<a class="news-tools__btn news-tools__btn--move fa fa-arrows" href="#"></a>';
-      element += '<a class="news-tools__btn news-tools__btn--delete fa fa-trash" href="#'+ id + '"></a>';
-      element += '</div>';
+    element += '<div class="news__content">';
+    element += '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque molestie odio vel turpis sollicitudin, id porta mauris aliquet. Fusce dui tellus, suscipit in turpis vitae, mattis pellentesque enim. Pellentesque suscipit eleifend massa sit amet luctus. Integer rutrum venenatis purus, sed pulvinar lorem venenatis nec. Ut a blandit dui, quis tempor ex. Ut tristique pulvinar nibh, vel semper lectus condimentum non. Duis aliquam varius nisl, vel sodales leo molestie nec. Proin porttitor nunc nisl, quis laoreet ligula ultrices id. Donec eget sapien porta, porta tortor eu, elementum eros. Vivamus hendrerit, lectus a mollis semper, enim ipsum tincidunt lacus, ut tristique odio erat vel eros. Sed sagittis finibus odio nec facilisis. Nunc pulvinar posuere aliquam. Praesent tristique fermentum turpis, et tempor lacus blandit quis.</p>';
+    element += '</div>';
 
-      element += '<figure class="news__figure news__figure--left">';
-      element += '<%= image_tag('image-default.jpg') %>';
-      element += '<figcaption class="news__figcaption">Lorem ipsum dolor sit amet</figcaption>';
-      element += '<div class="news-tools">';
-      element += '<input id="'+ id +'" data-position="left" class="filePicker news-tools__input news-tools__input--upload" type="file" name="news_image">';
-      element += '</div>';
-      element += '</figure>';
+    element += '</div>';
 
-      element += '<div class="news__content">';
-      element += '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque molestie odio vel turpis sollicitudin, id porta mauris aliquet. Fusce dui tellus, suscipit in turpis vitae, mattis pellentesque enim. Pellentesque suscipit eleifend massa sit amet luctus. Integer rutrum venenatis purus, sed pulvinar lorem venenatis nec. Ut a blandit dui, quis tempor ex. Ut tristique pulvinar nibh, vel semper lectus condimentum non. Duis aliquam varius nisl, vel sodales leo molestie nec. Proin porttitor nunc nisl, quis laoreet ligula ultrices id. Donec eget sapien porta, porta tortor eu, elementum eros. Vivamus hendrerit, lectus a mollis semper, enim ipsum tincidunt lacus, ut tristique odio erat vel eros. Sed sagittis finibus odio nec facilisis. Nunc pulvinar posuere aliquam. Praesent tristique fermentum turpis, et tempor lacus blandit quis.</p>';
-      element += '</div>';
+    container.append(element);
+    scrollTo(id);
+    break;
 
-      element += '</div>';
+    case '2':
+    var element = '<div id="'+ id + '" class="content">';
 
-      container.append(element);
-      addEventToInputFile(id);
-      scrollTo(id);
-      break;
+    element += '<div class="tools">';
+    element += '<a class="tools__btn tools__btn--upload fa fa-camera" href="#'+ id + '"></a>';
+    element += '<a class="tools__btn tools__btn--move fa fa-arrows" href="#"></a>';
+    element += '<a class="tools__btn tools__btn--delete fa fa-trash" href="#'+ id + '"></a>';
+    element += '</div>';
 
-      case '3':
-      var element = '<div id="'+ id + '" class="news__row">';
+    element += '<figure class="news__figure news__figure--left">';
+    element += '<%= image_tag('image-default.jpg') %>';
+    element += '<figcaption class="news__figcaption">Lorem ipsum dolor sit amet</figcaption>';
+    element += '<div class="tools">';
+    element += '<input id="'+ id +'" data-position="left" class="filePicker tools__input tools__input--upload" type="file" name="news_image">';
+    element += '</div>';
+    element += '</figure>';
 
-      element += '<div class="news-tools">';
-      element += '<a class="news-tools__btn news-tools__btn--upload fa fa-camera" href="#'+ id + '"></a>';
-      element += '<a class="news-tools__btn news-tools__btn--move fa fa-arrows" href="#"></a>';
-      element += '<a class="news-tools__btn news-tools__btn--delete fa fa-trash" href="#'+ id + '"></a>';
-      element += '</div>';
+    element += '<div class="news__content">';
+    element += '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque molestie odio vel turpis sollicitudin, id porta mauris aliquet. Fusce dui tellus, suscipit in turpis vitae, mattis pellentesque enim. Pellentesque suscipit eleifend massa sit amet luctus. Integer rutrum venenatis purus, sed pulvinar lorem venenatis nec. Ut a blandit dui, quis tempor ex. Ut tristique pulvinar nibh, vel semper lectus condimentum non. Duis aliquam varius nisl, vel sodales leo molestie nec. Proin porttitor nunc nisl, quis laoreet ligula ultrices id. Donec eget sapien porta, porta tortor eu, elementum eros. Vivamus hendrerit, lectus a mollis semper, enim ipsum tincidunt lacus, ut tristique odio erat vel eros. Sed sagittis finibus odio nec facilisis. Nunc pulvinar posuere aliquam. Praesent tristique fermentum turpis, et tempor lacus blandit quis.</p>';
+    element += '</div>';
 
-      element += '<figure class="news__figure news__figure--right">';
-      element += '<%= image_tag('image-default.jpg') %>';
-      element += '<figcaption class="news__figcaption">Lorem ipsum dolor sit amet</figcaption>';
-      element += '<div class="news-tools">';
-      element += '<input id="'+ id +'" data-position="right" class="filePicker news-tools__input news-tools__input--upload" type="file" name="news_image">';
-      element += '</div>';
-      element += '</figure>';
+    element += '</div>';
+
+    container.append(element);
+    addEventToInputFile(id);
+    scrollTo(id);
+    break;
+
+    case '3':
+    var element = '<div id="'+ id + '" class="content">';
+
+    element += '<div class="tools">';
+    element += '<a class="tools__btn tools__btn--upload fa fa-camera" href="#'+ id + '"></a>';
+    element += '<a class="tools__btn tools__btn--move fa fa-arrows" href="#"></a>';
+    element += '<a class="tools__btn tools__btn--delete fa fa-trash" href="#'+ id + '"></a>';
+    element += '</div>';
+
+    element += '<figure class="news__figure news__figure--right">';
+    element += '<%= image_tag('image-default.jpg') %>';
+    element += '<figcaption class="news__figcaption">Lorem ipsum dolor sit amet</figcaption>';
+    element += '<div class="tools">';
+    element += '<input id="'+ id +'" data-position="right" class="filePicker tools__input tools__input--upload" type="file" name="news_image">';
+    element += '</div>';
+    element += '</figure>';
 
 
-      element += '<div class="news__content">';
-      element += '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque molestie odio vel turpis sollicitudin, id porta mauris aliquet. Fusce dui tellus, suscipit in turpis vitae, mattis pellentesque enim. Pellentesque suscipit eleifend massa sit amet luctus. Integer rutrum venenatis purus, sed pulvinar lorem venenatis nec. Ut a blandit dui, quis tempor ex. Ut tristique pulvinar nibh, vel semper lectus condimentum non. Duis aliquam varius nisl, vel sodales leo molestie nec. Proin porttitor nunc nisl, quis laoreet ligula ultrices id. Donec eget sapien porta, porta tortor eu, elementum eros. Vivamus hendrerit, lectus a mollis semper, enim ipsum tincidunt lacus, ut tristique odio erat vel eros. Sed sagittis finibus odio nec facilisis. Nunc pulvinar posuere aliquam. Praesent tristique fermentum turpis, et tempor lacus blandit quis.</p>';
-      element += '</div>';
+    element += '<div class="news__content">';
+    element += '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque molestie odio vel turpis sollicitudin, id porta mauris aliquet. Fusce dui tellus, suscipit in turpis vitae, mattis pellentesque enim. Pellentesque suscipit eleifend massa sit amet luctus. Integer rutrum venenatis purus, sed pulvinar lorem venenatis nec. Ut a blandit dui, quis tempor ex. Ut tristique pulvinar nibh, vel semper lectus condimentum non. Duis aliquam varius nisl, vel sodales leo molestie nec. Proin porttitor nunc nisl, quis laoreet ligula ultrices id. Donec eget sapien porta, porta tortor eu, elementum eros. Vivamus hendrerit, lectus a mollis semper, enim ipsum tincidunt lacus, ut tristique odio erat vel eros. Sed sagittis finibus odio nec facilisis. Nunc pulvinar posuere aliquam. Praesent tristique fermentum turpis, et tempor lacus blandit quis.</p>';
+    element += '</div>';
 
-      element += '</div>';
+    element += '</div>';
 
-      container.append(element);
-      addEventToInputFile(id);
-      scrollTo(id);
-      break;
+    container.append(element);
+    addEventToInputFile(id);
+    scrollTo(id);
+    break;
 
-      case '4':
-      var element = '<div id="'+ id + '" class="news__row">';
+    case '4':
+    var element = '<div id="'+ id + '" class="content">';
 
-      element += '<div class="news-tools">';
-      element += '<a class="news-tools__btn news-tools__btn--upload fa fa-camera" href="#'+ id + '"></a>';
-      element += '<a class="news-tools__btn news-tools__btn--move fa fa-arrows" href="#"></a>';
-      element += '<a class="news-tools__btn news-tools__btn--delete fa fa-trash" href="#'+ id + '"></a>';
-      element += '</div>';
+    element += '<div class="tools">';
+    element += '<a class="tools__btn tools__btn--upload fa fa-camera" href="#'+ id + '"></a>';
+    element += '<a class="tools__btn tools__btn--move fa fa-arrows" href="#"></a>';
+    element += '<a class="tools__btn tools__btn--delete fa fa-trash" href="#'+ id + '"></a>';
+    element += '</div>';
 
-      element += '<figure class="news__figure news__figure--center">';
-      element += '<%= image_tag('image-default.jpg') %>';
-      element += '<figcaption class="news__figcaption">Lorem ipsum dolor sit amets</figcaption>';
-      element += '<div class="news-tools">';
-      element += '<input id="'+ id +'" data-position="center" class="filePicker news-tools__input news-tools__input--upload" type="file" name="news_image">';
-      element += '</div>';
-      element += '</figure>';
+    element += '<figure class="news__figure news__figure--center">';
+    element += '<%= image_tag('image-default.jpg') %>';
+    element += '<figcaption class="news__figcaption">Lorem ipsum dolor sit amets</figcaption>';
+    element += '<div class="tools">';
+    element += '<input id="'+ id +'" data-position="center" class="filePicker tools__input tools__input--upload" type="file" name="news_image">';
+    element += '</div>';
+    element += '</figure>';
 
-      element += '</div>';
+    element += '</div>';
 
-      container.append(element);
-      addEventToInputFile(id);
-      scrollTo(id);
-      break;
+    container.append(element);
+    addEventToInputFile(id);
+    scrollTo(id);
+    break;
 
-      case '5':
-      var element = '<div id="'+ id + '" class="news__row">';
+    case '5':
+    var element = '<div id="'+ id + '" class="content">';
 
-      element += '<div class="news-tools">';
-      element += '<a href="#' + id + '" class="news-tools__btn news-tools__btn--youtube fa fa-video-camera"></a>';
-      element += '<a class="news-tools__btn news-tools__btn--move fa fa-arrows" href="#"></a>';
-      element += '<a class="news-tools__btn news-tools__btn--delete fa fa-trash" href="#'+ id + '"></a>';
-      element += '</div>';
+    element += '<div class="tools">';
+    element += '<a href="#' + id + '" class="tools__btn tools__btn--youtube fa fa-video-camera"></a>';
+    element += '<a class="tools__btn tools__btn--move fa fa-arrows" href="#"></a>';
+    element += '<a class="tools__btn tools__btn--delete fa fa-trash" href="#'+ id + '"></a>';
+    element += '</div>';
 
-      element += '<div class="news__video news__video--center">';
-      element += '<iframe id="'+ id +'" src="" frameborder="0" allowfullscreen></iframe>';
-      element += '</div>';
+    element += '<div class="news__video news__video--center">';
+    element += '<iframe id="'+ id +'" src="" frameborder="0" allowfullscreen></iframe>';
+    element += '</div>';
 
-      element += '</div>';
+    element += '</div>';
 
-      container.append(element);
-      addEventToInputFile(id);
-      scrollTo(id);
-      break;
+    container.append(element);
+    addEventToInputFile(id);
+    scrollTo(id);
+    break;
 
-      default:
-    };
-
-    activeMediumEditor();
-  });
-
-  // scroll to
-  var scrollTo = function(id) {
-    if(id) {
-      $('html, body').animate({
-        scrollTop: $('#' + id).offset().top
-      }, 400);
-    }
+    default:
   };
 
-  // add event on input file
-  var addEventToInputFile = function(id) {
-    $('#' + id).on('change', fileSelectAndUpload);
-  };
+  activeMediumEditor();
+});
 
-  // upload file via ajax
-  var fileSelectAndUpload = function(evt) {
-    var file = evt.target.files[0];
+// scroll to
+var scrollTo = function(id) {
+  if(id) {
+    $('html, body').animate({
+      scrollTop: $('#' + id).offset().top
+    }, 400);
+  }
+};
 
-    if(file) {
-      var formData = new FormData();
-      formData.append('content_builder_image', file);
+// add event on input file
+var addEventToInputFile = function(id) {
+  $('#' + id).on('change', fileSelectAndUpload);
+};
 
-      $.ajax({
-        url: 'create_images',
-        data: formData,
-        cache: false,
-        contentType: false,
-        processData: false,
-        type: 'PUT',
-        beforeSend: function() {
-          $('#' + evt.target.id).append('<div class="news-loading"></div>');
-        },
-        complete: function(){
-          $('.news-loading').remove();
-        }
-      }).done(function(e) {
-        var p = evt.target.getAttribute('data-position');
-        $('#' + evt.target.id).find('img').attr('src', getImageOfPosition(p, e));
-      }).fail(function(e) {
-        alert('error: ' + e);
-      });
-    }
-  };
+// upload file via ajax
+var fileSelectAndUpload = function(evt) {
+  var file = evt.target.files[0];
 
-  // get image of position
-  var getImageOfPosition = function(position, e) {
-    switch(position) {
-      case 'left':
-      case 'right':
-      return e.image.left_or_right.url;
-      break;
+  if(file) {
+    var formData = new FormData();
+    formData.append('content_builder_image', file);
 
-      case 'center':
-      return e.image.center.url;
-      break;
-    };
-  };
-
-  // generate random id
-  var generateID = function() {
-    return '_' + Math.random().toString(36).substr(2, 9);
-  };
-
-  // active medium editor plugin
-  var activeMediumEditor = function() {
-    var editor = new MediumEditor('.news__content', {
-      placeholder: {
-        text: '',
-        hideOnClick: true
+    $.ajax({
+      url: 'create_images',
+      data: formData,
+      cache: false,
+      contentType: false,
+      processData: false,
+      type: 'PUT',
+      beforeSend: function() {
+        $('#' + evt.target.id).append('<div class="loading"></div>');
       },
-
-      toolbar: {
-        buttons: ['bold', 'italic', 'underline', 'anchor']
-      },
-
-      anchor: {
-        placeholderText: 'Ex: http://site.com'
-      },
-
-      anchorPreview: false,
-
-      paste: {
-        cleanPastedHTML: true
+      complete: function(){
+        $('.loading').remove();
       }
+    }).done(function(e) {
+      var p = evt.target.getAttribute('data-position');
+      $('#' + evt.target.id).find('img').attr('src', getImageOfPosition(p, e));
+    }).fail(function(e) {
+      alert('error: ' + e);
     });
+  }
+};
 
-    $('.news__figcaption').attr('contenteditable', 'true');
+// get image of position
+var getImageOfPosition = function(position, e) {
+  switch(position) {
+    case 'left':
+    case 'right':
+    return e.image.left_or_right.url;
+    break;
+
+    case 'center':
+    return e.image.center.url;
+    break;
   };
+};
 
-  // parse url by youtube using expression regular
-  var youtubeParser = function(url) {
-    var regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#\&\?]*).*/;
-    var match = url.match(regExp);
+// generate random id
+var generateID = function() {
+  return '_' + Math.random().toString(36).substr(2, 9);
+};
 
-    if(match && match[7].length == 11) {
-      return b = match[7];
-    } else {
-      alert('Ops! Você não informou uma url válida.');
+// active medium editor plugin
+var activeMediumEditor = function() {
+  var editor = new MediumEditor('.news__content', {
+    placeholder: {
+      text: '',
+      hideOnClick: true
+    },
+
+    toolbar: {
+      buttons: ['bold', 'italic', 'underline', 'anchor']
+    },
+
+    anchor: {
+      placeholderText: 'Ex: http://site.com'
+    },
+
+    anchorPreview: false,
+
+    paste: {
+      cleanPastedHTML: true
     }
-  };
+  });
 
-})();
+  $('.news__figcaption').attr('contenteditable', 'true');
+};
+
+// parse url by youtube using expression regular
+var youtubeParser = function(url) {
+  var regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#\&\?]*).*/;
+  var match = url.match(regExp);
+
+  if(match && match[7].length == 11) {
+    return b = match[7];
+  } else {
+    alert('Ops! Você não informou uma url válida.');
+  }
+};

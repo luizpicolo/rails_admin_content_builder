@@ -1,15 +1,14 @@
 @import 'medium-editor/medium-editor';
 @import 'medium-editor/themes/bootstrap';
 
-// news admin
-
-.news-snippet {
+.snippet {
   position: fixed;
+  z-index: 100;
   top: 50px;
   bottom: 110px;
   right: 0;
 
-  width: 200px;
+  width: 180px;
 
   padding: 20px;
 
@@ -20,28 +19,72 @@
   overflow-y: scroll;
 }
 
+.snippet__btn {
+  display: block;
+  text-decoration: none;
+  margin-bottom: 20px;
+
+  transition: box-shadow .1s ease;
+
+  &:hover {
+    box-shadow: 0 0 0 2px rgba(0,0,0,.1);
+  }
+}
+
+.snippet__image {
+  width: 100%;
+}
+
+
 .news__controls {
   position: fixed;
+  z-index: 100;
   bottom: 0;
   right: 0;
 
-  width: 200px;
+  width: 180px;
 
-  padding: 30px;
+  padding: 20px;
 
   background: #f8f8f8;
+  border-top: solid 1px rgba(0,0,0,.1);
   border-left: solid 1px rgba(0,0,0,.1);
 }
 
 
-.news-snippet__btn {
-  display: block;
-  text-decoration: none;
-  margin-bottom: 20px;
+.tools {
+  position: absolute;
+  top: 0;
+  left: -40px;
+
+  border-radius: .4rem;
+  background: darken(#fff, 7%);
+
+  overflow: hidden;
 }
 
-.news-snippet__image {
-  width: 100%;
+.tools__btn {
+  display: block;
+
+  font-size: 12px;
+  text-align: center;
+  text-transform: uppercase;
+
+  padding: 10px;
+
+  &:hover,
+  &:focus {
+    background: rgba(0,0,0,.05);
+    text-decoration: none;
+  }
+}
+
+.tools__input {
+
+}
+
+.tools__input--upload {
+  display: none !important;
 }
 
 
@@ -50,7 +93,7 @@
   padding: 0 220px 0 40px;
 }
 
-.news__row {
+.content {
   position: relative;
   max-width: 100%;
   height: auto !important;
@@ -83,43 +126,6 @@
     }
   }
 }
-
-
-.news-tools {
-  position: absolute;
-  top: 0;
-  left: -40px;
-
-  border-radius: .4rem;
-  background: darken(#fff, 7%);
-
-  overflow: hidden;
-}
-
-.news-tools__btn {
-  display: block;
-
-  font-size: 12px;
-  text-align: center;
-  text-transform: uppercase;
-
-  padding: 10px;
-
-  &:hover,
-  &:focus {
-    background: rgba(0,0,0,.05);
-    text-decoration: none;
-  }
-}
-
-.news-tools__input {
-
-}
-
-.news-tools__input--upload {
-  display: none !important;
-}
-
 
 .news__figure {
   position: relative;
@@ -174,7 +180,7 @@
 }
 
 
-.news-loading {
+.loading {
   position: absolute;
   top: 0;
   left: 0;

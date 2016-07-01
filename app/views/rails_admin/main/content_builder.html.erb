@@ -1,25 +1,25 @@
-<%= stylesheet_link_tag 'rails_admin/content_builder' %>
-<%= javascript_include_tag 'rails_admin/content_builder'  %>
+<%= stylesheet_link_tag 'rails_admin/content_builder', 'data-turbolinks-track' => false %>
+<%= javascript_include_tag 'rails_admin/content_builder', 'data-turbolinks-track' => false %>
 
-<div class="news-snippet">
-  <%= link_to '#', class: 'news-snippet__btn', data: {snippet: '1'} do %>
-    <%= image_tag 'snippet-text.jpg', class: 'news-snippet__image' %>
+<div class="snippet">
+  <%= link_to '#', class: 'snippet__btn', data: {snippet: '1'} do %>
+    <%= image_tag 'snippet-text.jpg', class: 'snippet__image' %>
   <% end %>
 
-  <%= link_to '#', class: 'news-snippet__btn', data: {snippet: '2'} do %>
-    <%= image_tag 'snippet-image-text.jpg', class: 'news-snippet__image' %>
+  <%= link_to '#', class: 'snippet__btn', data: {snippet: '2'} do %>
+    <%= image_tag 'snippet-image-text.jpg', class: 'snippet__image' %>
   <% end %>
 
-  <%= link_to '#', class: 'news-snippet__btn', data: {snippet: '3'} do %>
-    <%= image_tag 'snippet-text-image.jpg', class: 'news-snippet__image' %>
+  <%= link_to '#', class: 'snippet__btn', data: {snippet: '3'} do %>
+    <%= image_tag 'snippet-text-image.jpg', class: 'snippet__image' %>
   <% end %>
 
-  <%= link_to '#', class: 'news-snippet__btn', data: {snippet: '4'} do %>
-    <%= image_tag 'snippet-image.jpg', class: 'news-snippet__image' %>
+  <%= link_to '#', class: 'snippet__btn', data: {snippet: '4'} do %>
+    <%= image_tag 'snippet-image.jpg', class: 'snippet__image' %>
   <% end %>
 
-  <%= link_to '#', class: 'news-snippet__btn', data: {snippet: '5'} do %>
-    <%= image_tag 'snippet-video.jpg', class: 'news-snippet__image' %>
+  <%= link_to '#', class: 'snippet__btn', data: {snippet: '5'} do %>
+    <%= image_tag 'snippet-video.jpg', class: 'snippet__image' %>
   <% end %>
 </div>
 
