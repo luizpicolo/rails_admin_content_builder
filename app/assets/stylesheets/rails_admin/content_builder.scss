@@ -1,7 +1,7 @@
 @import 'medium-editor/medium-editor';
 @import 'medium-editor/themes/bootstrap';
 
-.snippet {
+.cb-snippet {
   position: fixed;
   z-index: 100;
   top: 50px;
@@ -19,7 +19,7 @@
   overflow-y: scroll;
 }
 
-.snippet__btn {
+.cb-snippet__btn {
   display: block;
   text-decoration: none;
   margin-bottom: 20px;
@@ -31,12 +31,12 @@
   }
 }
 
-.snippet__image {
+.cb-snippet__image {
   width: 100%;
 }
 
 
-.news__controls {
+.cb-controls {
   position: fixed;
   z-index: 100;
   bottom: 0;
@@ -52,7 +52,7 @@
 }
 
 
-.tools {
+.cb-tools {
   position: absolute;
   top: 0;
   left: -40px;
@@ -63,7 +63,7 @@
   overflow: hidden;
 }
 
-.tools__btn {
+.cb-tools__btn {
   display: block;
 
   font-size: 12px;
@@ -79,21 +79,41 @@
   }
 }
 
-.tools__input {
+.cb-tools__btn--upload {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  display: block;
+  width: 100%;
+  height: 100%;
+
+  font-size: 1.2em;
+
+  &:before {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+  }
+}
+
+.cb-tools__input {
 
 }
 
-.tools__input--upload {
+.cb-tools__input--upload {
   display: none !important;
 }
 
 
-.news__container {
+.cb-container {
   box-sizing: border-box;
   padding: 0 220px 0 40px;
 }
 
-.content {
+.cb-content {
   position: relative;
   max-width: 100%;
   height: auto !important;
@@ -109,7 +129,7 @@
 }
 
 
-.news__content {
+.cb-text {
   line-height: 1.6;
 
   color: rgba(0,0,0,.7);
@@ -127,32 +147,36 @@
   }
 }
 
-.news__figure {
+.cb-figure {
   position: relative;
-  margin: 0 0 20px;
+  margin: 0 0 15px;
 
   img {
     width: 100%;
   }
 }
 
-.news__figure--left {
+.cb-figure--left {
   float: left;
   width: 50%;
-  margin: 0 30px 30px 0;
+  margin: 0 30px 20px 0;
 }
 
-.news__figure--right {
+.cb-figure--right {
   float: right;
   width: 50%;
-  margin: 0 0 30px 30px;
+  margin: 0 0 20px 30px;
 }
 
-.news__figure--center {
-  margin: 0 0 30px;
+.cb-figure--center {
+  margin: 0 0 20px;
 }
 
-.news__figcaption {
+.cb-figure__clip {
+  position: relative;
+}
+
+.cb-figcaption {
   color: rgba(0,0,0,.6);
 
   font-size: 14px;
@@ -165,7 +189,7 @@
 }
 
 
-.news__video {
+.cb-video {
   position: relative;
   background: image_url('video-default.jpg') no-repeat center #e4e4e4;
 
@@ -175,12 +199,12 @@
   }
 }
 
-.news__video--center {
+.cb-video--center {
   margin-bottom: 30px;
 }
 
 
-.loading {
+.cb-loading {
   position: absolute;
   top: 0;
   left: 0;

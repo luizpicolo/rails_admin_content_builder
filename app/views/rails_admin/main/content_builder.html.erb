@@ -1,30 +1,30 @@
 <%= stylesheet_link_tag 'rails_admin/content_builder', 'data-turbolinks-track' => false %>
 <%= javascript_include_tag 'rails_admin/content_builder', 'data-turbolinks-track' => false %>
 
-<div class="snippet">
-  <%= link_to '#', class: 'snippet__btn', data: {snippet: '1'} do %>
-    <%= image_tag 'snippet-text.jpg', class: 'snippet__image' %>
+<div class="cb-snippet">
+  <%= link_to '#', class: 'cb-snippet__btn', data: {snippet: '1'} do %>
+    <%= image_tag 'snippet-text.jpg', class: 'cb-snippet__image' %>
   <% end %>
 
-  <%= link_to '#', class: 'snippet__btn', data: {snippet: '2'} do %>
-    <%= image_tag 'snippet-image-text.jpg', class: 'snippet__image' %>
+  <%= link_to '#', class: 'cb-snippet__btn', data: {snippet: '2'} do %>
+    <%= image_tag 'snippet-image-text.jpg', class: 'cb-snippet__image' %>
   <% end %>
 
-  <%= link_to '#', class: 'snippet__btn', data: {snippet: '3'} do %>
-    <%= image_tag 'snippet-text-image.jpg', class: 'snippet__image' %>
+  <%= link_to '#', class: 'cb-snippet__btn', data: {snippet: '3'} do %>
+    <%= image_tag 'snippet-text-image.jpg', class: 'cb-snippet__image' %>
   <% end %>
 
-  <%= link_to '#', class: 'snippet__btn', data: {snippet: '4'} do %>
-    <%= image_tag 'snippet-image.jpg', class: 'snippet__image' %>
+  <%= link_to '#', class: 'cb-snippet__btn', data: {snippet: '4'} do %>
+    <%= image_tag 'snippet-image.jpg', class: 'cb-snippet__image' %>
   <% end %>
 
-  <%= link_to '#', class: 'snippet__btn', data: {snippet: '5'} do %>
-    <%= image_tag 'snippet-video.jpg', class: 'snippet__image' %>
+  <%= link_to '#', class: 'cb-snippet__btn', data: {snippet: '5'} do %>
+    <%= image_tag 'snippet-video.jpg', class: 'cb-snippet__image' %>
   <% end %>
 </div>
 
-<%= simple_form_for rails_admin.content_builder_url(@abstract_model.to_param, id: @object.id), html: { class: 'news-form' }, remote: false do |f| %>
-  <div class="news__controls">
+<%= simple_form_for rails_admin.content_builder_url(@abstract_model.to_param, id: @object.id), html: { class: 'cb-form' }, remote: false do |f| %>
+  <div class="cb-controls">
     <%= f.button :submit, t('admin.actions.content_builder.button.save'), name: 'save', class: 'btn btn-block btn-primary' %>
     <% if @object.status %>
       <%= f.button :submit, t('admin.actions.content_builder.button.unpublish'), name: 'unpublish', class: 'btn btn-block btn-danger' %>
@@ -33,7 +33,7 @@
     <% end %>
   </div>
 
-  <div class="news__container">
+  <div class="cb-container">
     <%= @object.content.try(:html_safe) %>
   </div>
 
