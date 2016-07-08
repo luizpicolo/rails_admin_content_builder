@@ -1,3 +1,4 @@
+Rails.application.config.assets.precompile += %w( loading.svg )
 Rails.application.config.assets.precompile += %w( snippet-text.jpg )
 Rails.application.config.assets.precompile += %w( snippet-image-text.jpg )
 Rails.application.config.assets.precompile += %w( snippet-text-image.jpg )

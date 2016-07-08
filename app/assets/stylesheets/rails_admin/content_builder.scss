@@ -93,9 +93,9 @@
   &:before {
     position: absolute;
     top: 50%;
-    transform: translateY(-50%);
-    -webkit-transform: translateY(-50%);
-    -moz-transform: translateY(-50%);
+    transform: translateY(-50%) translateX(-50%);
+    -webkit-transform: translateY(-50%) translateX(-50%);
+    -moz-transform: translateY(-50%) translateX(-50%);
   }
 }
 
@@ -177,14 +177,13 @@
 }
 
 .cb-figcaption {
+  margin: 6px 0 0;
+
   color: rgba(0,0,0,.6);
-
   font-size: 14px;
+
   line-height: 1.4;
-
-  margin-top: 6px;
   padding: 8px 14px;
-
   background: rgba(0,0,0,.05);
 
   p {
@@ -215,7 +214,7 @@
 
   width: 100%;
   height: 100%;
-  background: image_url('loading.gif') no-repeat center rgba(#fff, .6);
+  background: image_url('loading.svg') no-repeat center rgba(#fff, .8);
 }
 
 
