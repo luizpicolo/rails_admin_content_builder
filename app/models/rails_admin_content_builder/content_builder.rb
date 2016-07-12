@@ -1,12 +1,18 @@
 module RailsAdminContentBuilder
   class ContentBuilder < ActiveRecord::Base
+    include SearchCop
     extend FriendlyId
+
     self.table_name = 'content_builders'
 
     friendly_id :title, use: :slugged
 
     validates :title, :date_publish, :written_by, presence: true
     has_many :content_builder_images, inverse_of: :content_builder, dependent: :destroy
+
+    search_scope :search do
+      attributes :title, :content
+    end
 
     def content_sanitized
       white_list_sanitizer = Rails::Html::WhiteListSanitizer.new

@@ -11,6 +11,20 @@ RSpec.describe RailsAdminContentBuilder::ContentBuilder, :type => :model do
     it { should have_many(:content_builder_images) }
   end
 
+  describe 'search' do
+    content = FactoryGirl.create(:content_builder)
+
+    it 'should return a searched content by title' do
+      output = RailsAdminContentBuilder::ContentBuilder.search(content.title).first
+      expect(output).to eq(content)
+    end
+
+    it 'should return a searched content by content' do
+      output = RailsAdminContentBuilder::ContentBuilder.search(content.content).first
+      expect(output).to eq(content)
+    end
+  end
+
   describe 'content_sanitized' do
     it 'should return only tag "div p img figure figcaption a iframe"' do
       @content_input = '<div></div><input/><mytag myattr="teste"></mytag><p></p><img/><figure></figure><figcaption></figcaption><a></a><iframe></iframe><textarea>'
