@@ -1,0 +1,295 @@
+//= require medium-editor
+
+// when rails admin ready
+$(document).on('rails_admin.dom_ready', function() {
+  $('.cb-form').on('submit', function(e){
+    var content = $('.cb-container').html();
+    $('#content').attr('value', content);
+  });
+
+  $('.cb-tools__input--upload').each(function() {
+    addEventToInputFile($(this).attr('id'));
+  });
+
+  $('.cb-container').sortable({
+    revert: true,
+    placeholder: 'ui-sortable-placeholder',
+    handle: '.cb-tools__btn--move',
+    cursor: 'move',
+  });
+
+  activeMediumEditor();
+});
+
+// when click on delete button
+$(document).on('click', '.cb-tools__btn--delete', function() {
+  var resp = confirm('<%= I18n.t('ad$(min.actions.news_admin.delete_block')%>');
+
+  if(resp) {
+    $($(this).attr('href')).remove();
+  }
+});
+
+// when click on tools buttons
+$(document).on('click', '.cb-tools__btn', function(e) {
+  e.preventDefault();
+});
+
+// when click on upload button
+$(document).on('click', '.cb-tools__btn--upload', function() {
+  $($(this).attr('href')).find('input').trigger('click');
+});
+
+// when click on youtube buttons
+$(document).on('click', '.cb-tools__btn--youtube', function() {
+  var resp = prompt('Cole a url do YouTube', '');
+  resp = youtubeParser(resp);
+
+  if(resp) {
+    var href = $(this).attr('href');
+    $(href).find('iframe').attr('src', 'https://www.youtube.com/embed/' + resp + '?rel=0&amp;showinfo=0');
+  }
+});
+
+// when click on snippet buttons
+$(document).on('click', '.cb-snippet__btn', function(e) {
+  e.preventDefault();
+
+  var snippet = $(this).attr('data-snippet');
+  var container = $('.cb-container');
+  var id = generateID();
+
+  switch (snippet) {
+    case '1':
+    var element = '<div id="'+ id + '" class="cb-content">';
+
+    element += '<div class="cb-tools">';
+    element += '<a class="cb-tools__btn cb-tools__btn--move fa fa-arrows" href="#"></a>';
+    element += '<a class="cb-tools__btn cb-tools__btn--delete fa fa-trash" href="#'+ id + '"></a>';
+    element += '</div>';
+
+    element += '<div class="cb-text">';
+    element += '<p>Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos.</p>';
+    element += '</div>';
+
+    element += '</div>';
+
+    container.append(element);
+    scrollTo(id);
+    break;
+
+    case '2':
+    var element = '<div id="'+ id + '" class="cb-content">';
+
+    element += '<div class="cb-tools">';
+    element += '<a class="cb-tools__btn cb-tools__btn--move fa fa-arrows" href="#"></a>';
+    element += '<a class="cb-tools__btn cb-tools__btn--delete fa fa-trash" href="#'+ id + '"></a>';
+    element += '</div>';
+
+    element += '<figure class="cb-figure cb-figure--left">';
+    element += '<div class="cb-figure__clip">';
+    element += '<%= image_tag('cb-image-default.jpg') %>';
+    element += '<input id="'+ id +'" data-position="left" class="filePicker cb-tools__input cb-tools__input--upload" type="file" name="cb-image">';
+    element += '<div class="cb-tools cb-tools--center">';
+    element += '<a class="cb-tools__btn cb-tools__btn--upload fa fa-camera" href="#'+ id + '"></a>';
+    element += '</div>';
+    element += '</div>';
+    element += '<figcaption class="cb-figcaption cb-text">Descrição da imagem</figcaption>';
+    element += '</figure>';
+
+    element += '<div class="cb-text">';
+    element += '<p>Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos.</p>';
+    element += '</div>';
+
+    element += '</div>';
+
+    container.append(element);
+    addEventToInputFile(id);
+    scrollTo(id);
+    break;
+
+    case '3':
+    var element = '<div id="'+ id + '" class="cb-content">';
+
+    element += '<div class="cb-tools">';
+    element += '<a class="cb-tools__btn cb-tools__btn--move fa fa-arrows" href="#"></a>';
+    element += '<a class="cb-tools__btn cb-tools__btn--delete fa fa-trash" href="#'+ id + '"></a>';
+    element += '</div>';
+
+    element += '<figure class="cb-figure cb-figure--right">';
+    element += '<div class="cb-figure__clip">';
+    element += '<%= image_tag('cb-image-default.jpg') %>';
+    element += '<input id="'+ id +'" data-position="right" class="filePicker cb-tools__input cb-tools__input--upload" type="file" name="cb-image">';
+    element += '<div class="cb-tools cb-tools--center">';
+    element += '<a class="cb-tools__btn cb-tools__btn--upload fa fa-camera" href="#'+ id + '"></a>';
+    element += '</div>';
+    element += '</div>';
+    element += '<figcaption class="cb-figcaption cb-text">Descrição da imagem</figcaption>';
+    element += '</figure>';
+
+
+    element += '<div class="cb-text">';
+    element += '<p>Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos.</p>';
+    element += '</div>';
+
+    element += '</div>';
+
+    container.append(element);
+    addEventToInputFile(id);
+    scrollTo(id);
+    break;
+
+    case '4':
+    var element = '<div id="'+ id + '" class="cb-content">';
+
+    element += '<div class="cb-tools">';
+    element += '<a class="cb-tools__btn cb-tools__btn--move fa fa-arrows" href="#"></a>';
+    element += '<a class="cb-tools__btn cb-tools__btn--delete fa fa-trash" href="#'+ id + '"></a>';
+    element += '</div>';
+
+    element += '<figure class="cb-figure cb-figure--center">';
+    element += '<div class="cb-figure__clip">';
+    element += '<%= image_tag('cb-image-default.jpg') %>';
+    element += '<input id="'+ id +'" data-position="center" class="filePicker cb-tools__input cb-tools__input--upload" type="file" name="cb-image">';
+    element += '<div class="cb-tools cb-tools--center">';
+    element += '<a class="cb-tools__btn cb-tools__btn--upload fa fa-camera" href="#'+ id + '"></a>';
+    element += '</div>';
+    element += '</div>';
+    element += '<figcaption class="cb-figcaption cb-text">Descrição da imagem</figcaption>';
+    element += '</figure>';
+
+    element += '</div>';
+
+    container.append(element);
+    addEventToInputFile(id);
+    scrollTo(id);
+    break;
+
+    case '5':
+    var element = '<div id="'+ id + '" class="cb-content">';
+
+    element += '<div class="cb-tools">';
+    element += '<a class="cb-tools__btn cb-tools__btn--move fa fa-arrows" href="#"></a>';
+    element += '<a class="cb-tools__btn cb-tools__btn--delete fa fa-trash" href="#'+ id + '"></a>';
+    element += '</div>';
+
+    element += '<div class="cb-video cb-video--center">';
+    element += '<iframe id="'+ id +'" src="" frameborder="0" allowfullscreen></iframe>';
+    element += '<div class="cb-tools cb-tools--center">';
+    element += '<a class="cb-tools__btn cb-tools__btn--upload cb-tools__btn--youtube fa fa-youtube-play" href="#'+ id + '"></a>';
+    element += '</div>';
+    element += '</div>';
+
+    element += '</div>';
+
+    container.append(element);
+    addEventToInputFile(id);
+    scrollTo(id);
+    break;
+
+    default:
+  };
+
+  activeMediumEditor();
+});
+
+// scroll to
+var scrollTo = function(id) {
+  if(id) {
+    $('html, body').animate({
+      scrollTop: $('#' + id).offset().top
+    }, 400);
+  }
+};
+
+// add event on input file
+var addEventToInputFile = function(id) {
+  $('#' + id).on('change', fileSelectAndUpload);
+};
+
+// upload file via ajax
+var fileSelectAndUpload = function(evt) {
+  var file = evt.target.files[0];
+
+  if(file) {
+    var formData = new FormData();
+    formData.append('content_builder_image', file);
+
+    $.ajax({
+      url: 'create_images',
+      data: formData,
+      cache: false,
+      contentType: false,
+      processData: false,
+      type: 'PUT',
+      beforeSend: function() {
+        $('#' + evt.target.id).find('figure').append('<div class="cb-loading"></div>');
+        $('.cb-tools--center').addClass('cb-tools--disabled');
+      },
+      complete: function(){
+        $('.cb-loading').remove();
+        $('.cb-tools--center').removeClass('cb-tools--disabled');
+      }
+    }).done(function(e) {
+      var p = evt.target.getAttribute('data-position');
+      $('#' + evt.target.id).find('img').attr('src', getImageOfPosition(p, e));
+    }).fail(function(e) {
+      alert('error: ' + e);
+    });
+  }
+};
+
+// get image of position
+var getImageOfPosition = function(position, e) {
+  switch(position) {
+    case 'left':
+    case 'right':
+    return e.image.left_or_right.url;
+    break;
+
+    case 'center':
+    return e.image.center.url;
+    break;
+  };
+};
+
+// generate random id
+var generateID = function() {
+  return '_' + Math.random().toString(36).substr(2, 9);
+};
+
+// active medium editor plugin
+var activeMediumEditor = function() {
+  var editor = new MediumEditor('.cb-text', {
+    placeholder: {
+      text: '',
+      hideOnClick: true
+    },
+
+    toolbar: {
+      buttons: ['bold', 'italic', 'underline', 'anchor']
+    },
+
+    anchor: {
+      placeholderText: 'Ex: http://site.com'
+    },
+
+    anchorPreview: false,
+
+    paste: {
+      cleanPastedHTML: true
+    }
+  });
+};
+
+// parse url by youtube using expression regular
+var youtubeParser = function(url) {
+  var regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#\&\?]*).*/;
+  var match = url.match(regExp);
+
+  if(match && match[7].length == 11) {
+    return b = match[7];
+  } else {
+    alert('Ops! Você não informou uma url válida.');
+  }
+};

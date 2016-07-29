@@ -7,3 +7,9 @@
 /pkg/
 /spec/reports/
 /tmp/
+/.idea/*
+/test_app/*
+/spec/dummy/tmp/*
+spec/dummy/log/test.log
+spec/dummy/db/test.sqlite3
+

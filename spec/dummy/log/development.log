@@ -1,0 +1,1182 @@
+  [1m[36m (7.8ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.7ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.0ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36m (1.9ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.0ms)[0m  select sqlite_version(*)
+  [1m[36m (0.7ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (0.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('0')[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateContentBuilders (20160426125046)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mCREATE TABLE "content_builders" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "date_publish" datetime, "content" text, "status" boolean DEFAULT 'f', "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160426125046"]]
+  [1m[36m (3.3ms)[0m  [1mcommit transaction[0m
+Migrating to CreateContentBuilderImages (20160426125047)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mCREATE TABLE "content_builder_images" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "image" varchar, "content_builder_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.0ms)[0m  select sqlite_version(*)
+  [1m[36m (0.1ms)[0m  [1mCREATE  INDEX "index_content_builder_images_on_content_builder_id" ON "content_builder_images" ("content_builder_id")[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160426125047"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_content_builder_images_on_content_builder_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_content_builder_images_on_content_builder_id' AND type='index'
+[0m
+  [1m[36m (6.6ms)[0m  [1mCREATE TABLE "content_builder_images" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "image" varchar, "content_builder_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.8ms)[0m  [1mCREATE  INDEX "index_content_builder_images_on_content_builder_id" ON "content_builder_images" ("content_builder_id")[0m
+  [1m[35m (0.8ms)[0m  CREATE TABLE "content_builders" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "date_publish" datetime, "content" text, "status" boolean DEFAULT 'f', "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.8ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.8ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.0ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (0.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160426125047')
+  [1m[36m (0.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160426125046')[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.4ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_content_builder_images_on_content_builder_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_content_builder_images_on_content_builder_id' AND type='index'
+[0m
+  [1m[36m (1.9ms)[0m  [1mCREATE TABLE "content_builder_images" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "image" varchar, "content_builder_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (1.0ms)[0m  [1mCREATE  INDEX "index_content_builder_images_on_content_builder_id" ON "content_builder_images" ("content_builder_id")[0m
+  [1m[35m (0.8ms)[0m  CREATE TABLE "content_builders" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "date_publish" datetime, "content" text, "status" boolean DEFAULT 'f', "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.8ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.8ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.0ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (0.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160426125047')
+  [1m[36m (0.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160426125046')[0m
+  [1m[36m (2.9ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.8ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateContentBuilders (20160426125046)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  CREATE TABLE "content_builders" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "date_publish" datetime, "content" text, "status" boolean DEFAULT 'f', "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160426125046"]]
+  [1m[35m (1.7ms)[0m  commit transaction
+Migrating to CreateContentBuilderImages (20160426125047)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  CREATE TABLE "content_builder_images" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "image" varchar, "content_builder_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mCREATE  INDEX "index_content_builder_images_on_content_builder_id" ON "content_builder_images" ("content_builder_id")[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160426125047"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.0ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_content_builder_images_on_content_builder_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_content_builder_images_on_content_builder_id' AND type='index'
+[0m
+  [1m[36m (2.6ms)[0m  [1mCREATE TABLE "content_builder_images" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "image" varchar, "content_builder_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.9ms)[0m  [1mCREATE  INDEX "index_content_builder_images_on_content_builder_id" ON "content_builder_images" ("content_builder_id")[0m
+  [1m[35m (0.9ms)[0m  CREATE TABLE "content_builders" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "date_publish" datetime, "content" text, "status" boolean DEFAULT 'f', "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.9ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.8ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.0ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (0.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160426125047')
+  [1m[36m (0.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160426125046')[0m
+  [1m[35m (0.8ms)[0m  CREATE TABLE "content_builder_images" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "image" varchar, "content_builder_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.0ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (0.7ms)[0m  CREATE  INDEX "index_content_builder_images_on_content_builder_id" ON "content_builder_images" ("content_builder_id")
+  [1m[36m (0.7ms)[0m  [1mCREATE TABLE "content_builders" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "date_publish" datetime, "content" text, "status" boolean DEFAULT 'f', "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.7ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar NOT NULL) 
+  [1m[36m (0.8ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.0ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (0.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160426125047')[0m
+  [1m[35m (0.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160426125046')
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36m (1.7ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.7ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateContentBuilders (20160426125046)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  CREATE TABLE "content_builders" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "date_publish" datetime, "content" text, "status" boolean DEFAULT 'f', "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160426125046"]]
+  [1m[35m (1.0ms)[0m  commit transaction
+Migrating to CreateContentBuilderImages (20160426125047)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  CREATE TABLE "content_builder_images" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "image" varchar, "content_builder_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mCREATE  INDEX "index_content_builder_images_on_content_builder_id" ON "content_builder_images" ("content_builder_id")[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160426125047"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.0ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.4ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_content_builder_images_on_content_builder_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_content_builder_images_on_content_builder_id' AND type='index'
+[0m
+  [1m[36m (2.1ms)[0m  [1mCREATE TABLE "content_builder_images" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "image" varchar, "content_builder_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.8ms)[0m  [1mCREATE  INDEX "index_content_builder_images_on_content_builder_id" ON "content_builder_images" ("content_builder_id")[0m
+  [1m[35m (1.0ms)[0m  CREATE TABLE "content_builders" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "date_publish" datetime, "content" text, "status" boolean DEFAULT 'f', "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (1.5ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.9ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (0.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160426125047')
+  [1m[36m (0.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160426125046')[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_content_builder_images_on_content_builder_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_content_builder_images_on_content_builder_id' AND type='index'
+[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.0ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_content_builder_images_on_content_builder_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_content_builder_images_on_content_builder_id' AND type='index'
+[0m
+  [1m[36m (6.2ms)[0m  [1mCREATE TABLE "content_builder_images" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "image" varchar, "content_builder_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (1.0ms)[0m  [1mCREATE  INDEX "index_content_builder_images_on_content_builder_id" ON "content_builder_images" ("content_builder_id")[0m
+  [1m[35m (0.9ms)[0m  CREATE TABLE "content_builders" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "date_publish" datetime, "content" text, "status" boolean DEFAULT 'f', "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.8ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.8ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.0ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (0.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160426125047')
+  [1m[36m (0.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160426125046')[0m
+  [1m[36m (7.9ms)[0m  [1mCREATE TABLE "content_builder_images" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "image" varchar, "content_builder_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.8ms)[0m  [1mCREATE  INDEX "index_content_builder_images_on_content_builder_id" ON "content_builder_images" ("content_builder_id")[0m
+  [1m[35m (1.0ms)[0m  CREATE TABLE "content_builders" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "date_publish" datetime, "content" text, "status" boolean DEFAULT 'f', "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.8ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.7ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.0ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (0.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160426125047')
+  [1m[36m (0.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160426125046')[0m
+  [1m[36m (1.8ms)[0m  [1mCREATE TABLE "content_builder_images" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "image" varchar, "content_builder_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.8ms)[0m  [1mCREATE  INDEX "index_content_builder_images_on_content_builder_id" ON "content_builder_images" ("content_builder_id")[0m
+  [1m[35m (0.8ms)[0m  CREATE TABLE "content_builders" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "date_publish" datetime, "content" text, "status" boolean DEFAULT 'f', "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.7ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.8ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.0ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (0.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160426125047')
+  [1m[36m (0.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160426125046')[0m
+  [1m[36m (2.1ms)[0m  [1mCREATE TABLE "content_builder_images" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "image" varchar, "content_builder_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (1.0ms)[0m  [1mCREATE  INDEX "index_content_builder_images_on_content_builder_id" ON "content_builder_images" ("content_builder_id")[0m
+  [1m[35m (0.8ms)[0m  CREATE TABLE "content_builders" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "date_publish" datetime, "content" text, "status" boolean DEFAULT 'f', "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.9ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.8ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.0ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (0.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160426125047')
+  [1m[36m (0.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160426125046')[0m
+  [1m[36m (6.8ms)[0m  [1mCREATE TABLE "content_builder_images" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "image" varchar, "content_builder_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.8ms)[0m  [1mCREATE  INDEX "index_content_builder_images_on_content_builder_id" ON "content_builder_images" ("content_builder_id")[0m
+  [1m[35m (1.0ms)[0m  CREATE TABLE "content_builders" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "date_publish" datetime, "content" text, "status" boolean DEFAULT 'f', "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.8ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.8ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (0.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160426125047')
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateContentBuilders (20160426205618)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mCREATE TABLE "content_builders" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "date_publish" datetime, "content" text, "status" boolean DEFAULT 'f', "slug" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (7.2ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.9ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateContentBuilders (20160426205618)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  CREATE TABLE "content_builders" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "date_publish" datetime, "content" text, "status" boolean DEFAULT 'f', "slug" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160426205618"]]
+  [1m[35m (1.0ms)[0m  commit transaction
+Migrating to CreateContentBuilderImages (20160426205619)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  CREATE TABLE "content_builder_images" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "image" varchar, "content_builder_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mCREATE  INDEX "index_content_builder_images_on_content_builder_id" ON "content_builder_images" ("content_builder_id")[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160426205619"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+Migrating to CreateContentBuilderRelateds (20160426205620)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mCREATE TABLE "content_builder_relateds" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "content_builder_id" integer, "content_builder_related_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160426205620"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_content_builder_images_on_content_builder_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_content_builder_images_on_content_builder_id' AND type='index'
+[0m
+  [1m[36m (218.0ms)[0m  [1mCREATE TABLE "content_builder_images" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "image" varchar, "content_builder_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (77.4ms)[0m  [1mCREATE  INDEX "index_content_builder_images_on_content_builder_id" ON "content_builder_images" ("content_builder_id")[0m
+  [1m[35m (127.3ms)[0m  CREATE TABLE "content_builder_relateds" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "content_builder_id" integer, "content_builder_related_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (187.6ms)[0m  [1mCREATE TABLE "content_builders" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "date_publish" datetime, "content" text, "status" boolean DEFAULT 'f', "slug" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (77.7ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar NOT NULL) 
+  [1m[36m (99.4ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (79.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160426205620')[0m
+  [1m[35m (79.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160426205619')
+  [1m[36m (79.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160426205618')[0m
+  [1m[36m (2.6ms)[0m  [1mCREATE TABLE "content_builder_images" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "image" varchar, "content_builder_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (1.0ms)[0m  [1mCREATE  INDEX "index_content_builder_images_on_content_builder_id" ON "content_builder_images" ("content_builder_id")[0m
+  [1m[35m (0.8ms)[0m  CREATE TABLE "content_builder_relateds" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "content_builder_id" integer, "content_builder_related_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.9ms)[0m  [1mCREATE TABLE "content_builders" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "date_publish" datetime, "content" text, "status" boolean DEFAULT 'f', "slug" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.9ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar NOT NULL) 
+  [1m[36m (0.7ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.0ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (0.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160426205620')[0m
+  [1m[35m (0.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160426205619')
+  [1m[36m (0.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160426205618')[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateContentBuilders (20160428143712)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mCREATE TABLE "content_builders" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "written_by" varchar, "news_source" varchar, "summary" text, "date_publish" datetime, "content" text, "status" boolean DEFAULT 'f', "slug" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (4.0ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.7ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateContentBuilderRelateds (20160426205620)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  CREATE TABLE "content_builder_relateds" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "content_builder_id" integer, "content_builder_related_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160426205620"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+Migrating to CreateContentBuilders (20160428143712)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  CREATE TABLE "content_builders" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "written_by" varchar, "news_source" varchar, "summary" text, "date_publish" datetime, "content" text, "status" boolean DEFAULT 'f', "slug" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160428143712"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+Migrating to CreateContentBuilderImages (20160428143713)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  CREATE TABLE "content_builder_images" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "image" varchar, "content_builder_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mCREATE  INDEX "index_content_builder_images_on_content_builder_id" ON "content_builder_images" ("content_builder_id")[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160428143713"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_content_builder_images_on_content_builder_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_content_builder_images_on_content_builder_id' AND type='index'
+[0m
+  [1m[36m (3.3ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.7ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateContentBuilderRelateds (20160426205620)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  CREATE TABLE "content_builder_relateds" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "content_builder_id" integer, "content_builder_related_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160426205620"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+Migrating to CreateContentBuilders (20160428143712)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  CREATE TABLE "content_builders" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "written_by" varchar, "news_source" varchar, "summary" text, "date_publish" datetime, "content" text, "status" boolean DEFAULT 'f', "slug" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160428143712"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+Migrating to CreateContentBuilderImages (20160428143713)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  CREATE TABLE "content_builder_images" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "image" varchar, "content_builder_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mCREATE  INDEX "index_content_builder_images_on_content_builder_id" ON "content_builder_images" ("content_builder_id")[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160428143713"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_content_builder_images_on_content_builder_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_content_builder_images_on_content_builder_id' AND type='index'
+[0m
+  [1m[36m (7.0ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.7ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.0ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateContentBuilderRelateds (20160426205620)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  CREATE TABLE "content_builder_relateds" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "content_builder_id" integer, "content_builder_related_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160426205620"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+Migrating to CreateContentBuilders (20160428144721)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  CREATE TABLE "content_builders" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "written_by" varchar, "news_source" varchar, "summary" text, "date_publish" datetime, "content" text, "status" boolean DEFAULT 'f', "slug" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160428144721"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+Migrating to CreateContentBuilderImages (20160428144722)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  CREATE TABLE "content_builder_images" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "image" varchar, "content_builder_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mCREATE  INDEX "index_content_builder_images_on_content_builder_id" ON "content_builder_images" ("content_builder_id")[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160428144722"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_content_builder_images_on_content_builder_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_content_builder_images_on_content_builder_id' AND type='index'
+[0m
+  [1m[36m (3.1ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.9ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateContentBuilderRelateds (20160426205620)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  CREATE TABLE "content_builder_relateds" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "content_builder_id" integer, "content_builder_related_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160426205620"]]
+  [1m[35m (1.6ms)[0m  commit transaction
+Migrating to CreateContentBuilders (20160428144721)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  CREATE TABLE "content_builders" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "written_by" varchar, "news_source" varchar, "summary" text, "date_publish" datetime, "content" text, "status" boolean DEFAULT 'f', "slug" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160428144721"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+Migrating to CreateContentBuilderImages (20160428144722)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  CREATE TABLE "content_builder_images" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "image" varchar, "content_builder_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mCREATE  INDEX "index_content_builder_images_on_content_builder_id" ON "content_builder_images" ("content_builder_id")[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160428144722"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_content_builder_images_on_content_builder_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_content_builder_images_on_content_builder_id' AND type='index'
+[0m
+  [1m[36m (1.7ms)[0m  [1mCREATE TABLE "content_builder_images" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "image" varchar, "content_builder_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.8ms)[0m  [1mCREATE  INDEX "index_content_builder_images_on_content_builder_id" ON "content_builder_images" ("content_builder_id")[0m
+  [1m[35m (0.7ms)[0m  CREATE TABLE "content_builder_relateds" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "content_builder_id" integer, "content_builder_related_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.9ms)[0m  [1mCREATE TABLE "content_builders" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "written_by" varchar, "news_source" varchar, "summary" text, "date_publish" datetime, "content" text, "status" boolean DEFAULT 'f', "slug" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.8ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar NOT NULL) 
+  [1m[36m (0.7ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.0ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (0.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160428144722')[0m
+  [1m[35m (0.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160428144721')
+  [1m[36m (0.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160426205620')[0m
+  [1m[36m (2.7ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.8ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateContentBuilderRelateds (20160426205620)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  CREATE TABLE "content_builder_relateds" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "content_builder_id" integer, "content_builder_related_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160426205620"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+Migrating to CreateContentBuilders (20160428144721)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  CREATE TABLE "content_builders" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "written_by" varchar, "news_source" varchar, "summary" text, "date_publish" datetime, "content" text, "status" boolean DEFAULT 'f', "slug" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160428144721"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+Migrating to CreateContentBuilderImages (20160428144722)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  CREATE TABLE "content_builder_images" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "image" varchar, "content_builder_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.2ms)[0m  [1mCREATE  INDEX "index_content_builder_images_on_content_builder_id" ON "content_builder_images" ("content_builder_id")[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160428144722"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.0ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_content_builder_images_on_content_builder_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_content_builder_images_on_content_builder_id' AND type='index'
+[0m
+  [1m[36m (2.2ms)[0m  [1mCREATE TABLE "content_builder_images" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "image" varchar, "content_builder_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.8ms)[0m  [1mCREATE  INDEX "index_content_builder_images_on_content_builder_id" ON "content_builder_images" ("content_builder_id")[0m
+  [1m[35m (0.8ms)[0m  CREATE TABLE "content_builder_relateds" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "content_builder_id" integer, "content_builder_related_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.9ms)[0m  [1mCREATE TABLE "content_builders" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "written_by" varchar, "news_source" varchar, "summary" text, "date_publish" datetime, "content" text, "status" boolean DEFAULT 'f', "slug" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.9ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar NOT NULL) 
+  [1m[36m (0.8ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.0ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (0.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160428144722')[0m
+  [1m[35m (0.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160428144721')
+  [1m[36m (0.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160426205620')[0m
+  [1m[36m (4.7ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.7ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.0ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateContentBuilderRelateds (20160426205620)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  CREATE TABLE "content_builder_relateds" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "content_builder_id" integer, "content_builder_related_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160426205620"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+Migrating to CreateContentBuilders (20160502123538)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  CREATE TABLE "content_builders" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "written_by" varchar, "date_publish" datetime, "content" text, "status" boolean DEFAULT 'f', "slug" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160502123538"]]
+  [1m[35m (1.1ms)[0m  commit transaction
+Migrating to CreateContentBuilderImages (20160502123539)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  CREATE TABLE "content_builder_images" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "image" varchar, "content_builder_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mCREATE  INDEX "index_content_builder_images_on_content_builder_id" ON "content_builder_images" ("content_builder_id")[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160502123539"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.4ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_content_builder_images_on_content_builder_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_content_builder_images_on_content_builder_id' AND type='index'
+[0m
+  [1m[36m (7.1ms)[0m  [1mCREATE TABLE "content_builder_images" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "image" varchar, "content_builder_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.9ms)[0m  [1mCREATE  INDEX "index_content_builder_images_on_content_builder_id" ON "content_builder_images" ("content_builder_id")[0m
+  [1m[35m (1.5ms)[0m  CREATE TABLE "content_builder_relateds" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "content_builder_id" integer, "content_builder_related_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.9ms)[0m  [1mCREATE TABLE "content_builders" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "written_by" varchar, "date_publish" datetime, "content" text, "status" boolean DEFAULT 'f', "slug" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (1.0ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar NOT NULL) 
+  [1m[36m (0.7ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.0ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (0.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160502123539')[0m
+  [1m[35m (0.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160502123538')
+  [1m[36m (0.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160426205620')[0m
+  [1m[36m (2.5ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.9ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateContentBuilderRelateds (20160426205620)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "content_builder_relateds" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "content_builder_id" integer, "content_builder_related_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160426205620"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+Migrating to CreateContentBuilders (20160713142319)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "content_builders" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "written_by" varchar, "date_publish" datetime, "content" text, "status" boolean DEFAULT 'f', "slug" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160713142319"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+Migrating to CreateContentBuilderImages (20160713142320)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "content_builder_images" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "image" varchar, "content_builder_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mCREATE  INDEX "index_content_builder_images_on_content_builder_id" ON "content_builder_images" ("content_builder_id")[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160713142320"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+Migrating to CreateContentBuilderCategories (20160713142321)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "content_builders" ADD "content_builder_category_id" integer[0m
+  [1m[35m (0.1ms)[0m  CREATE  INDEX "index_content_builders_on_content_builder_category_id" ON "content_builders" ("content_builder_category_id")
+  [1m[36m (0.1ms)[0m  [1mCREATE TABLE "content_builder_categories" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "slug" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160713142321"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.0ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_content_builder_images_on_content_builder_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_content_builder_images_on_content_builder_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_content_builders_on_content_builder_category_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_content_builders_on_content_builder_category_id' AND type='index'
+
+
+
+Started GET "/" for 127.0.0.1 at 2016-07-13 10:27:10 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /home/w3case/.rvm/gems/ruby-2.2.1@rails_admin_content_builder/gems/railties-4.2.6/lib/rails/templates/rails/welcome/index.html.erb (1.0ms)
+Completed 200 OK in 7ms (Views: 7.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2016-07-13 10:27:13 -0400
+Processing by RailsAdmin::MainController#dashboard as HTML
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "content_builders"
+  [1m[36mRailsAdminContentBuilder::ContentBuilder Load (0.1ms)[0m  [1mSELECT  "content_builders".* FROM "content_builders"  ORDER BY content_builders.updated_at desc LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "content_builder_categories"
+  [1m[36mRailsAdminContentBuilder::ContentBuilderCategory Load (0.1ms)[0m  [1mSELECT  "content_builder_categories".* FROM "content_builder_categories"  ORDER BY content_builder_categories.updated_at desc LIMIT 1[0m
+  Rendered /home/w3case/.rvm/gems/ruby-2.2.1@rails_admin_content_builder/gems/rails_admin-0.8.1/app/views/rails_admin/main/dashboard.html.haml within layouts/rails_admin/application (6.8ms)
+  Rendered /home/w3case/.rvm/gems/ruby-2.2.1@rails_admin_content_builder/gems/rails_admin-0.8.1/app/views/layouts/rails_admin/_secondary_navigation.html.haml (1.9ms)
+  Rendered /home/w3case/.rvm/gems/ruby-2.2.1@rails_admin_content_builder/gems/rails_admin-0.8.1/app/views/layouts/rails_admin/_navigation.html.haml (4.3ms)
+  Rendered /home/w3case/.rvm/gems/ruby-2.2.1@rails_admin_content_builder/gems/rails_admin-0.8.1/app/views/layouts/rails_admin/_sidebar_navigation.html.haml (1.7ms)
+  Rendered /home/w3case/.rvm/gems/ruby-2.2.1@rails_admin_content_builder/gems/rails_admin-0.8.1/app/views/layouts/rails_admin/pjax.html.haml (2.0ms)
+Completed 200 OK in 3278ms (Views: 3149.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/rails_admin/rails_admin.self-ea4795d73dc5c5e31b568ebd2ccf6b0437eaa95534a1a4a49d4acaf02492ef7e.css?body=1" for 127.0.0.1 at 2016-07-13 10:27:17 -0400
+
+
+Started GET "/assets/rails_admin/jquery.remotipart.fixed.self-357a8f834a6b278f578acd51708542bff0852a75d8d583d0d761d3f387af5b4c.js?body=1" for 127.0.0.1 at 2016-07-13 10:27:17 -0400
+
+
+Started GET "/assets/rails_admin/ra.nested-form-hooks.self-abecd3cd4d55ce44cbf00b87d2f612d570af5e7fe5701d05135d60f8c07e7d37.js?body=1" for 127.0.0.1 at 2016-07-13 10:27:17 -0400
+
+
+Started GET "/assets/rails_admin/ra.filter-box.self-7a15aaeea6101fb1e648df5848917eddd01c5c193ffae1e121224ec7e96d8647.js?body=1" for 127.0.0.1 at 2016-07-13 10:27:17 -0400
+
+
+Started GET "/assets/fontawesome-webfont-d3ebb498192527b985939ae62cc4e5eb5c108efc1896184126b45d866868e73d.woff2?v=4.6.1" for 127.0.0.1 at 2016-07-13 10:27:17 -0400
+
+
+Started GET "/admin/rails_admin_content_builder~content_builder?_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2016-07-13 10:27:20 -0400
+Processing by RailsAdmin::MainController#index as HTML
+  Parameters: {"_pjax"=>"[data-pjax-container]", "model_name"=>"rails_admin_content_builder~content_builder"}
+  [1m[35mRailsAdminContentBuilder::ContentBuilder Load (0.2ms)[0m  SELECT  "content_builders".* FROM "content_builders"  ORDER BY content_builders.id desc LIMIT 20 OFFSET 0
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "content_builders"[0m
+  Rendered /home/w3case/.rvm/gems/ruby-2.2.1@rails_admin_content_builder/gems/rails_admin-0.8.1/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax (27.1ms)
+Completed 200 OK in 47ms (Views: 32.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/admin/rails_admin_content_builder~content_builder/new?_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2016-07-13 10:27:22 -0400
+Processing by RailsAdmin::MainController#new as HTML
+  Parameters: {"_pjax"=>"[data-pjax-container]", "model_name"=>"rails_admin_content_builder~content_builder"}
+  Rendered /home/w3case/.rvm/gems/ruby-2.2.1@rails_admin_content_builder/gems/rails_admin-0.8.1/app/views/rails_admin/main/_form_field.html.haml (1.9ms)
+  Rendered /home/w3case/.rvm/gems/ruby-2.2.1@rails_admin_content_builder/gems/rails_admin-0.8.1/app/views/rails_admin/main/_form_datetime.html.haml (2.0ms)
+  Rendered /home/w3case/.rvm/gems/ruby-2.2.1@rails_admin_content_builder/gems/rails_admin-0.8.1/app/views/rails_admin/main/_form_field.html.haml (0.4ms)
+  Rendered /home/w3case/.rvm/gems/ruby-2.2.1@rails_admin_content_builder/gems/rails_admin-0.8.1/app/views/rails_admin/main/_submit_buttons.html.haml (3.1ms)
+  Rendered /home/w3case/.rvm/gems/ruby-2.2.1@rails_admin_content_builder/gems/rails_admin-0.8.1/app/views/rails_admin/main/new.html.haml within layouts/rails_admin/pjax (22.9ms)
+Completed 200 OK in 34ms (Views: 29.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/admin/rails_admin_content_builder~content_builder/new" for 127.0.0.1 at 2016-07-13 10:27:29 -0400
+Processing by RailsAdmin::MainController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MdUdfo5Ip7lVRe3t2mqkB8kTn39tGf5qvSjCo0nFdloQQHeAojD6Y2SUswvs0RLZbxnl5waSDzhop+fbwO9k8g==", "rails_admin_content_builder_content_builder"=>{"title"=>"teste", "date_publish"=>"July 25, 2016 10:27", "written_by"=>"Luiz Picolo"}, "return_to"=>"http://localhost:3000/admin/rails_admin_content_builder~content_builder", "_save"=>"", "model_name"=>"rails_admin_content_builder~content_builder"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mRailsAdminContentBuilder::ContentBuilder Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "content_builders" WHERE ("content_builders"."id" IS NOT NULL) AND "content_builders"."slug" = ? LIMIT 1[0m  [["slug", "teste"]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "content_builders" ("title", "date_publish", "written_by", "slug", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["title", "teste"], ["date_publish", "2016-07-25 10:27:00.000000"], ["written_by", "Luiz Picolo"], ["slug", "teste"], ["created_at", "2016-07-13 14:27:29.079160"], ["updated_at", "2016-07-13 14:27:29.079160"]]
+  [1m[36m (1.8ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/admin/rails_admin_content_builder~content_builder
+Completed 302 Found in 23ms (ActiveRecord: 2.3ms)
+
+
+Started GET "/admin/rails_admin_content_builder~content_builder" for 127.0.0.1 at 2016-07-13 10:27:29 -0400
+Processing by RailsAdmin::MainController#index as HTML
+  Parameters: {"model_name"=>"rails_admin_content_builder~content_builder"}
+  [1m[35mRailsAdminContentBuilder::ContentBuilder Load (0.2ms)[0m  SELECT  "content_builders".* FROM "content_builders"  ORDER BY content_builders.id desc LIMIT 20 OFFSET 0
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "content_builders"[0m
+  Rendered /home/w3case/.rvm/gems/ruby-2.2.1@rails_admin_content_builder/gems/rails_admin-0.8.1/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/application (15.6ms)
+  Rendered /home/w3case/.rvm/gems/ruby-2.2.1@rails_admin_content_builder/gems/rails_admin-0.8.1/app/views/layouts/rails_admin/_secondary_navigation.html.haml (0.9ms)
+  Rendered /home/w3case/.rvm/gems/ruby-2.2.1@rails_admin_content_builder/gems/rails_admin-0.8.1/app/views/layouts/rails_admin/_navigation.html.haml (3.3ms)
+  Rendered /home/w3case/.rvm/gems/ruby-2.2.1@rails_admin_content_builder/gems/rails_admin-0.8.1/app/views/layouts/rails_admin/_sidebar_navigation.html.haml (1.4ms)
+  Rendered /home/w3case/.rvm/gems/ruby-2.2.1@rails_admin_content_builder/gems/rails_admin-0.8.1/app/views/layouts/rails_admin/pjax.html.haml (3.8ms)
+Completed 200 OK in 189ms (Views: 185.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/admin/rails_admin_content_builder~content_builder/1/delete?_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2016-07-13 10:27:32 -0400
+Processing by RailsAdmin::MainController#delete as HTML
+  Parameters: {"_pjax"=>"[data-pjax-container]", "model_name"=>"rails_admin_content_builder~content_builder", "id"=>"1"}
+  [1m[35mRailsAdminContentBuilder::ContentBuilder Load (0.2ms)[0m  SELECT  "content_builders".* FROM "content_builders" WHERE "content_builders"."id" = ?  ORDER BY "content_builders"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mRailsAdminContentBuilder::ContentBuilderImage Load (0.1ms)[0m  [1mSELECT "content_builder_images".* FROM "content_builder_images" WHERE "content_builder_images"."content_builder_id" = ?[0m  [["content_builder_id", 1]]
+  Rendered /home/w3case/.rvm/gems/ruby-2.2.1@rails_admin_content_builder/gems/rails_admin-0.8.1/app/views/rails_admin/main/_delete_notice.html.haml (18.8ms)
+  Rendered /home/w3case/.rvm/gems/ruby-2.2.1@rails_admin_content_builder/gems/rails_admin-0.8.1/app/views/rails_admin/main/delete.html.haml within layouts/rails_admin/pjax (27.5ms)
+Completed 200 OK in 41ms (Views: 35.2ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/admin/rails_admin_content_builder~content_builder/1/delete" for 127.0.0.1 at 2016-07-13 10:27:34 -0400
+Processing by RailsAdmin::MainController#delete as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ifdLBBbptSHs2DfSv2JpGdrSmyzTSsCX19mXhj0qEhmoYiH6OpHo+90JaTSJ2d/HfNjhtLjBMcUCVrL+tAAAsQ==", "return_to"=>"http://localhost:3000/admin/rails_admin_content_builder~content_builder", "model_name"=>"rails_admin_content_builder~content_builder", "id"=>"1"}
+  [1m[35mRailsAdminContentBuilder::ContentBuilder Load (0.1ms)[0m  SELECT  "content_builders".* FROM "content_builders" WHERE "content_builders"."id" = ?  ORDER BY "content_builders"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mRailsAdminContentBuilder::ContentBuilderImage Load (0.0ms)[0m  SELECT "content_builder_images".* FROM "content_builder_images" WHERE "content_builder_images"."content_builder_id" = ?  [["content_builder_id", 1]]
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "content_builders" WHERE "content_builders"."id" = ?[0m  [["id", 1]]
+  [1m[35m (1.8ms)[0m  commit transaction
+Redirected to http://localhost:3000/admin/rails_admin_content_builder~content_builder
+Completed 302 Found in 7ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/admin/rails_admin_content_builder~content_builder" for 127.0.0.1 at 2016-07-13 10:27:34 -0400
+Processing by RailsAdmin::MainController#index as HTML
+  Parameters: {"model_name"=>"rails_admin_content_builder~content_builder"}
+  [1m[36mRailsAdminContentBuilder::ContentBuilder Load (0.1ms)[0m  [1mSELECT  "content_builders".* FROM "content_builders"  ORDER BY content_builders.id desc LIMIT 20 OFFSET 0[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "content_builders"
+  Rendered /home/w3case/.rvm/gems/ruby-2.2.1@rails_admin_content_builder/gems/rails_admin-0.8.1/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/application (6.7ms)
+  Rendered /home/w3case/.rvm/gems/ruby-2.2.1@rails_admin_content_builder/gems/rails_admin-0.8.1/app/views/layouts/rails_admin/_secondary_navigation.html.haml (0.6ms)
+  Rendered /home/w3case/.rvm/gems/ruby-2.2.1@rails_admin_content_builder/gems/rails_admin-0.8.1/app/views/layouts/rails_admin/_navigation.html.haml (1.6ms)
+  Rendered /home/w3case/.rvm/gems/ruby-2.2.1@rails_admin_content_builder/gems/rails_admin-0.8.1/app/views/layouts/rails_admin/_sidebar_navigation.html.haml (1.0ms)
+  Rendered /home/w3case/.rvm/gems/ruby-2.2.1@rails_admin_content_builder/gems/rails_admin-0.8.1/app/views/layouts/rails_admin/pjax.html.haml (2.6ms)
+Completed 200 OK in 119ms (Views: 116.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/admin/rails_admin_content_builder~content_builder" for 127.0.0.1 at 2016-07-13 10:30:46 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+	bin/rake db:migrate RAILS_ENV=development
+
+):
+  activerecord (4.2.6) lib/active_record/migration.rb:392:in `check_pending!'
+  activerecord (4.2.6) lib/active_record/migration.rb:373:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.6) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/w3case/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/w3case/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/w3case/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/w3case/.rvm/gems/ruby-2.2.1@rails_admin_content_builder/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.4ms)
+  Rendered /home/w3case/.rvm/gems/ruby-2.2.1@rails_admin_content_builder/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered /home/w3case/.rvm/gems/ruby-2.2.1@rails_admin_content_builder/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/w3case/.rvm/gems/ruby-2.2.1@rails_admin_content_builder/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (14.0ms)
+  [1m[36m (2.1ms)[0m  [1mCREATE TABLE "content_builder_categories" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "slug" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.7ms)[0m  CREATE TABLE "content_builder_images" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "image" varchar, "content_builder_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (0.8ms)[0m  CREATE  INDEX "index_content_builder_images_on_content_builder_id" ON "content_builder_images" ("content_builder_id")
+  [1m[36m (0.7ms)[0m  [1mCREATE TABLE "content_builder_relateds" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "content_builder_id" integer, "content_builder_related_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.8ms)[0m  CREATE TABLE "content_builders" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "written_by" varchar, "date_publish" datetime, "content" text, "status" boolean DEFAULT 'f', "slug" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "content_builder_category_id" integer) 
+  [1m[36m (0.7ms)[0m  [1mCREATE  INDEX "index_content_builders_on_content_builder_category_id" ON "content_builders" ("content_builder_category_id")[0m
+  [1m[35m (0.8ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar NOT NULL) 
+  [1m[36m (0.9ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.0ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (0.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160713142321')[0m
+  [1m[35m (0.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160426205620')
+  [1m[36m (0.8ms)[0m  [1mCREATE TABLE "content_builder_categories" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "slug" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.7ms)[0m  CREATE TABLE "content_builder_images" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "image" varchar, "content_builder_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.0ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (0.8ms)[0m  CREATE  INDEX "index_content_builder_images_on_content_builder_id" ON "content_builder_images" ("content_builder_id")
+  [1m[36m (0.8ms)[0m  [1mCREATE TABLE "content_builder_relateds" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "content_builder_id" integer, "content_builder_related_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.8ms)[0m  CREATE TABLE "content_builders" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "written_by" varchar, "date_publish" datetime, "content" text, "status" boolean DEFAULT 'f', "slug" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "content_builder_category_id" integer) 
+  [1m[36m (0.7ms)[0m  [1mCREATE  INDEX "index_content_builders_on_content_builder_category_id" ON "content_builders" ("content_builder_category_id")[0m
+  [1m[35m (0.7ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar NOT NULL) 
+  [1m[36m (0.8ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.0ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (0.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160713142321')[0m
+  [1m[35m (0.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160426205620')
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36m (7.9ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.0ms)[0m  select sqlite_version(*)
+  [1m[36m (0.7ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.0ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateContentBuilderRelateds (20160426205620)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  CREATE TABLE "content_builder_relateds" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "content_builder_id" integer, "content_builder_related_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160426205620"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+Migrating to CreateContentBuilders (20160713142956)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  CREATE TABLE "content_builders" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "written_by" varchar, "date_publish" datetime, "content" text, "status" boolean DEFAULT 'f', "slug" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160713142956"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+Migrating to CreateContentBuilderImages (20160713142957)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  CREATE TABLE "content_builder_images" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "image" varchar, "content_builder_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mCREATE  INDEX "index_content_builder_images_on_content_builder_id" ON "content_builder_images" ("content_builder_id")[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160713142957"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+Migrating to CreateContentBuilderCategories (20160713142958)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "content_builders" ADD "content_builder_category_id" integer[0m
+  [1m[35m (0.1ms)[0m  CREATE  INDEX "index_content_builders_on_content_builder_category_id" ON "content_builders" ("content_builder_category_id")
+  [1m[36m (0.1ms)[0m  [1mCREATE TABLE "content_builder_categories" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "slug" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160713142958"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_content_builder_images_on_content_builder_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_content_builder_images_on_content_builder_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_content_builders_on_content_builder_category_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_content_builders_on_content_builder_category_id' AND type='index'
+
+
+
+Started GET "/" for 127.0.0.1 at 2016-07-13 10:31:32 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /home/w3case/.rvm/gems/ruby-2.2.1@rails_admin_content_builder/gems/railties-4.2.6/lib/rails/templates/rails/welcome/index.html.erb (1.0ms)
+Completed 200 OK in 7ms (Views: 6.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2016-07-13 10:31:36 -0400
+Processing by RailsAdmin::MainController#dashboard as HTML
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "content_builders"
+  [1m[36mRailsAdminContentBuilder::ContentBuilder Load (0.2ms)[0m  [1mSELECT  "content_builders".* FROM "content_builders"  ORDER BY content_builders.updated_at desc LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "content_builder_categories"
+  [1m[36mRailsAdminContentBuilder::ContentBuilderCategory Load (0.1ms)[0m  [1mSELECT  "content_builder_categories".* FROM "content_builder_categories"  ORDER BY content_builder_categories.updated_at desc LIMIT 1[0m
+  Rendered /home/w3case/.rvm/gems/ruby-2.2.1@rails_admin_content_builder/gems/rails_admin-0.8.1/app/views/rails_admin/main/dashboard.html.haml within layouts/rails_admin/application (7.2ms)
+  Rendered /home/w3case/.rvm/gems/ruby-2.2.1@rails_admin_content_builder/gems/rails_admin-0.8.1/app/views/layouts/rails_admin/_secondary_navigation.html.haml (2.0ms)
+  Rendered /home/w3case/.rvm/gems/ruby-2.2.1@rails_admin_content_builder/gems/rails_admin-0.8.1/app/views/layouts/rails_admin/_navigation.html.haml (4.4ms)
+  Rendered /home/w3case/.rvm/gems/ruby-2.2.1@rails_admin_content_builder/gems/rails_admin-0.8.1/app/views/layouts/rails_admin/_sidebar_navigation.html.haml (1.8ms)
+  Rendered /home/w3case/.rvm/gems/ruby-2.2.1@rails_admin_content_builder/gems/rails_admin-0.8.1/app/views/layouts/rails_admin/pjax.html.haml (2.4ms)
+Completed 200 OK in 571ms (Views: 418.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/admin/rails_admin_content_builder~content_builder_category?_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2016-07-13 10:31:40 -0400
+Processing by RailsAdmin::MainController#index as HTML
+  Parameters: {"_pjax"=>"[data-pjax-container]", "model_name"=>"rails_admin_content_builder~content_builder_category"}
+  [1m[35mRailsAdminContentBuilder::ContentBuilderCategory Load (0.2ms)[0m  SELECT  "content_builder_categories".* FROM "content_builder_categories"  ORDER BY content_builder_categories.id desc LIMIT 20 OFFSET 0
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "content_builder_categories"[0m
+  Rendered /home/w3case/.rvm/gems/ruby-2.2.1@rails_admin_content_builder/gems/rails_admin-0.8.1/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax (21.8ms)
+Completed 200 OK in 37ms (Views: 29.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/admin/rails_admin_content_builder~content_builder_category/new?_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2016-07-13 10:31:41 -0400
+Processing by RailsAdmin::MainController#new as HTML
+  Parameters: {"_pjax"=>"[data-pjax-container]", "model_name"=>"rails_admin_content_builder~content_builder_category"}
+  Rendered /home/w3case/.rvm/gems/ruby-2.2.1@rails_admin_content_builder/gems/rails_admin-0.8.1/app/views/rails_admin/main/_form_field.html.haml (1.7ms)
+  Rendered /home/w3case/.rvm/gems/ruby-2.2.1@rails_admin_content_builder/gems/rails_admin-0.8.1/app/views/rails_admin/main/_submit_buttons.html.haml (2.7ms)
+  Rendered /home/w3case/.rvm/gems/ruby-2.2.1@rails_admin_content_builder/gems/rails_admin-0.8.1/app/views/rails_admin/main/new.html.haml within layouts/rails_admin/pjax (15.1ms)
+Completed 200 OK in 29ms (Views: 23.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/admin/rails_admin_content_builder~content_builder_category/new" for 127.0.0.1 at 2016-07-13 10:31:44 -0400
+Processing by RailsAdmin::MainController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"L5K2VyAh9X1FDKUO/haXgdUNDLyEdY+eeh0Q3U2E8l4OB9ypDFmop3Td++jIrSFfcwd2JO/+fsyvkjWlxK7g9g==", "rails_admin_content_builder_content_builder_category"=>{"title"=>"test"}, "return_to"=>"http://localhost:3000/admin/rails_admin_content_builder~content_builder_category", "_save"=>"", "model_name"=>"rails_admin_content_builder~content_builder_category"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mRailsAdminContentBuilder::ContentBuilderCategory Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "content_builder_categories" WHERE ("content_builder_categories"."id" IS NOT NULL) AND "content_builder_categories"."slug" = ? LIMIT 1[0m  [["slug", "test"]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "content_builder_categories" ("title", "slug", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "test"], ["slug", "test"], ["created_at", "2016-07-13 14:31:44.460333"], ["updated_at", "2016-07-13 14:31:44.460333"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/admin/rails_admin_content_builder~content_builder_category
+Completed 302 Found in 19ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/admin/rails_admin_content_builder~content_builder_category" for 127.0.0.1 at 2016-07-13 10:31:44 -0400
+Processing by RailsAdmin::MainController#index as HTML
+  Parameters: {"model_name"=>"rails_admin_content_builder~content_builder_category"}
+  [1m[35mRailsAdminContentBuilder::ContentBuilderCategory Load (0.1ms)[0m  SELECT  "content_builder_categories".* FROM "content_builder_categories"  ORDER BY content_builder_categories.id desc LIMIT 20 OFFSET 0
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "content_builder_categories"[0m
+  Rendered /home/w3case/.rvm/gems/ruby-2.2.1@rails_admin_content_builder/gems/rails_admin-0.8.1/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/application (7.9ms)
+  Rendered /home/w3case/.rvm/gems/ruby-2.2.1@rails_admin_content_builder/gems/rails_admin-0.8.1/app/views/layouts/rails_admin/_secondary_navigation.html.haml (0.5ms)
+  Rendered /home/w3case/.rvm/gems/ruby-2.2.1@rails_admin_content_builder/gems/rails_admin-0.8.1/app/views/layouts/rails_admin/_navigation.html.haml (1.5ms)
+  Rendered /home/w3case/.rvm/gems/ruby-2.2.1@rails_admin_content_builder/gems/rails_admin-0.8.1/app/views/layouts/rails_admin/_sidebar_navigation.html.haml (1.2ms)
+  Rendered /home/w3case/.rvm/gems/ruby-2.2.1@rails_admin_content_builder/gems/rails_admin-0.8.1/app/views/layouts/rails_admin/pjax.html.haml (2.6ms)
+Completed 200 OK in 101ms (Views: 97.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/admin/rails_admin_content_builder~content_builder?_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2016-07-13 10:31:46 -0400
+Processing by RailsAdmin::MainController#index as HTML
+  Parameters: {"_pjax"=>"[data-pjax-container]", "model_name"=>"rails_admin_content_builder~content_builder"}
+  [1m[35mRailsAdminContentBuilder::ContentBuilder Load (0.1ms)[0m  SELECT  "content_builders".* FROM "content_builders"  ORDER BY content_builders.id desc LIMIT 20 OFFSET 0
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "content_builders"[0m
+  Rendered /home/w3case/.rvm/gems/ruby-2.2.1@rails_admin_content_builder/gems/rails_admin-0.8.1/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax (10.3ms)
+Completed 200 OK in 28ms (Views: 15.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/admin/rails_admin_content_builder~content_builder/new?_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2016-07-13 10:31:47 -0400
+Processing by RailsAdmin::MainController#new as HTML
+  Parameters: {"_pjax"=>"[data-pjax-container]", "model_name"=>"rails_admin_content_builder~content_builder"}
+  Rendered /home/w3case/.rvm/gems/ruby-2.2.1@rails_admin_content_builder/gems/rails_admin-0.8.1/app/views/rails_admin/main/_form_field.html.haml (0.4ms)
+  Rendered /home/w3case/.rvm/gems/ruby-2.2.1@rails_admin_content_builder/gems/rails_admin-0.8.1/app/views/rails_admin/main/_form_datetime.html.haml (2.1ms)
+  Rendered /home/w3case/.rvm/gems/ruby-2.2.1@rails_admin_content_builder/gems/rails_admin-0.8.1/app/views/rails_admin/main/_form_field.html.haml (0.3ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "content_builder_categories"
+  [1m[36mRailsAdminContentBuilder::ContentBuilderCategory Load (0.1ms)[0m  [1mSELECT "content_builder_categories".* FROM "content_builder_categories"  ORDER BY content_builder_categories.id desc[0m
+  Rendered /home/w3case/.rvm/gems/ruby-2.2.1@rails_admin_content_builder/gems/rails_admin-0.8.1/app/views/rails_admin/main/_form_filtering_select.html.haml (8.6ms)
+  Rendered /home/w3case/.rvm/gems/ruby-2.2.1@rails_admin_content_builder/gems/rails_admin-0.8.1/app/views/rails_admin/main/_submit_buttons.html.haml (0.9ms)
+  Rendered /home/w3case/.rvm/gems/ruby-2.2.1@rails_admin_content_builder/gems/rails_admin-0.8.1/app/views/rails_admin/main/new.html.haml within layouts/rails_admin/pjax (27.8ms)
+Completed 200 OK in 36ms (Views: 32.2ms | ActiveRecord: 0.2ms)
+  [1m[36m (4.0ms)[0m  [1mCREATE TABLE "content_builder_categories" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "slug" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.8ms)[0m  CREATE TABLE "content_builder_images" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "image" varchar, "content_builder_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (1.0ms)[0m  CREATE  INDEX "index_content_builder_images_on_content_builder_id" ON "content_builder_images" ("content_builder_id")
+  [1m[36m (0.8ms)[0m  [1mCREATE TABLE "content_builder_relateds" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "content_builder_id" integer, "content_builder_related_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (1.2ms)[0m  CREATE TABLE "content_builders" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "written_by" varchar, "date_publish" datetime, "content" text, "status" boolean DEFAULT 'f', "slug" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "content_builder_category_id" integer) 
+  [1m[36m (0.9ms)[0m  [1mCREATE  INDEX "index_content_builders_on_content_builder_category_id" ON "content_builders" ("content_builder_category_id")[0m
+  [1m[35m (1.0ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar NOT NULL) 
+  [1m[36m (1.0ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (0.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160713142958')[0m
+  [1m[35m (0.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160426205620')
+  [1m[36m (0.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160713142957')[0m
+  [1m[35m (0.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160713142956')
+  [1m[36m (4.2ms)[0m  [1mCREATE TABLE "content_builder_categories" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "slug" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.8ms)[0m  CREATE TABLE "content_builder_images" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "image" varchar, "content_builder_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (0.9ms)[0m  CREATE  INDEX "index_content_builder_images_on_content_builder_id" ON "content_builder_images" ("content_builder_id")
+  [1m[36m (0.9ms)[0m  [1mCREATE TABLE "content_builder_relateds" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "content_builder_id" integer, "content_builder_related_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (1.0ms)[0m  CREATE TABLE "content_builders" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "written_by" varchar, "date_publish" datetime, "content" text, "status" boolean DEFAULT 'f', "slug" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "content_builder_category_id" integer) 
+  [1m[36m (0.8ms)[0m  [1mCREATE  INDEX "index_content_builders_on_content_builder_category_id" ON "content_builders" ("content_builder_category_id")[0m
+  [1m[35m (0.8ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar NOT NULL) 
+  [1m[36m (0.8ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.0ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (0.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160713142958')[0m
+  [1m[35m (0.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160426205620')
+  [1m[36m (0.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160713142957')[0m
+  [1m[35m (0.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160713142956')
+  [1m[36m (7.5ms)[0m  [1mCREATE TABLE "content_builder_categories" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "slug" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (1.4ms)[0m  CREATE TABLE "content_builder_images" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "image" varchar, "content_builder_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (0.8ms)[0m  CREATE  INDEX "index_content_builder_images_on_content_builder_id" ON "content_builder_images" ("content_builder_id")
+  [1m[36m (0.7ms)[0m  [1mCREATE TABLE "content_builder_relateds" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "content_builder_id" integer, "content_builder_related_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.8ms)[0m  CREATE TABLE "content_builders" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "written_by" varchar, "date_publish" datetime, "content" text, "status" boolean DEFAULT 'f', "slug" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "content_builder_category_id" integer) 
+  [1m[36m (0.8ms)[0m  [1mCREATE  INDEX "index_content_builders_on_content_builder_category_id" ON "content_builders" ("content_builder_category_id")[0m
+  [1m[35m (0.9ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar NOT NULL) 
+  [1m[36m (0.9ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.0ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (0.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160713142958')[0m
+  [1m[35m (0.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160426205620')
+  [1m[36m (0.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160713142957')[0m
+  [1m[35m (0.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160713142956')
+  [1m[36m (2.8ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.0ms)[0m  select sqlite_version(*)
+  [1m[36m (0.8ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.0ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateContentBuilderRelateds (20160426205620)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  CREATE TABLE "content_builder_relateds" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "content_builder_id" integer, "content_builder_related_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160426205620"]]
+  [1m[35m (1.0ms)[0m  commit transaction
+Migrating to CreateContentBuilders (20160713185406)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  CREATE TABLE "content_builders" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "written_by" varchar, "date_publish" datetime, "content" text, "status" boolean DEFAULT 'f', "slug" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160713185406"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+Migrating to CreateContentBuilderImages (20160713185407)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  CREATE TABLE "content_builder_images" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "image" varchar, "content_builder_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mCREATE  INDEX "index_content_builder_images_on_content_builder_id" ON "content_builder_images" ("content_builder_id")[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160713185407"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+Migrating to CreateContentBuilderCategories (20160713185408)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mCREATE TABLE "content_builder_categories" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "slug" varchar, "content_builder_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  CREATE  INDEX "index_content_builder_categories_on_content_builder_id" ON "content_builder_categories" ("content_builder_id")
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160713185408"]]
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_content_builder_categories_on_content_builder_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_content_builder_categories_on_content_builder_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_content_builder_images_on_content_builder_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_content_builder_images_on_content_builder_id' AND type='index'
+[0m
+  [1m[36m (1.8ms)[0m  [1mCREATE TABLE "content_builder_categories" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "slug" varchar, "content_builder_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (1.0ms)[0m  [1mCREATE  INDEX "index_content_builder_categories_on_content_builder_id" ON "content_builder_categories" ("content_builder_id")[0m
+  [1m[35m (0.7ms)[0m  CREATE TABLE "content_builder_images" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "image" varchar, "content_builder_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.6ms)[0m  [1mCREATE  INDEX "index_content_builder_images_on_content_builder_id" ON "content_builder_images" ("content_builder_id")[0m
+  [1m[35m (0.9ms)[0m  CREATE TABLE "content_builder_relateds" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "content_builder_id" integer, "content_builder_related_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.7ms)[0m  [1mCREATE TABLE "content_builders" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "written_by" varchar, "date_publish" datetime, "content" text, "status" boolean DEFAULT 'f', "slug" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.9ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar NOT NULL) 
+  [1m[36m (0.8ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.0ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (0.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160713185408')[0m
+  [1m[35m (0.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160426205620')
+  [1m[36m (0.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160713185407')[0m
+  [1m[35m (0.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160713185406')
+  [1m[36m (8.0ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.9ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateContentBuilderRelateds (20160426205620)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  CREATE TABLE "content_builder_relateds" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "content_builder_id" integer, "content_builder_related_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160426205620"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+Migrating to CreateContentBuilders (20160713185613)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  CREATE TABLE "content_builders" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "written_by" varchar, "date_publish" datetime, "content" text, "status" boolean DEFAULT 'f', "slug" varchar, "content_builder_category_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mCREATE  INDEX "index_content_builders_on_content_builder_category_id" ON "content_builders" ("content_builder_category_id")[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160713185613"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+Migrating to CreateContentBuilderImages (20160713185614)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mCREATE TABLE "content_builder_images" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "image" varchar, "content_builder_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  CREATE  INDEX "index_content_builder_images_on_content_builder_id" ON "content_builder_images" ("content_builder_id")
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160713185614"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+Migrating to CreateContentBuilderCategories (20160713185615)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  CREATE TABLE "content_builder_categories" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "slug" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160713185615"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_content_builder_images_on_content_builder_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_content_builder_images_on_content_builder_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_content_builders_on_content_builder_category_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_content_builders_on_content_builder_category_id' AND type='index'
+[0m
+  [1m[36m (4.2ms)[0m  [1mCREATE TABLE "content_builder_categories" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "slug" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.8ms)[0m  CREATE TABLE "content_builder_images" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "image" varchar, "content_builder_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (1.0ms)[0m  CREATE  INDEX "index_content_builder_images_on_content_builder_id" ON "content_builder_images" ("content_builder_id")
+  [1m[36m (0.7ms)[0m  [1mCREATE TABLE "content_builder_relateds" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "content_builder_id" integer, "content_builder_related_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.8ms)[0m  CREATE TABLE "content_builders" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "written_by" varchar, "date_publish" datetime, "content" text, "status" boolean DEFAULT 'f', "slug" varchar, "content_builder_category_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.7ms)[0m  [1mCREATE  INDEX "index_content_builders_on_content_builder_category_id" ON "content_builders" ("content_builder_category_id")[0m
+  [1m[35m (0.8ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar NOT NULL) 
+  [1m[36m (0.8ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.0ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (0.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160713185615')[0m
+  [1m[35m (0.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160713185614')
+  [1m[36m (0.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160426205620')[0m
+  [1m[35m (0.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160713185613')
+  [1m[36m (8.1ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.9ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateContentBuilderRelateds (20160426205620)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  CREATE TABLE "content_builder_relateds" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "content_builder_id" integer, "content_builder_related_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160426205620"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+Migrating to CreateContentBuilderCategories (20160713185839)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  CREATE TABLE "content_builder_categories" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "slug" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160713185839"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+Migrating to CreateContentBuilders (20160713185840)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  CREATE TABLE "content_builders" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "written_by" varchar, "date_publish" datetime, "content" text, "status" boolean DEFAULT 'f', "slug" varchar, "content_builder_category_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mCREATE  INDEX "index_content_builders_on_content_builder_category_id" ON "content_builders" ("content_builder_category_id")[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160713185840"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+Migrating to CreateContentBuilderImages (20160713185841)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mCREATE TABLE "content_builder_images" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "image" varchar, "content_builder_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  CREATE  INDEX "index_content_builder_images_on_content_builder_id" ON "content_builder_images" ("content_builder_id")
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160713185841"]]
+  [1m[35m (1.1ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_content_builder_images_on_content_builder_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_content_builder_images_on_content_builder_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_content_builders_on_content_builder_category_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_content_builders_on_content_builder_category_id' AND type='index'
+[0m
+  [1m[36m (3.3ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (1.0ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateContentBuilderCategories (20160713185839)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "content_builder_categories" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "slug" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160713185839"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+Migrating to CreateContentBuilders (20160713185840)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  CREATE TABLE "content_builders" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "written_by" varchar, "date_publish" datetime, "content" text, "status" boolean DEFAULT 'f', "slug" varchar, "content_builder_category_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mCREATE  INDEX "index_content_builders_on_content_builder_category_id" ON "content_builders" ("content_builder_category_id")[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160713185840"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+Migrating to CreateContentBuilderImages (20160713185841)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mCREATE TABLE "content_builder_images" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "image" varchar, "content_builder_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  CREATE  INDEX "index_content_builder_images_on_content_builder_id" ON "content_builder_images" ("content_builder_id")
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160713185841"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_content_builder_images_on_content_builder_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_content_builder_images_on_content_builder_id' AND type='index'
+
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_content_builders_on_content_builder_category_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_content_builders_on_content_builder_category_id' AND type='index'
+[0m
+  [1m[36m (7.4ms)[0m  [1mCREATE TABLE "content_builder_categories" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "slug" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (1.1ms)[0m  CREATE TABLE "content_builder_images" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "image" varchar, "content_builder_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.2ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (1.4ms)[0m  CREATE  INDEX "index_content_builder_images_on_content_builder_id" ON "content_builder_images" ("content_builder_id")
+  [1m[36m (1.1ms)[0m  [1mCREATE TABLE "content_builders" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "written_by" varchar, "date_publish" datetime, "content" text, "status" boolean DEFAULT 'f', "slug" varchar, "content_builder_category_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.9ms)[0m  CREATE  INDEX "index_content_builders_on_content_builder_category_id" ON "content_builders" ("content_builder_category_id")
+  [1m[36m (1.5ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (1.5ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.2ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (1.2ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160713185841')
+  [1m[36m (1.1ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160713185840')[0m
+  [1m[35m (0.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160713185839')
+  [1m[36m (2.7ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.7ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateContentBuilderCategories (20160713200214)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "content_builder_categories" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "slug" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160713200214"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+Migrating to CreateContentBuilders (20160713200215)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  CREATE TABLE "content_builders" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "written_by" varchar, "date_publish" datetime, "content" text, "status" boolean DEFAULT 'f', "slug" varchar, "content_builder_category_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mCREATE  INDEX "index_content_builders_on_content_builder_category_id" ON "content_builders" ("content_builder_category_id")[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160713200215"]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+Migrating to CreateContentBuilderImages (20160713200216)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mCREATE TABLE "content_builder_images" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "image" varchar, "content_builder_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  CREATE  INDEX "index_content_builder_images_on_content_builder_id" ON "content_builder_images" ("content_builder_id")
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160713200216"]]
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_content_builder_images_on_content_builder_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_content_builder_images_on_content_builder_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_content_builders_on_content_builder_category_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_content_builders_on_content_builder_category_id' AND type='index'
+[0m
+  [1m[36m (2.4ms)[0m  [1mCREATE TABLE "content_builder_categories" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "slug" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.7ms)[0m  CREATE TABLE "content_builder_images" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "image" varchar, "content_builder_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (0.9ms)[0m  CREATE  INDEX "index_content_builder_images_on_content_builder_id" ON "content_builder_images" ("content_builder_id")
+  [1m[36m (0.8ms)[0m  [1mCREATE TABLE "content_builders" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "written_by" varchar, "date_publish" datetime, "content" text, "status" boolean DEFAULT 'f', "slug" varchar, "content_builder_category_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.7ms)[0m  CREATE  INDEX "index_content_builders_on_content_builder_category_id" ON "content_builders" ("content_builder_category_id")
+  [1m[36m (0.8ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.7ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.0ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (0.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160713200216')
+  [1m[36m (0.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160713200215')[0m
+  [1m[35m (0.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160713200214')
+  [1m[36m (6.6ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.7ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateContentBuilderCategories (20160713200802)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  CREATE TABLE "content_builder_categories" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "slug" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160713200802"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+Migrating to CreateContentBuilders (20160713200803)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  CREATE TABLE "content_builders" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "written_by" varchar, "date_publish" datetime, "content" text, "status" boolean DEFAULT 'f', "slug" varchar, "content_builder_category_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mCREATE  INDEX "index_content_builders_on_content_builder_category_id" ON "content_builders" ("content_builder_category_id")[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160713200803"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+Migrating to CreateContentBuilderImages (20160713200804)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mCREATE TABLE "content_builder_images" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "image" varchar, "content_builder_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  CREATE  INDEX "index_content_builder_images_on_content_builder_id" ON "content_builder_images" ("content_builder_id")
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160713200804"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_content_builder_images_on_content_builder_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_content_builder_images_on_content_builder_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_content_builders_on_content_builder_category_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_content_builders_on_content_builder_category_id' AND type='index'
+[0m
+  [1m[36m (8.6ms)[0m  [1mCREATE TABLE "content_builder_categories" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "slug" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.7ms)[0m  CREATE TABLE "content_builder_images" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "image" varchar, "content_builder_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (0.9ms)[0m  CREATE  INDEX "index_content_builder_images_on_content_builder_id" ON "content_builder_images" ("content_builder_id")
+  [1m[36m (1.0ms)[0m  [1mCREATE TABLE "content_builders" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "written_by" varchar, "date_publish" datetime, "content" text, "status" boolean DEFAULT 'f', "slug" varchar, "content_builder_category_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.8ms)[0m  CREATE  INDEX "index_content_builders_on_content_builder_category_id" ON "content_builders" ("content_builder_category_id")
+  [1m[36m (0.8ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.8ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.0ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (0.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160713200804')
+  [1m[36m (0.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160713200803')[0m
+  [1m[35m (0.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160713200802')
