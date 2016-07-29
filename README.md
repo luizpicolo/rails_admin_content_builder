@@ -29,6 +29,8 @@ Supported Asset Plugin
 
 ## Installation
 
+**Test with rails < 5 and TurboLink < 5**
+
 Add this line to your application's Gemfile:
 
 ```ruby
