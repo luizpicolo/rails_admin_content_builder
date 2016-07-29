@@ -28,8 +28,8 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'capybara', '~> 2.7', '>= 2.7.0'
   spec.add_development_dependency 'launchy', '~> 2.4', '>= 2.4.3'
   spec.add_development_dependency "shoulda-matchers", "~> 3.1"
-  spec.add_development_dependency 'selenium-webdriver', '~> 0'
-  spec.add_development_dependency 'factory_girl_rails', '~> 0'
+  spec.add_development_dependency 'selenium-webdriver', '~> 2.53', '>= 2.53.4'
+  spec.add_development_dependency 'factory_girl_rails', '~> 4.7', '>= 4.7.0'
   spec.add_development_dependency 'faker', '~> 1.6', '>= 1.6.3'
 
   spec.add_runtime_dependency "carrierwave", "~> 0.11.0"
@@ -38,5 +38,5 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency 'friendly_id', '~> 5.1', '>= 5.1.0'
   spec.add_runtime_dependency "simple_form", "~> 3.2"
   spec.add_runtime_dependency 'search_cop', '~> 1.0', '>= 1.0.6'
-  spec.add_runtime_dependency 'rails-html-sanitizer', '~> 0'
+  spec.add_runtime_dependency 'rails-html-sanitizer', '~> 1.0', '>= 1.0.0'
 end
