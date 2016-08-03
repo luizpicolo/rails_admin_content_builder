@@ -33,7 +33,7 @@ Add this line to your application's Gemfile:
 
 ```ruby
 gem 'rails_admin'
-gem 'rails_admin_content_builder', git: 'git://github.com/luizpicolo/rails_admin_content_builder.git'
+gem 'rails_admin_content_builder'
 ```
 
 Run the generator and migrations
@@ -112,6 +112,13 @@ In your show content view
 content_sanitized : Text
 content_builder_images : Object
 ```
+
+# Demonstration
+
+Content Builder:
+[link](https://example-cb-fc.herokuapp.com/admin/rails_admin_content_builder~content_builder/1/content_builder)    
+Content:
+[link](https://example-cb-fc.herokuapp.com/noticias/general/orem-ipsum-dolor-sit-amet-consectetur-adipiscing-elit-aenean-tellus-ante-auctor-ut-facilisis-nec)
 
 ## Development
 
