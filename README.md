@@ -1,7 +1,5 @@
 # RailsAdminContentBuilder
 
-![Work in progress](http://messages.hellobits.com/warning.svg?message=Work%20in%20progress)
-
 [![Build Status](https://travis-ci.org/luizpicolo/rails_admin_content_builder.svg?branch=master)](https://travis-ci.org/luizpicolo/rails_admin_content_builder)
 [![Code Climate](https://codeclimate.com/github/luizpicolo/rails_admin_content_builder/badges/gpa.svg)](https://codeclimate.com/github/luizpicolo/rails_admin_content_builder)
 [![Test Coverage](https://codeclimate.com/github/luizpicolo/rails_admin_content_builder/badges/coverage.svg)](https://codeclimate.com/github/luizpicolo/rails_admin_content_builder/coverage)
