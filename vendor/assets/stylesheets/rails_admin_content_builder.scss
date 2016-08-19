@@ -166,7 +166,7 @@
   font-size: 1.1em;
 
   &:before {
-    content: '"';
+    content: "\“";
 
     position: absolute;
     top: -.5rem;
@@ -176,7 +176,6 @@
     line-height: 1;
 
     color: rgba(0,0,0,.2);
-    font-family: cursive;
     font-size: 4em;
   }
 }
