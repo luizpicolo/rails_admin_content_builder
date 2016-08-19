@@ -21,6 +21,18 @@
   <%= link_to '#', class: 'cb-snippet__btn', data: {snippet: '5'} do %>
     <%= image_tag 'cb-snippet-video.jpg', class: 'cb-snippet__image' %>
   <% end %>
+
+  <%= link_to '#', class: 'cb-snippet__btn', data: {snippet: '6'} do %>
+    <%= image_tag 'cb-snippet-quote-text.jpg', class: 'cb-snippet__image' %>
+  <% end %>
+
+  <%= link_to '#', class: 'cb-snippet__btn', data: {snippet: '7'} do %>
+    <%= image_tag 'cb-snippet-text-quote.jpg', class: 'cb-snippet__image' %>
+  <% end %>
+
+  <%= link_to '#', class: 'cb-snippet__btn', data: {snippet: '8'} do %>
+    <%= image_tag 'cb-snippet-quote.jpg', class: 'cb-snippet__image' %>
+  <% end %>
 </div>
 
 <%= simple_form_for rails_admin.content_builder_url(@abstract_model.to_param, id: @object.id), html: { class: 'cb-form' }, remote: false do |f| %>

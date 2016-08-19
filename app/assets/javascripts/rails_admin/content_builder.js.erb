@@ -188,6 +188,78 @@ $(document).on('click', '.cb-snippet__btn', function(e) {
     break;
 
     default:
+
+    case '6':
+    var element = '<div id="'+ id + '" class="cb-content">';
+
+    element += '<div class="cb-tools">';
+    element += '<a class="cb-tools__btn cb-tools__btn--move fa fa-arrows" href="#"></a>';
+    element += '<a class="cb-tools__btn cb-tools__btn--delete fa fa-trash" href="#'+ id + '"></a>';
+    element += '</div>';
+
+    element += '<blockquote class="cb-blockquote cb-blockquote--left">';
+    element += '<div class="cb-blockquote__text cb-text"><p>Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos</p></div>';
+    element += '<footer class="cb-blockquote__footer cb-text">Lorem Ipsum</footer>';
+    element += '</blockquote>';
+
+    element += '<div class="cb-text">';
+    element += '<p>Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos.</p>';
+    element += '</div>';
+
+    element += '</div>';
+
+    container.append(element);
+    addEventToInputFile(id);
+    scrollTo(id);
+    break;
+
+    case '7':
+    var element = '<div id="'+ id + '" class="cb-content">';
+
+    element += '<div class="cb-tools">';
+    element += '<a class="cb-tools__btn cb-tools__btn--move fa fa-arrows" href="#"></a>';
+    element += '<a class="cb-tools__btn cb-tools__btn--delete fa fa-trash" href="#'+ id + '"></a>';
+    element += '</div>';
+
+    element += '<blockquote class="cb-blockquote cb-blockquote--right">';
+    element += '<div class="cb-blockquote__text cb-text"><p>Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos</p></div>';
+    element += '<footer class="cb-blockquote__footer cb-text">Lorem Ipsum</footer>';
+    element += '</blockquote>';
+
+    element += '<div class="cb-text">';
+    element += '<p>Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos.</p>';
+    element += '</div>';
+
+    element += '</div>';
+
+    container.append(element);
+    addEventToInputFile(id);
+    scrollTo(id);
+    break;
+
+    case '8':
+    var element = '<div id="'+ id + '" class="cb-content">';
+
+    element += '<div class="cb-tools">';
+    element += '<a class="cb-tools__btn cb-tools__btn--move fa fa-arrows" href="#"></a>';
+    element += '<a class="cb-tools__btn cb-tools__btn--delete fa fa-trash" href="#'+ id + '"></a>';
+    element += '</div>';
+
+    element += '<blockquote class="cb-blockquote">';
+    element += '<div class="cb-blockquote__text cb-text"><p>Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos</p></div>';
+    element += '<footer class="cb-blockquote__footer cb-text">Lorem Ipsum</footer>';
+    element += '</blockquote>';
+
+    element += '<div class="cb-text">';
+    element += '<p>Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos.</p>';
+    element += '</div>';
+
+    element += '</div>';
+
+    container.append(element);
+    addEventToInputFile(id);
+    scrollTo(id);
+    break;
   };
 
   activeMediumEditor();

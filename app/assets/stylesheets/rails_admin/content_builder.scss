@@ -128,7 +128,7 @@
   line-height: 1.6;
 
   color: rgba(0,0,0,.7);
-  font-family: arial, sans-serif;
+  font-family: sans-serif;
   font-size: 16px;
 
   margin-bottom: 30px;
@@ -204,6 +204,73 @@
 
 .cb-video--center {
   margin-bottom: 30px;
+}
+
+
+.cb-blockquote {
+  position: relative;
+  margin: 0 0 20px;
+
+  padding: 32px 0 0 32px;
+  border: 0;
+}
+
+.cb-blockquote--left {
+  float: left;
+  width: 50%;
+  margin: 0 30px 20px 0;
+}
+
+.cb-blockquote--right {
+  float: right;
+  width: 50%;
+  margin: 0 30px 20px 0;
+}
+
+.cb-blockquote__text {
+  margin: 0 0 16px;
+
+  line-height: 1.4;
+
+  color: rgba(0,0,0,.6);
+  font-family: sans-serif;
+  font-size: 22px;
+
+  &:before {
+    content: '"';
+
+    position: absolute;
+    top: -8px;
+    left: 0;
+
+    display: block;
+    line-height: 1;
+
+    color: rgba(0,0,0,.2);
+    font-family: cursive;
+    font-size: 80px;
+  }
+}
+
+.cb-blockquote__footer {
+  position: relative;
+  margin: 0;
+
+  padding-left: 24px;
+
+  color: rgba(0,0,0,.6);
+  font-family: sans-serif;
+  font-size: 16px;
+
+  &:before {
+    content: "\2014 \00A0";
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    display: block;
+  }
 }
 
 

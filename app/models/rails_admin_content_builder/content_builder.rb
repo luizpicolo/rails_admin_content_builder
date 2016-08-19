@@ -20,7 +20,7 @@ module RailsAdminContentBuilder
       white_list_sanitizer = Rails::Html::WhiteListSanitizer.new
       white_list_sanitizer.sanitize(
         self.content,
-        tags: %w(div b i a u p img figure figcaption a iframe),
+        tags: %w(div b i a u p img figure figcaption a iframe footer blockquote),
         attributes: %w(src class alt href allowfullscreen frameborder height width)).try(:html_safe)
     end
   end
