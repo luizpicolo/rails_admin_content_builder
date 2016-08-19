@@ -194,7 +194,7 @@ $(document).on('click', '.cb-snippet__btn', function(e) {
 });
 
 // scroll to
-var scrollTo = function(id) {
+ function scrollTo(id) {
   if(id) {
     $('html, body').animate({
       scrollTop: $('#' + id).offset().top
@@ -203,12 +203,12 @@ var scrollTo = function(id) {
 };
 
 // add event on input file
-var addEventToInputFile = function(id) {
+function addEventToInputFile(id) {
   $('#' + id).on('change', fileSelectAndUpload);
 };
 
 // upload file via ajax
-var fileSelectAndUpload = function(evt) {
+function fileSelectAndUpload(evt) {
   var file = evt.target.files[0];
 
   if(file) {
@@ -240,7 +240,7 @@ var fileSelectAndUpload = function(evt) {
 };
 
 // get image of position
-var getImageOfPosition = function(position, e) {
+function getImageOfPosition(position, e) {
   switch(position) {
     case 'left':
     case 'right':
@@ -254,12 +254,12 @@ var getImageOfPosition = function(position, e) {
 };
 
 // generate random id
-var generateID = function() {
+function generateID() {
   return '_' + Math.random().toString(36).substr(2, 9);
 };
 
 // active medium editor plugin
-var activeMediumEditor = function() {
+function activeMediumEditor() {
   var editor = new MediumEditor('.cb-text', {
     placeholder: {
       text: '',
@@ -283,7 +283,7 @@ var activeMediumEditor = function() {
 };
 
 // parse url by youtube using expression regular
-var youtubeParser = function(url) {
+function youtubeParser(url) {
   var regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#\&\?]*).*/;
   var match = url.match(regExp);
 
