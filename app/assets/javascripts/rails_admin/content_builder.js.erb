@@ -2,12 +2,15 @@
 
 // when rails admin ready
 $(document).on('rails_admin.dom_ready', function() {
+  activeSortable();
+
   $('.cb-form').on('submit', function(e){
     var content = $('.cb-container').html();
     $('#content').attr('value', content);
   });
 
-  $('.cb-tools__input--upload').each(function() {
+  $('.cb-content').each(function() {
+    autocomplete($(this).attr('id'));
     addEventToInputFile($(this).attr('id'));
   });
 
@@ -58,6 +61,7 @@ $(document).on('click', '.cb-snippet__btn', function(e) {
   var snippet = $(this).attr('data-snippet');
   var container = $('.cb-container');
   var id = generateID();
+  var section_id = generateID();
 
   switch (snippet) {
     case '1':
@@ -260,10 +264,80 @@ $(document).on('click', '.cb-snippet__btn', function(e) {
     addEventToInputFile(id);
     scrollTo(id);
     break;
+
+    case '9':
+    var sections = [];
+    var element = '<div id="'+ id + '" class="cb-content">';
+
+    element += '<div class="cb-tools">';
+    element += '<a class="cb-tools__btn cb-tools__btn--move fa fa-arrows" href="#"></a>';
+    element += '<a class="cb-tools__btn cb-tools__btn--delete fa fa-trash" href="#'+ id + '"></a>';
+    element += '</div>';
+
+    element += '<aside class="cb-relational cb-relational--left">'
+    element += '<h1 class="cb-aside-title">Notícias relacionadas</h1>';
+    element += '<input class="cb-search" type="text" name="search" placeholder="Buscar notícia">';
+    element += '<ol class="cb-relational__list">';
+
+    element += '</ol>';
+    element += '</aside>';
+
+    element += '<div class="cb-text">';
+    element += '<p>Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos.</p>';
+    element += '</div>';
+
+    element += '</div>';
+
+    container.append(element);
+    addEventToInputFile(id);
+    autocomplete(id);
+    scrollTo(id);
+    activeSortable();
+    break;
+
+    case '10':
+    var sections = [];
+    var element = '<div id="'+ id + '" class="cb-content">';
+
+    element += '<div class="cb-tools">';
+    element += '<a class="cb-tools__btn cb-tools__btn--move fa fa-arrows" href="#"></a>';
+    element += '<a class="cb-tools__btn cb-tools__btn--delete fa fa-trash" href="#'+ id + '"></a>';
+    element += '</div>';
+
+    element += '<aside class="cb-relational cb-relational--right">'
+    element += '<h1 class="cb-aside-title">Notícias relacionadas</h1>';
+    element += '<input class="cb-search" type="text" name="search" placeholder="Buscar notícia">';
+    element += '<ol class="cb-relational__list">';
+
+    element += '</ol>';
+    element += '</aside>';
+
+    element += '<div class="cb-text">';
+    element += '<p>Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos.</p>';
+    element += '</div>';
+
+    element += '</div>';
+
+    container.append(element);
+    addEventToInputFile(id);
+    autocomplete(id);
+    scrollTo(id);
+    activeSortable();
+    break;
   };
 
   activeMediumEditor();
 });
+
+// sortable to relational
+function activeSortable() {
+  $('.cb-relational__list').sortable({
+    revert: true,
+    placeholder: 'ui-sortable-placeholder',
+    handle: '.cb-relational__btn--move',
+    cursor: 'move',
+  });
+};
 
 // scroll to
  function scrollTo(id) {
@@ -364,4 +438,29 @@ function youtubeParser(url) {
   } else {
     alert('Ops! Você não informou uma url válida.');
   }
+};
+
+function autocomplete(id) {
+  $('#' + id + ' input:text').autocomplete({
+    source: "search_content",
+    minLength: 5,
+    select: function(event, ui) {
+      section_id = generateID();
+      element = '<li id="'+ section_id +'" class="cb-relational__item">';
+      element += '<a href="/noticias/' + ui.item.content_builder_category.slug + '/' + ui.item.slug + '" class="cb-relational__link" target="blank"></a>';
+      element += '<h2 class="cb-relational__title cb-text">'+ ui.item.title +'</h2>';
+      element += '<div class="cb-tools">';
+      element += '<a class="cb-tools__btn cb-tools__btn--small cb-relational__btn--move fa fa-arrows" href="#"></a>';
+      element += '<a class="cb-tools__btn cb-tools__btn--small cb-tools__btn--delete fa fa-trash" href="#'+ section_id +'"></a>';
+      element += '</div>';
+      element += '</li>';
+      $("#" + id + ' ol').append(element);
+      activeSortable();
+      return false;
+    }
+  }).autocomplete("instance")._renderItem = function(ul, item) {
+    return $( "<li>" )
+        .append( "<a>" + item.title + "</a>" )
+        .appendTo( ul );
+  };
 };
