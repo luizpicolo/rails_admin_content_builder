@@ -15,3 +15,14 @@ pt-BR:
           save: "Salvar"
           publish: "Publicar"
           unpublish: 'Despublicar'
+        snippet:
+          text: "Texto"
+          image_left: "Imagem a esquerda"
+          image_right: "Imagem a direita"
+          image_center: "Imagem centralizada"
+          video: "Vídeo"
+          blockquote_right: "Citação a esqueda"
+          blockquote_left: "Citação a direita"
+          blockquote_center: "Citação centralizada"
+          related_content_right: "Notícias relacionadas a esquerda"
+          related_content_left: "Notícias relacionadas a direita"

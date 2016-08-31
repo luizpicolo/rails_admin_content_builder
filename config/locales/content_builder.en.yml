@@ -15,3 +15,14 @@ en:
           save: "Save"
           publish: "Publish"
           unpublish: 'Unpublish'
+        snippet:
+          text: "Text"
+          image_left: "Image left"
+          image_right: "Image right"
+          image_center: "Image center"
+          video: "video"
+          blockquote_right: "Blockquote right"
+          blockquote_left: "Blockquote left"
+          blockquote_center: "Blockquote center"
+          related_content_right: "Related content right"
+          related_content_left: "Related content left"
