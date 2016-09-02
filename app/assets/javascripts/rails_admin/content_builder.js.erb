@@ -275,11 +275,9 @@ $(document).on('click', '.cb-snippet__btn', function(e) {
     element += '</div>';
 
     element += '<aside class="cb-relational cb-relational--left">'
-    element += '<h1 class="cb-aside-title">Notícias relacionadas</h1>';
+    element += '<h2 class="cb-relational__title">Saiba mais</h2>';
     element += '<input class="cb-search" type="text" name="search" placeholder="Buscar notícia">';
-    element += '<ol class="cb-relational__list">';
-
-    element += '</ol>';
+    element += '<ol class="cb-relational__list"></ol>';
     element += '</aside>';
 
     element += '<div class="cb-text">';
@@ -305,11 +303,9 @@ $(document).on('click', '.cb-snippet__btn', function(e) {
     element += '</div>';
 
     element += '<aside class="cb-relational cb-relational--right">'
-    element += '<h1 class="cb-aside-title">Notícias relacionadas</h1>';
+    element += '<h2 class="cb-relational__title">Saiba mais</h2>';
     element += '<input class="cb-search" type="text" name="search" placeholder="Buscar notícia">';
-    element += '<ol class="cb-relational__list">';
-
-    element += '</ol>';
+    element += '<ol class="cb-relational__list"></ol>';
     element += '</aside>';
 
     element += '<div class="cb-text">';
@@ -423,7 +419,28 @@ function activeMediumEditor() {
     anchorPreview: false,
 
     paste: {
-      cleanPastedHTML: true
+      forcePlainText: true,
+      cleanPastedHTML: false,
+      cleanReplacements: [],
+      cleanAttrs: ['class', 'style', 'dir'],
+      cleanTags: ['meta'],
+      unwrapTags: []
+    }
+  });
+
+  var editor = new MediumEditor('.cb-editable', {
+    placeholder: false,
+    toolbar: false,
+    anchor: false,
+    anchorPreview: false,
+
+    paste: {
+      forcePlainText: true,
+      cleanPastedHTML: false,
+      cleanReplacements: [],
+      cleanAttrs: ['class', 'style', 'dir'],
+      cleanTags: ['meta'],
+      unwrapTags: []
     }
   });
 };
@@ -446,16 +463,20 @@ function autocomplete(id) {
     minLength: 5,
     select: function(event, ui) {
       section_id = generateID();
+
       element = '<li id="'+ section_id +'" class="cb-relational__item">';
       element += '<a href="/noticias/' + ui.item.content_builder_category.slug + '/' + ui.item.slug + '" class="cb-relational__link" target="blank"></a>';
-      element += '<h2 class="cb-relational__title cb-text">'+ ui.item.title +'</h2>';
+      element += '<h2 class="cb-relational__caption cb-editable">'+ ui.item.title +'</h2>';
       element += '<div class="cb-tools">';
       element += '<a class="cb-tools__btn cb-tools__btn--small cb-relational__btn--move fa fa-arrows" href="#"></a>';
       element += '<a class="cb-tools__btn cb-tools__btn--small cb-tools__btn--delete fa fa-trash" href="#'+ section_id +'"></a>';
       element += '</div>';
       element += '</li>';
+
       $("#" + id + ' ol').append(element);
+      activeMediumEditor();
       activeSortable();
+      
       return false;
     }
   }).autocomplete("instance")._renderItem = function(ul, item) {
