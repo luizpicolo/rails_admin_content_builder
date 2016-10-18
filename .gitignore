@@ -2,9 +2,9 @@
 /.yardoc
 /Gemfile.lock
 /_yardoc/
-/coverage/
 /doc/
 /pkg/
+/coverage/
 /spec/reports/
 /tmp/
 /.idea/*

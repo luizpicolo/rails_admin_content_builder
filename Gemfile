@@ -8,6 +8,6 @@ group :development, :test do
   gem 'rails_admin'
   gem 'fuubar'
   gem 'rubocop'
-  gem 'codeclimate-test-reporter'
   gem 'simplecov', require: false
+  gem "codeclimate-test-reporter"
 end
