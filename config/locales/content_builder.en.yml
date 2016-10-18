@@ -12,7 +12,9 @@ en:
         news_source: "News source"
         summary: "Summary"
         url: "Paste YouTube url"
+        invalid_url: "Invalid url"
         image_description: 'Image description'
+        search_content: 'Search Content'
         button:
           save: "Save"
           publish: "Publish"

@@ -12,7 +12,9 @@ pt-BR:
         news_source: "Fonte"
         summary: "Resumo"
         url: "Cole a url do YouTube"
+        invalid_url: "Ops! Você não informou uma url válida"
         image_description: 'Divulgação'
+        search_content: 'Buscar notícias'
         button:
           save: "Salvar"
           publish: "Publicar"

@@ -208,7 +208,7 @@ $(document).on('click', '.cb-snippet__btn', function(e) {
     element += '</div>';
 
     element += '<blockquote class="cb-blockquote cb-blockquote--left">';
-    element += '<div class="cb-blockquote__text cb-text"><p>Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos</p></div>';
+    element += '<div class="cb-blockquote__text cb-text"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur venenatis</p></div>';
     element += '<footer class="cb-blockquote__footer cb-text">Lorem Ipsum</footer>';
     element += '</blockquote>';
 
@@ -232,7 +232,7 @@ $(document).on('click', '.cb-snippet__btn', function(e) {
     element += '</div>';
 
     element += '<blockquote class="cb-blockquote cb-blockquote--right">';
-    element += '<div class="cb-blockquote__text cb-text"><p>Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos</p></div>';
+    element += '<div class="cb-blockquote__text cb-text"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur venenatis</p></div>';
     element += '<footer class="cb-blockquote__footer cb-text">Lorem Ipsum</footer>';
     element += '</blockquote>';
 
@@ -256,7 +256,7 @@ $(document).on('click', '.cb-snippet__btn', function(e) {
     element += '</div>';
 
     element += '<blockquote class="cb-blockquote">';
-    element += '<div class="cb-blockquote__text cb-text"><p>Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos</p></div>';
+    element += '<div class="cb-blockquote__text cb-text"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur venenatis</p></div>';
     element += '<footer class="cb-blockquote__footer cb-text">Lorem Ipsum</footer>';
     element += '</blockquote>';
 
@@ -282,7 +282,7 @@ $(document).on('click', '.cb-snippet__btn', function(e) {
 
     element += '<aside class="cb-relational cb-relational--left">'
     element += '<h2 class="cb-relational__title">Saiba mais</h2>';
-    element += '<input class="cb-search" type="text" name="search" placeholder="Buscar notícia">';
+    element += '<input class="cb-search" type="text" name="search" placeholder="<%= I18n.t('admin.actions.content_builder.search_content')%>">';
     element += '<ol class="cb-relational__list"></ol>';
     element += '</aside>';
 
@@ -310,7 +310,7 @@ $(document).on('click', '.cb-snippet__btn', function(e) {
 
     element += '<aside class="cb-relational cb-relational--right">'
     element += '<h2 class="cb-relational__title">Saiba mais</h2>';
-    element += '<input class="cb-search" type="text" name="search" placeholder="Buscar notícia">';
+    element += '<input class="cb-search" type="text" name="search" placeholder="<%= I18n.t('admin.actions.content_builder.search_content')%>">';
     element += '<ol class="cb-relational__list"></ol>';
     element += '</aside>';
 
@@ -459,7 +459,7 @@ function youtubeParser(url) {
   if(match && match[7].length == 11) {
     return b = match[7];
   } else {
-    alert('Ops! Você não informou uma url válida.');
+    alert('<%= I18n.t('admin.actions.content_builder.invalid_url')%>');
   }
 };
 
