@@ -11,6 +11,8 @@ en:
         written_by: "Writter By"
         news_source: "News source"
         summary: "Summary"
+        url: "Paste YouTube url"
+        image_description: 'Image description'
         button:
           save: "Save"
           publish: "Publish"
