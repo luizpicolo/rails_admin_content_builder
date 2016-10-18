@@ -8,4 +8,3 @@ group :development, :test do
   gem 'shoulda-matchers', '~> 3.1'
   gem 'rails_admin_content_builder', path: '../../'
 end
-

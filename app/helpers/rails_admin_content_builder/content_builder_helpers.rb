@@ -7,26 +7,32 @@
 #     end
 #   end
 module RailsAdminContentBuilder
+  # This is a Module
   module ContentBuilderHelpers
     # Return content Object
     #
     #   @content = content_created
     def content_created
-      RailsAdminContentBuilder::ContentBuilder
+      set_content_builder
     end
 
     # Return all contents created
     #
     #   @content = all_contents_created
     def all_contents_created
-      RailsAdminContentBuilder::ContentBuilder.where(status: true)
+      set_content_builder.where(status: true)
     end
 
     # Return specific contents created by slug
     #
     #   @content = find_content_created_by_slug('slug')
     def find_content_created_by_slug(slug)
-      RailsAdminContentBuilder::ContentBuilder.where(status: true, slug: slug).first
+      set_content_builder.where(status: true, slug: slug).first
+    end
+
+    # Return object RailsAdminContentBuilder::ContentBuilder
+    def set_content_builder
+      RailsAdminContentBuilder::ContentBuilder
     end
   end
 end

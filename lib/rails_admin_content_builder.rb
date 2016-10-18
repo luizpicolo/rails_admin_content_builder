@@ -1,4 +1,4 @@
-require "rails_admin_content_builder/engine"
+require 'rails_admin_content_builder/engine'
 
 module RailsAdminContentBuilder
 end
@@ -23,7 +23,7 @@ module RailsAdmin
         end
 
         register_instance_option :controller do
-          Proc.new do
+          proc do
             @object = @abstract_model.model.find(params[:id])
             @response = {}
 
@@ -46,7 +46,7 @@ module RailsAdmin
               end
             end
 
-            render :action => @action.template_name
+            render action: @action.template_name
           end
         end
       end

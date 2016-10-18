@@ -1,0 +1,10 @@
+AllCops:
+  Exclude:
+    - 'spec/dummy/**/*'
+    - 'vendor/bundle/**/*'
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Documentation:
+  Enabled: false
