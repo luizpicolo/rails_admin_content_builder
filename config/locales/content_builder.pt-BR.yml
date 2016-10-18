@@ -11,6 +11,8 @@ pt-BR:
         written_by: "Autor"
         news_source: "Fonte"
         summary: "Resumo"
+        url: "Cole a url do YouTube"
+        image_description: 'Divulgação'
         button:
           save: "Salvar"
           publish: "Publicar"
