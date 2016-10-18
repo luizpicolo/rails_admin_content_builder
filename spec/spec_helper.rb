@@ -1,13 +1,13 @@
 ENV['RAILS_ENV'] ||= 'test'
 
-require File.expand_path("../dummy/config/environment.rb", __FILE__)
+require File.expand_path('../dummy/config/environment.rb', __FILE__)
 require 'rspec/rails'
 require 'faker'
 require 'rails_admin/engine'
 require 'rails_admin/config'
 require 'shoulda-matchers'
 require 'factory_girl_rails'
-require "codeclimate-test-reporter"
+require 'codeclimate-test-reporter'
 require 'simplecov'
 
 CodeClimate::TestReporter.start
@@ -25,7 +25,7 @@ RSpec.configure do |config|
   config.infer_base_class_for_anonymous_controllers = false
   config.include RailsAdmin::Engine.routes.url_helpers
   config.include RailsAdmin::Config
-  config.order = "random"
+  config.order = 'random'
 end
 
 Shoulda::Matchers.configure do |config|

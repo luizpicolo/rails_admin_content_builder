@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-RSpec.describe RailsAdminContentBuilder::ContentBuilderImage, :type => :model do
+RSpec.describe RailsAdminContentBuilder::ContentBuilderImage, type: :model do
   describe 'validates' do
     it { should validate_presence_of(:image) }
   end

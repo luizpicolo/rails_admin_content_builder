@@ -1,14 +1,15 @@
 require 'spec_helper'
 
-feature 'change status content builder', :type => :feature do
-
+feature 'change status content builder', type: :feature do
   before(:each) do
     @model_name = 'rails_admin_content_builder~content_builder'
   end
 
   scenario 'publish', js: false do
     content = FactoryGirl.create(:content_builder)
-    visit rails_admin.content_builder_path(model_name: @model_name, id: content.id)
+    visit rails_admin.content_builder_path(
+      model_name: @model_name, id: content.id
+    )
 
     click_button('Publish')
 
@@ -18,7 +19,9 @@ feature 'change status content builder', :type => :feature do
 
   scenario 'unpublish', js: false do
     content = FactoryGirl.create(:content_builder, status: true)
-    visit rails_admin.content_builder_path(model_name: @model_name, id: content.id)
+    visit rails_admin.content_builder_path(
+      model_name: @model_name, id: content.id
+    )
 
     click_button('Unpublish')
 

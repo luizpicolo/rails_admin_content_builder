@@ -1,0 +1,12 @@
+AllCops:
+  Exclude:
+    - 'spec/dummy/bin/**/*'
+    - 'spec/dummy/db/schema.rb'
+    - 'spec/dummy/tmp/**/*'
+    - 'vendor/bundle/**/*'
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Documentation:
+  Enabled: false

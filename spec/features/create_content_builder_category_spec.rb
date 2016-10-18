@@ -1,7 +1,6 @@
 require 'spec_helper'
 
-feature 'create content builder category', :type => :feature do
-
+feature 'create content builder category', type: :feature do
   before(:each) do
     @model_name = 'rails_admin_content_builder~content_builder_category'
   end
@@ -13,6 +12,8 @@ feature 'create content builder category', :type => :feature do
 
     click_button('Save')
 
-    expect(page).to have_content('Content builder category successfully created')
+    expect(page).to have_content(
+      'Content builder category successfully created'
+    )
   end
 end

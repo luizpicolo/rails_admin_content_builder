@@ -11,36 +11,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160713200804) do
-
-  create_table "content_builder_categories", force: :cascade do |t|
-    t.string   "name"
-    t.string   "slug"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+ActiveRecord::Schema.define(version: 20_160_713_200_804) do
+  create_table 'content_builder_categories', force: :cascade do |t|
+    t.string   'name'
+    t.string   'slug'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
   end
 
-  create_table "content_builder_images", force: :cascade do |t|
-    t.string   "image"
-    t.integer  "content_builder_id"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
+  create_table 'content_builder_images', force: :cascade do |t|
+    t.string   'image'
+    t.integer  'content_builder_id'
+    t.datetime 'created_at',         null: false
+    t.datetime 'updated_at',         null: false
   end
 
-  add_index "content_builder_images", ["content_builder_id"], name: "index_content_builder_images_on_content_builder_id"
+  add_index 'content_builder_images', ['content_builder_id'], name: 'index_content_builder_images_on_content_builder_id'
 
-  create_table "content_builders", force: :cascade do |t|
-    t.string   "title"
-    t.string   "written_by"
-    t.datetime "date_publish"
-    t.text     "content"
-    t.boolean  "status",                      default: false
-    t.string   "slug"
-    t.integer  "content_builder_category_id"
-    t.datetime "created_at",                                  null: false
-    t.datetime "updated_at",                                  null: false
+  create_table 'content_builders', force: :cascade do |t|
+    t.string   'title'
+    t.string   'written_by'
+    t.datetime 'date_publish'
+    t.text     'content'
+    t.boolean  'status', default: false
+    t.string   'slug'
+    t.integer  'content_builder_category_id'
+    t.datetime 'created_at',                                  null: false
+    t.datetime 'updated_at',                                  null: false
   end
 
-  add_index "content_builders", ["content_builder_category_id"], name: "index_content_builders_on_content_builder_category_id"
-
+  add_index 'content_builders', ['content_builder_category_id'], name: 'index_content_builders_on_content_builder_category_id'
 end

@@ -1,4 +1,4 @@
-require "rails_admin_content_builder/engine"
+require 'rails_admin_content_builder/engine'
 
 module RailsAdminContentBuilder
 end
@@ -23,7 +23,7 @@ module RailsAdmin
         end
 
         register_instance_option :controller do
-          Proc.new do
+          proc do
             @object = @abstract_model.model.find(params[:id])
             @response = {}
 
@@ -39,14 +39,15 @@ module RailsAdmin
                 end
 
                 if @object.update(content: params[:content], status: status)
-                  flash[:success] = t('admin.actions.content_builder.success_save')
+                  flash[:success] = t('admin.actions.content_builder.
+                  success_save')
                 else
                   flash[:error] = t('admin.actions.content_builder.error_save')
                 end
               end
             end
 
-            render :action => @action.template_name
+            render action: @action.template_name
           end
         end
       end
