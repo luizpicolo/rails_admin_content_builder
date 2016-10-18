@@ -26,7 +26,7 @@ $(document).on('rails_admin.dom_ready', function() {
 
 // when click on delete button
 $(document).on('click', '.cb-tools__btn--delete', function() {
-  var resp = confirm('<%= I18n.t('ad$(min.actions.news_admin.delete_block')%>');
+  var resp = confirm('<%= I18n.t('admin.actions.content_builder.delete_block')%>');
 
   if(resp) {
     $($(this).attr('href')).remove();
@@ -45,7 +45,7 @@ $(document).on('click', '.cb-tools__btn--upload', function() {
 
 // when click on youtube buttons
 $(document).on('click', '.cb-tools__btn--youtube', function() {
-  var resp = prompt('Cole a url do YouTube', '');
+  var resp = prompt('<%= I18n.t('admin.actions.content_builder.url')%>', '');
   resp = youtubeParser(resp);
 
   if(resp) {
@@ -73,7 +73,7 @@ $(document).on('click', '.cb-snippet__btn', function(e) {
     element += '</div>';
 
     element += '<div class="cb-text">';
-    element += '<p>Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos.</p>';
+    element += '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur venenatis congue pharetra. Proin quis commodo odio. Fusce a sapien massa. Praesent ultrices dolor at risus porttitor, nec semper orci ornare. Nullam nisi eros, pellentesque et suscipit ac, ultrices eget lorem. Donec ipsum tellus, aliquet vitae metus ut, tempus viverra lorem.</p>';
     element += '</div>';
 
     element += '</div>';
@@ -98,11 +98,13 @@ $(document).on('click', '.cb-snippet__btn', function(e) {
     element += '<a class="cb-tools__btn cb-tools__btn--upload fa fa-camera" href="#'+ id + '"></a>';
     element += '</div>';
     element += '</div>';
-    element += '<figcaption class="cb-figcaption cb-text">Divulgação</figcaption>';
+    element += '<figcaption class="cb-figcaption cb-text">';
+    element += '<%= I18n.t('admin.actions.content_builder.image_description')%>';
+    element += '</figcaption>';
     element += '</figure>';
 
     element += '<div class="cb-text">';
-    element += '<p>Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos.</p>';
+    element += '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur venenatis congue pharetra. Proin quis commodo odio. Fusce a sapien massa. Praesent ultrices dolor at risus porttitor, nec semper orci ornare. Nullam nisi eros, pellentesque et suscipit ac, ultrices eget lorem. Donec ipsum tellus, aliquet vitae metus ut, tempus viverra lorem.</p>';
     element += '</div>';
 
     element += '</div>';
@@ -128,12 +130,14 @@ $(document).on('click', '.cb-snippet__btn', function(e) {
     element += '<a class="cb-tools__btn cb-tools__btn--upload fa fa-camera" href="#'+ id + '"></a>';
     element += '</div>';
     element += '</div>';
-    element += '<figcaption class="cb-figcaption cb-text">Divulgação</figcaption>';
+    element += '<figcaption class="cb-figcaption cb-text">';
+    element += '<%= I18n.t('admin.actions.content_builder.image_description')%>';
+    element += '</figcaption>';
     element += '</figure>';
 
 
     element += '<div class="cb-text">';
-    element += '<p>Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos.</p>';
+    element += '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur venenatis congue pharetra. Proin quis commodo odio. Fusce a sapien massa. Praesent ultrices dolor at risus porttitor, nec semper orci ornare. Nullam nisi eros, pellentesque et suscipit ac, ultrices eget lorem. Donec ipsum tellus, aliquet vitae metus ut, tempus viverra lorem.</p>';
     element += '</div>';
 
     element += '</div>';
@@ -159,7 +163,9 @@ $(document).on('click', '.cb-snippet__btn', function(e) {
     element += '<a class="cb-tools__btn cb-tools__btn--upload fa fa-camera" href="#'+ id + '"></a>';
     element += '</div>';
     element += '</div>';
-    element += '<figcaption class="cb-figcaption cb-text">Divulgação</figcaption>';
+    element += '<figcaption class="cb-figcaption cb-text">';
+    element += '<%= I18n.t('admin.actions.content_builder.image_description')%>';
+    element += '</figcaption>';
     element += '</figure>';
 
     element += '</div>';
@@ -207,7 +213,7 @@ $(document).on('click', '.cb-snippet__btn', function(e) {
     element += '</blockquote>';
 
     element += '<div class="cb-text">';
-    element += '<p>Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos.</p>';
+    element += '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur venenatis congue pharetra. Proin quis commodo odio. Fusce a sapien massa. Praesent ultrices dolor at risus porttitor, nec semper orci ornare. Nullam nisi eros, pellentesque et suscipit ac, ultrices eget lorem. Donec ipsum tellus, aliquet vitae metus ut, tempus viverra lorem.</p>';
     element += '</div>';
 
     element += '</div>';
@@ -231,7 +237,7 @@ $(document).on('click', '.cb-snippet__btn', function(e) {
     element += '</blockquote>';
 
     element += '<div class="cb-text">';
-    element += '<p>Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos.</p>';
+    element += '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur venenatis congue pharetra. Proin quis commodo odio. Fusce a sapien massa. Praesent ultrices dolor at risus porttitor, nec semper orci ornare. Nullam nisi eros, pellentesque et suscipit ac, ultrices eget lorem. Donec ipsum tellus, aliquet vitae metus ut, tempus viverra lorem..</p>';
     element += '</div>';
 
     element += '</div>';
@@ -255,7 +261,7 @@ $(document).on('click', '.cb-snippet__btn', function(e) {
     element += '</blockquote>';
 
     element += '<div class="cb-text">';
-    element += '<p>Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos.</p>';
+    element += '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur venenatis congue pharetra. Proin quis commodo odio. Fusce a sapien massa. Praesent ultrices dolor at risus porttitor, nec semper orci ornare. Nullam nisi eros, pellentesque et suscipit ac, ultrices eget lorem. Donec ipsum tellus, aliquet vitae metus ut, tempus viverra lorem..</p>';
     element += '</div>';
 
     element += '</div>';
@@ -281,7 +287,7 @@ $(document).on('click', '.cb-snippet__btn', function(e) {
     element += '</aside>';
 
     element += '<div class="cb-text">';
-    element += '<p>Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos.</p>';
+    element += '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur venenatis congue pharetra. Proin quis commodo odio. Fusce a sapien massa. Praesent ultrices dolor at risus porttitor, nec semper orci ornare. Nullam nisi eros, pellentesque et suscipit ac, ultrices eget lorem. Donec ipsum tellus, aliquet vitae metus ut, tempus viverra lorem..</p>';
     element += '</div>';
 
     element += '</div>';
@@ -309,7 +315,7 @@ $(document).on('click', '.cb-snippet__btn', function(e) {
     element += '</aside>';
 
     element += '<div class="cb-text">';
-    element += '<p>Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos.</p>';
+    element += '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur venenatis congue pharetra. Proin quis commodo odio. Fusce a sapien massa. Praesent ultrices dolor at risus porttitor, nec semper orci ornare. Nullam nisi eros, pellentesque et suscipit ac, ultrices eget lorem. Donec ipsum tellus, aliquet vitae metus ut, tempus viverra lorem.</p>';
     element += '</div>';
 
     element += '</div>';
