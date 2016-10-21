@@ -97,6 +97,11 @@ In your show content view
 </article>
 ```
 
+## Run tests
+
+bundle exec rake
+rspec
+
 ## Attributes and Methods
 
 ```ruby
