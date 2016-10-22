@@ -75,11 +75,11 @@
 
 <%= simple_form_for rails_admin.content_builder_url(@abstract_model.to_param, id: @object.id), html: { class: 'cb-form' }, remote: false do |f| %>
   <div class="cb-controls">
-    <%= f.button :submit, t('admin.actions.content_builder.button.save'), name: 'save', class: 'btn btn-block btn-primary' %>
+    <%= f.button :submit, t('admin.actions.content_builder.button.save'), name: 'save', class: 'btn btn-block btn-primary btn-right' %>
     <% if @object.status %>
-      <%= f.button :submit, t('admin.actions.content_builder.button.unpublish'), name: 'unpublish', class: 'btn btn-block btn-danger' %>
+      <%= f.button :submit, t('admin.actions.content_builder.button.unpublish'), name: 'unpublish', class: 'btn btn-block btn-danger btn-left' %>
     <% else %>
-      <%= f.button :submit, t('admin.actions.content_builder.button.publish'), name: 'publish', class: 'btn btn-block btn-success' %>
+      <%= f.button :submit, t('admin.actions.content_builder.button.publish'), name: 'publish', class: 'btn btn-block btn-success btn-left' %>
     <% end %>
   </div>
 
