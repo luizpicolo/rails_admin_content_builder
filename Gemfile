@@ -7,6 +7,6 @@ group :development, :test do
   gem 'friendly_id'
   gem 'rails_admin'
   gem 'fuubar'
-  gem 'codeclimate-test-reporter'
+  gem 'coveralls', require: false
   gem 'simplecov', require: false
 end

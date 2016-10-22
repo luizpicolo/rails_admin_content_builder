@@ -112,6 +112,12 @@ In your show content view
 content_sanitized : Text
 content_builder_images : Object
 ```
+## Run tests
+
+```ruby
+bundle exec rake
+rspec
+```
 
 # Demonstration
 
