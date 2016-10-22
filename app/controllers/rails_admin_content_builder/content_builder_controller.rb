@@ -17,7 +17,7 @@ module RailsAdminContentBuilder
       @content_builder = ContentBuilder.find(params[:id])
       @image = @content_builder.content_builder_images
                                .create(image: params[:content_builder_image])
-      if @image
+      if @image.valid?
         render json: find_image(@image.id)
       else
         render json: @image.errors
