@@ -15,7 +15,8 @@ describe content_builder_controller, type: :controller do
                           )
 
       json = JSON.parse(response.body)
-      path = '/uploads/rails_admin_content_builder/content_builder_image/image/1/'
+      path = '/uploads/rails_admin_content_builder'
+      path << '/content_builder_image/image/1/'
 
       expect(response.status).to eq 200
       expect(json['image']['url']).to eq path + 'example.jpg'

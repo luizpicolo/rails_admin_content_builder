@@ -1,8 +1,6 @@
 AllCops:
   Exclude:
-    - 'spec/dummy/bin/**/*'
-    - 'spec/dummy/db/schema.rb'
-    - 'spec/dummy/tmp/**/*'
+    - 'spec/dummy/**/*'
     - 'vendor/bundle/**/*'
 
 Style/FrozenStringLiteralComment:

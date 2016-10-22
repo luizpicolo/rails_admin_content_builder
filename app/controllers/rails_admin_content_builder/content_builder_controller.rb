@@ -7,8 +7,7 @@ module RailsAdminContentBuilder
                                         .limit(10)
                                         .search(params[:term])
       if @content_builder
-        hash = 'include: {content_builder_category: {only: [:name, :slug]}}'
-        render json: @content_builder.to_json(hash)
+        render json: @content_builder.to_json(include: {content_builder_category: {only: [:name, :slug]}})
       else
         render json: @content_builder.errors
       end

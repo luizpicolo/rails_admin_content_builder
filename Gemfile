@@ -8,5 +8,6 @@ group :development, :test do
   gem 'rails_admin'
   gem 'fuubar'
   gem 'coveralls', require: false
+  gem 'rubocop'
   gem 'simplecov', require: false
 end

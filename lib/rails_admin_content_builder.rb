@@ -39,8 +39,7 @@ module RailsAdmin
                 end
 
                 if @object.update(content: params[:content], status: status)
-                  flash[:success] = t('admin.actions.content_builder.
-                  success_save')
+                  flash[:success] = t('admin.actions.content_builder.success_save')
                 else
                   flash[:error] = t('admin.actions.content_builder.error_save')
                 end

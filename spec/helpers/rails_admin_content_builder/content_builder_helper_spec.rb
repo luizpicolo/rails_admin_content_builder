@@ -3,7 +3,8 @@ require 'spec_helper'
 describe RailsAdminContentBuilder::ContentBuilderHelpers, type: :helper do
   describe '#content_created' do
     it 'return object content' do
-      expect(helper.content_created).to eq(RailsAdminContentBuilder::ContentBuilder)
+      content_builder = RailsAdminContentBuilder::ContentBuilder
+      expect(helper.content_created).to eq(content_builder)
     end
   end
 
@@ -27,7 +28,9 @@ describe RailsAdminContentBuilder::ContentBuilderHelpers, type: :helper do
 
     it 'return contents objects by slug with status true' do
       content = FactoryGirl.create(:content_builder, status: false)
-      expect(helper.find_content_created_by_slug(content.slug)).not_to eq(content)
+      expect(
+        helper.find_content_created_by_slug(content.slug)
+      ).not_to eq(content)
     end
   end
 end
