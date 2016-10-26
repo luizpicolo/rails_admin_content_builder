@@ -7,10 +7,10 @@ require 'rails_admin/engine'
 require 'rails_admin/config'
 require 'shoulda-matchers'
 require 'factory_girl_rails'
-require 'codeclimate-test-reporter'
+require 'coveralls'
 require 'simplecov'
 
-CodeClimate::TestReporter.start
+Coveralls.wear!
 SimpleCov.start
 
 Rails.backtrace_cleaner.remove_silencers!

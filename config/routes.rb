@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get_url = 'admin/rails_admin_content_builder~content_builder/:id/search_content'
+  get_url = 'admin/rails_admin_content_builder~content_builder/search_content'
   get_method = 'rails_admin_content_builder/content_builder#search_content'
   get get_url => get_method
 

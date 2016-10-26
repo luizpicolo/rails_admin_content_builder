@@ -7,7 +7,6 @@ require 'action_mailer/railtie'
 require 'action_view/railtie'
 require 'sprockets/railtie'
 require "rails/all"
-# require "rails/test_unit/railtie"
 
 Bundler.require(*Rails.groups)
 require 'rails_admin_content_builder'

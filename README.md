@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/luizpicolo/rails_admin_content_builder.svg?branch=master)](https://travis-ci.org/luizpicolo/rails_admin_content_builder)
 [![Code Climate](https://codeclimate.com/github/luizpicolo/rails_admin_content_builder/badges/gpa.svg)](https://codeclimate.com/github/luizpicolo/rails_admin_content_builder)
-[![Test Coverage](https://codeclimate.com/github/luizpicolo/rails_admin_content_builder/badges/coverage.svg)](https://codeclimate.com/github/luizpicolo/rails_admin_content_builder/coverage)
+[![Coverage Status](https://coveralls.io/repos/github/luizpicolo/rails_admin_content_builder/badge.svg?branch=master)](https://coveralls.io/github/luizpicolo/rails_admin_content_builder?branch=master)
 [![Issue Count](https://codeclimate.com/github/luizpicolo/rails_admin_content_builder/badges/issue_count.svg)](https://codeclimate.com/github/luizpicolo/rails_admin_content_builder)
 
 Easy way for create contents using [rails_admin](https://github.com/sferik/rails_admin)
@@ -116,6 +116,12 @@ rspec
 # Methods
 content_sanitized : Text
 content_builder_images : Object
+```
+## Run tests
+
+```ruby
+bundle exec rake
+rspec
 ```
 
 # Demonstration
