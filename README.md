@@ -1,15 +1,20 @@
-# RailsAdminContentBuilder
+# Rails Admin Content Builder
 
 [![Build Status](https://travis-ci.org/luizpicolo/rails_admin_content_builder.svg?branch=master)](https://travis-ci.org/luizpicolo/rails_admin_content_builder)
 [![Code Climate](https://codeclimate.com/github/luizpicolo/rails_admin_content_builder/badges/gpa.svg)](https://codeclimate.com/github/luizpicolo/rails_admin_content_builder)
 [![Coverage Status](https://coveralls.io/repos/github/luizpicolo/rails_admin_content_builder/badge.svg?branch=master)](https://coveralls.io/github/luizpicolo/rails_admin_content_builder?branch=master)
 [![Issue Count](https://codeclimate.com/github/luizpicolo/rails_admin_content_builder/badges/issue_count.svg)](https://codeclimate.com/github/luizpicolo/rails_admin_content_builder)
 
-Easy way for create contents using [rails_admin](https://github.com/sferik/rails_admin)
+Easy way for create contents using [rails_admin](https://github.com/sferik/rails_admin).
 
 ## Preview
 
-![preview](https://raw.githubusercontent.com/luizpicolo/rails_admin_content_builder/master/screenshot/image1.png)
+![content-min](https://cloud.githubusercontent.com/assets/2979365/20011834/b0c61e4a-a28b-11e6-955c-cc487f43a880.jpg)
+
+### Demonstration
+
+[Content Builder](https://example-cb-fc.herokuapp.com/admin/rails_admin_content_builder~content_builder/6/content_builder)   
+[Content generated](https://example-cb-fc.herokuapp.com/noticias/lorem/lorem-ipsum-dolor-sit-amet)
 
 ## Requirements
 
@@ -123,13 +128,6 @@ content_builder_images : Object
 bundle exec rake
 rspec
 ```
-
-# Demonstration
-
-Content Builder:
-[link](https://example-cb-fc.herokuapp.com/admin/rails_admin_content_builder~content_builder/1/content_builder)    
-Content:
-[link](https://example-cb-fc.herokuapp.com/noticias/general/orem-ipsum-dolor-sit-amet-consectetur-adipiscing-elit-aenean-tellus-ante-auctor-ut-facilisis-nec)
 
 ## Development
 
