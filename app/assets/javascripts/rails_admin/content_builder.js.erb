@@ -4,8 +4,24 @@
 $(document).on('rails_admin.dom_ready', function() {
   activeSortable();
 
-  $('.cb-form').on('submit', function(e){
+  $('.cb-form').on('submit', function(e) {
+    // remove all attributes of content editable
+    $('.cb-text').replaceWith(function() {
+      return $('<' + this.nodeName + '>')
+                .addClass($(this).attr('class'))
+                .append($(this).contents());
+    });
+
+    $('.cb-editable').replaceWith(function() {
+      return $('<' + this.nodeName + '>')
+                .addClass($(this).attr('class'))
+                .append($(this).contents());
+    });
+
+    // get all content of container
     var content = $('.cb-container').html();
+
+    // set content in input file
     $('#content').attr('value', content);
   });
 
@@ -197,8 +213,6 @@ $(document).on('click', '.cb-snippet__btn', function(e) {
     scrollTo(id);
     break;
 
-    default:
-
     case '6':
     var element = '<div id="'+ id + '" class="cb-content">';
 
@@ -342,7 +356,7 @@ function activeSortable() {
 };
 
 // scroll to
- function scrollTo(id) {
+function scrollTo(id) {
   if(id) {
     $('html, body').animate({
       scrollTop: $('#' + id).offset().top
@@ -409,7 +423,7 @@ function generateID() {
 
 // active medium editor plugin
 function activeMediumEditor() {
-  var editor = new MediumEditor('.cb-text', {
+  var text = new MediumEditor('.cb-text', {
     placeholder: {
       text: '',
       hideOnClick: true
@@ -435,7 +449,7 @@ function activeMediumEditor() {
     }
   });
 
-  var editor = new MediumEditor('.cb-editable', {
+  var editable = new MediumEditor('.cb-editable', {
     placeholder: false,
     toolbar: false,
     anchor: false,
