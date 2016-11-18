@@ -5,13 +5,14 @@ $(document).on('rails_admin.dom_ready', function() {
   activeSortable();
 
   $('.cb-form').on('submit', function(e) {
-    // remove all attributes of content editable
+    // remove all attributes of cb-text
     $('.cb-text').replaceWith(function() {
       return $('<' + this.nodeName + '>')
                 .addClass($(this).attr('class'))
                 .append($(this).contents());
     });
 
+    // remove all attributes of cb-editable
     $('.cb-editable').replaceWith(function() {
       return $('<' + this.nodeName + '>')
                 .addClass($(this).attr('class'))
