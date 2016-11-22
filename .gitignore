@@ -13,3 +13,4 @@
 spec/dummy/log/*.log
 spec/dummy/db/test.sqlite3
 *.gem
+/spec/dummy/public/uploads/
