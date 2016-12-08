@@ -341,6 +341,37 @@ $(document).on('click', '.cb-snippet__btn', function(e) {
     scrollTo(id);
     activeSortable();
     break;
+
+    case '11':
+    var sections = [];
+    var element = '<div id="'+ id + '" class="cb-content">';
+
+    element += '<div class="cb-tools">';
+    element += '<a class="cb-tools__btn cb-tools__btn--move fa fa-arrows" href="#"></a>';
+    element += '<a class="cb-tools__btn cb-tools__btn--upload fa fa-camera" href="#'+ id + '"></a>';
+    element += '<a class="cb-tools__btn cb-tools__btn--delete fa fa-trash" href="#'+ id + '"></a>';
+    element += '</div>';
+
+    element += '<div class="cb-gallery">';
+    <% (0..11).each do %>
+    element += '<div class="cb-gallery__item">';
+    element += '<div class="cb-tools cb-tools--center">';
+    element += '<a class="cb-tools__btn cb-tools__btn--move fa fa-arrows" href="#"></a>';
+    element += '<a class="cb-tools__btn cb-tools__btn--delete fa fa-trash" href="#'+ id + '"></a>';
+    element += '</div>';
+    element += '<img class="cb-tools__image" src="http://wowslider.com/sliders/demo-22/data1/images/harrypotter975357.jpg">';
+    element += '</div>';
+    <% end %>
+    element += '</div>';
+
+    element += '</div>';
+
+    container.append(element);
+    addEventToInputFile(id);
+    autocomplete(id);
+    scrollTo(id);
+    activeSortable();
+    break;
   };
 
   activeMediumEditor();
