@@ -6,6 +6,7 @@ group :development, :test do
   gem 'sqlite3'
   gem 'friendly_id'
   gem 'rails_admin'
+  gem 'rubocop-github'
   gem 'fuubar'
   gem 'coveralls', require: false
   gem 'rubocop'

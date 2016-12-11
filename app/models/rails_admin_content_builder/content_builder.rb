@@ -1,5 +1,5 @@
 module RailsAdminContentBuilder
-  class ContentBuilder < ActiveRecord::Base
+  class ContentBuilder < ApplicationRecord
     include SearchCop
     extend FriendlyId
 

@@ -2,9 +2,13 @@ AllCops:
   Exclude:
     - 'spec/dummy/**/*'
     - 'vendor/bundle/**/*'
+    - 'app/models/application_record.rb'
 
 Style/FrozenStringLiteralComment:
   Enabled: false
 
 Documentation:
   Enabled: false
+
+inherit_gem:
+  rubocop-github: config/default.yml
