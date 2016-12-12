@@ -346,6 +346,8 @@
 }
 
 .cb-gallery {
+  margin-bottom: 30px;
+  
   &:after {
     visibility: hidden;
     display: block;
@@ -389,6 +391,16 @@
 
   background: rgba(0,0,0,.05);
   border: dashed 2px rgba(0,0,0,.05);
+}
+
+.ui-sortable-placeholder--gallery {
+  position: relative;
+  float: left;
+  margin-bottom: 5px;
+
+  box-sizing: border-box;
+  width: 25%;
+  padding: 0 0 17%;
 }
 
 @media screen and (min-width: 460px) {

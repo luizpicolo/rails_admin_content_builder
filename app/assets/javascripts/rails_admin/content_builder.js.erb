@@ -356,7 +356,7 @@ $(document).on('click', '.cb-snippet__btn', function(e) {
     <% (0..11).each do %>
     element += '<div class="cb-gallery__item">';
     element += '<div class="cb-tools cb-tools--center">';
-    element += '<a class="cb-tools__btn cb-tools__btn--move fa fa-arrows" href="#"></a>';
+    element += '<a class="cb-tools__btn cb-gallery__btn--move fa fa-arrows" href="#"></a>';
     element += '<a class="cb-tools__btn cb-tools__btn--delete fa fa-trash" href="#'+ id + '"></a>';
     element += '</div>';
     element += '<img class="cb-tools__image" src="http://wowslider.com/sliders/demo-22/data1/images/harrypotter975357.jpg">';
@@ -383,6 +383,13 @@ function activeSortable() {
     revert: true,
     placeholder: 'ui-sortable-placeholder',
     handle: '.cb-relational__btn--move',
+    cursor: 'move',
+  });
+
+  $('.cb-gallery').sortable({
+    revert: true,
+    placeholder: 'ui-sortable-placeholder--gallery',
+    handle: '.cb-gallery__btn--move',
     cursor: 'move',
   });
 };
