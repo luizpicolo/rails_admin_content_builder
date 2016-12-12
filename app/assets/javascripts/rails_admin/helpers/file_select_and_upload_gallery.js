@@ -31,7 +31,9 @@ function fileSelectAndUploadGallery(evt) {
       element += '<a class="cb-tools__btn cb-gallery__btn--move fa fa-arrows" href="#"></a>';
       element += '<a class="cb-tools__btn cb-tools__btn--delete fa fa-trash" href="#'+ id + '"></a>';
       element += '</div>';
+      element += '<figure class="cb-gallery__figure">';
       element += '<img class="cb-tools__image" src="'+ getImageOfPosition(p, e) +'">';
+      element += '</figure>';
       element += '</div>';
 
       $('#' + evt.target.id + ' .cb-gallery').append(element);
