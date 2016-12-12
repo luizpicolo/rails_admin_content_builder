@@ -1,5 +1,5 @@
 module RailsAdminContentBuilder
-  class ContentBuilderCategory < ActiveRecord::Base
+  class ContentBuilderCategory < ApplicationRecord
     extend FriendlyId
     friendly_id :name, use: :slugged
 

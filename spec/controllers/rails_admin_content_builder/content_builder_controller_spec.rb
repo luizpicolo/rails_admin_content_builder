@@ -7,12 +7,12 @@ describe content_builder_controller, type: :controller do
   describe 'PUT #create_images' do
     it 'returns valid JSON' do
       content_builder = FactoryGirl.create :content_builder
-      put :create_images, id: content_builder.id,
+      put :create_images, params: { id: content_builder.id,
                           content_builder_image: Rack::Test::UploadedFile.new(
                             File.join(
                               'spec', 'fixtures', 'assets', 'example.jpg'
                             )
-                          )
+                          ) }
 
       json = JSON.parse(response.body)
       path = '/uploads/rails_admin_content_builder'
@@ -27,7 +27,7 @@ describe content_builder_controller, type: :controller do
 
     it 'returns error' do
       content_builder = FactoryGirl.create :content_builder
-      put :create_images, id: content_builder.id, content_builder_image: nil
+      put :create_images, params: { id: content_builder.id, content_builder_image: nil }
 
       json = JSON.parse(response.body)
 
@@ -44,7 +44,7 @@ describe content_builder_controller, type: :controller do
       5.times do |i|
         content_builder = FactoryGirl.create :content_builder, title: "title #{i}"
       end
-      get :search_content, term: "content"
+      get :search_content, params: { term: 'content' }
 
       json = JSON.parse(response.body)
 
