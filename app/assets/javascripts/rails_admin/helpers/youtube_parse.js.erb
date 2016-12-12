@@ -1,0 +1,11 @@
+// parse url by youtube using expression regular
+function youtubeParser(url) {
+  var regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#\&\?]*).*/;
+  var match = url.match(regExp);
+
+  if(match && match[7].length == 11) {
+    return b = match[7];
+  } else {
+    alert('<%= I18n.t('admin.actions.content_builder.invalid_url')%>');
+  }
+};

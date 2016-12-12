@@ -130,7 +130,7 @@
   padding: 0 0 300px 0;
 }
 
-.cb-content {
+.cb-content, .cb-gallery-content {
   position: relative;
   max-width: 100%;
   height: auto !important;
@@ -347,7 +347,7 @@
 
 .cb-gallery {
   margin-bottom: 30px;
-  
+
   &:after {
     visibility: hidden;
     display: block;
