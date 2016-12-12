@@ -359,13 +359,17 @@
 .cb-gallery__item {
   position: relative;
   float: left;
+  margin-bottom: 5px;
 
   box-sizing: border-box;
   width: 25%;
-  padding: 0 5px 10px;
+  padding: 0 5px 17%;
+  overflow: hidden;
 }
 
 .cb-tools__image {
+  position: absolute;
+
   display: block;
   width: 100%;
 }
