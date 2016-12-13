@@ -32,7 +32,7 @@ function fileSelectAndUploadGallery(evt) {
       element += '<a class="cb-tools__btn cb-tools__btn--delete fa fa-trash" href="#'+ id + '"></a>';
       element += '</div>';
       element += '<figure class="cb-gallery__figure">';
-      element += '<img class="cb-tools__image" src="'+ getImageOfPosition(p, e) +'">';
+      element += '<img class="cb-gallery__image" src="'+ getImageOfPosition(p, e) +'">';
       element += '</figure>';
       element += '</div>';
 

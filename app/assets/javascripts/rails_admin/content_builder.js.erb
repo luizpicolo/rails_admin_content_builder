@@ -32,7 +32,7 @@ $(document).on('rails_admin.dom_ready', function() {
     addEventToInputFile($(this).attr('id'));
   });
 
-  $('.cb-gallery-content').each(function() {
+  $('.cb-content-gallery').each(function() {
     addEventToInputFileGallery($(this).attr('id'));
   });
 
@@ -350,7 +350,7 @@ $(document).on('click', '.cb-snippet__btn', function(e) {
 
     case '11':
     var sections = [];
-    var element = '<div id="'+ id + '" class="cb-gallery-content">';
+    var element = '<div id="'+ id + '" class="cb-content-gallery">';
 
     element += '<div class="cb-tools">';
     element += '<a class="cb-tools__btn cb-tools__btn--move fa fa-arrows" href="#"></a>';

@@ -130,8 +130,7 @@
   padding: 0 0 300px 0;
 }
 
-.cb-content,
-.cb-gallery-content {
+.cb-content {
   position: relative;
   max-width: 100%;
   height: auto !important;
@@ -347,8 +346,12 @@
   background-position: 98% 10px;
 }
 
-.cb-gallery {
+.cb-content-gallery {
+  @extend .cb-content;
   margin-bottom: 30px;
+}
+
+.cb-gallery {
   min-height: 100px;
 
   &:after {
@@ -379,9 +382,8 @@
   background-position: 98% 10px;
 }
 
-.cb-tools__image {
+.cb-gallery__image {
   position: absolute;
-
   display: block;
   height: 100%;
 }

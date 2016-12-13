@@ -259,6 +259,27 @@
   display: none;
 }
 
+.cb-content-gallery {
+  @extend .cb-content;
+}
+
+.cb-gallery {
+
+}
+
+.cb-gallery__item {
+
+}
+
+.cb-gallery__figure {
+  margin: 0;
+  padding: 0;
+}
+
+.cb-gallery__image {
+  width: 100%;
+}
+
 @media screen and (min-width: 768px) {
   .cb-title,
   .news__title {
