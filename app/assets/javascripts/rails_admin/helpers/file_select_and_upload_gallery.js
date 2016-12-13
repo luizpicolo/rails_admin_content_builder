@@ -41,4 +41,4 @@ function fileSelectAndUploadGallery(evt) {
       alert('error: ' + e);
     });
   }
-};
+}

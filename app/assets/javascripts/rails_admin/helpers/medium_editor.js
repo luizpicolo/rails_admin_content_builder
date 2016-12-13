@@ -24,7 +24,7 @@ function activeMediumEditor() {
       cleanTags: ['meta'],
       unwrapTags: []
     }
-  });
+  })
 
   var editable = new MediumEditor('.cb-editable', {
     placeholder: false,
@@ -40,5 +40,5 @@ function activeMediumEditor() {
       cleanTags: ['meta'],
       unwrapTags: []
     }
-  });
-};
+  })
+}
