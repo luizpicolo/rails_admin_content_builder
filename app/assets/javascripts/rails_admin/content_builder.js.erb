@@ -1,4 +1,5 @@
 //= require medium-editor
+//= require_tree ./helpers
 
 // when rails admin ready
 $(document).on('rails_admin.dom_ready', function() {
@@ -29,6 +30,10 @@ $(document).on('rails_admin.dom_ready', function() {
   $('.cb-content').each(function() {
     autocomplete($(this).attr('id'));
     addEventToInputFile($(this).attr('id'));
+  });
+
+  $('.cb-gallery-content').each(function() {
+    addEventToInputFileGallery($(this).attr('id'));
   });
 
   $('.cb-container').sortable({
@@ -131,6 +136,7 @@ $(document).on('click', '.cb-snippet__btn', function(e) {
     scrollTo(id);
     break;
 
+    // Image center
     case '3':
     var element = '<div id="'+ id + '" class="cb-content">';
 
@@ -341,169 +347,27 @@ $(document).on('click', '.cb-snippet__btn', function(e) {
     scrollTo(id);
     activeSortable();
     break;
+
+    case '11':
+    var sections = [];
+    var element = '<div id="'+ id + '" class="cb-gallery-content">';
+
+    element += '<div class="cb-tools">';
+    element += '<a class="cb-tools__btn cb-tools__btn--move fa fa-arrows" href="#"></a>';
+    element += '<input id="'+ id +'" data-position="center" class="filePicker cb-tools__input cb-tools__input--upload" type="file" name="cb-image" multiple>';
+    element += '<a class="cb-tools__btn cb-tools__btn--upload fa fa-camera" href="#'+ id + '"></a>';
+    element += '<a class="cb-tools__btn cb-tools__btn--delete fa fa-trash" href="#'+ id + '"></a>';
+    element += '</div>';
+    element += '<div class="cb-gallery"></div>';
+    element += '</div>';
+
+    container.append(element);
+    addEventToInputFileGallery(id);
+    autocomplete(id);
+    scrollTo(id);
+    activeSortable();
+    break;
   };
 
   activeMediumEditor();
 });
-
-// sortable to relational
-function activeSortable() {
-  $('.cb-relational__list').sortable({
-    revert: true,
-    placeholder: 'ui-sortable-placeholder',
-    handle: '.cb-relational__btn--move',
-    cursor: 'move',
-  });
-};
-
-// scroll to
-function scrollTo(id) {
-  if(id) {
-    $('html, body').animate({
-      scrollTop: $('#' + id).offset().top
-    }, 400);
-  }
-};
-
-// add event on input file
-function addEventToInputFile(id) {
-  $('#' + id).on('change', fileSelectAndUpload);
-};
-
-// upload file via ajax
-function fileSelectAndUpload(evt) {
-  console.log(evt);
-  var file = evt.target.files[0];
-
-  if(file) {
-    var formData = new FormData();
-    formData.append('content_builder_image', file);
-
-    $.ajax({
-      url: 'create_images',
-      data: formData,
-      cache: false,
-      contentType: false,
-      processData: false,
-      type: 'PUT',
-      beforeSend: function() {
-        $('#' + evt.target.id).find('figure').append('<div class="cb-loading"></div>');
-        $('.cb-tools--center').addClass('cb-tools--disabled');
-      },
-      complete: function(){
-        $('.cb-loading').remove();
-        $('.cb-tools--center').removeClass('cb-tools--disabled');
-      }
-    }).done(function(e) {
-      var p = evt.target.getAttribute('data-position');
-      $('#' + evt.target.id).find('img').attr('src', getImageOfPosition(p, e));
-    }).fail(function(e) {
-      alert('error: ' + e);
-    });
-  }
-};
-
-// get image of position
-function getImageOfPosition(position, e) {
-  switch(position) {
-    case 'left':
-    case 'right':
-    return e.image.left_or_right.url;
-    break;
-
-    case 'center':
-    return e.image.center.url;
-    break;
-  };
-};
-
-// generate random id
-function generateID() {
-  return '_' + Math.random().toString(36).substr(2, 9);
-};
-
-// active medium editor plugin
-function activeMediumEditor() {
-  var text = new MediumEditor('.cb-text', {
-    placeholder: {
-      text: '',
-      hideOnClick: true
-    },
-
-    toolbar: {
-      buttons: ['bold', 'italic', 'underline', 'anchor']
-    },
-
-    anchor: {
-      placeholderText: 'Ex: http://site.com'
-    },
-
-    anchorPreview: false,
-
-    paste: {
-      forcePlainText: true,
-      cleanPastedHTML: false,
-      cleanReplacements: [],
-      cleanAttrs: ['class', 'style', 'dir'],
-      cleanTags: ['meta'],
-      unwrapTags: []
-    }
-  });
-
-  var editable = new MediumEditor('.cb-editable', {
-    placeholder: false,
-    toolbar: false,
-    anchor: false,
-    anchorPreview: false,
-
-    paste: {
-      forcePlainText: true,
-      cleanPastedHTML: false,
-      cleanReplacements: [],
-      cleanAttrs: ['class', 'style', 'dir'],
-      cleanTags: ['meta'],
-      unwrapTags: []
-    }
-  });
-};
-
-// parse url by youtube using expression regular
-function youtubeParser(url) {
-  var regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#\&\?]*).*/;
-  var match = url.match(regExp);
-
-  if(match && match[7].length == 11) {
-    return b = match[7];
-  } else {
-    alert('<%= I18n.t('admin.actions.content_builder.invalid_url')%>');
-  }
-};
-
-function autocomplete(id) {
-  $('#' + id + ' input:text').autocomplete({
-    source: "search_content",
-    minLength: 5,
-    select: function(event, ui) {
-      section_id = generateID();
-
-      element = '<li id="'+ section_id +'" class="cb-relational__item">';
-      element += '<a href="/noticias/' + ui.item.content_builder_category.slug + '/' + ui.item.slug + '" class="cb-relational__link" target="blank"></a>';
-      element += '<h2 class="cb-relational__caption cb-editable">'+ ui.item.title +'</h2>';
-      element += '<div class="cb-tools">';
-      element += '<a class="cb-tools__btn cb-tools__btn--small cb-relational__btn--move fa fa-arrows" href="#"></a>';
-      element += '<a class="cb-tools__btn cb-tools__btn--small cb-tools__btn--delete fa fa-trash" href="#'+ section_id +'"></a>';
-      element += '</div>';
-      element += '</li>';
-
-      $("#" + id + ' ol').append(element);
-      activeMediumEditor();
-      activeSortable();
-
-      return false;
-    }
-  }).autocomplete("instance")._renderItem = function(ul, item) {
-    return $( "<li>" )
-        .append( "<a>" + item.title + "</a>" )
-        .appendTo( ul );
-  };
-};

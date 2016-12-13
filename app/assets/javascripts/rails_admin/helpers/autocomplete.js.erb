@@ -1,0 +1,28 @@
+function autocomplete(id) {
+  $('#' + id + ' input:text').autocomplete({
+    source: "search_content",
+    minLength: 5,
+    select: function(event, ui) {
+      section_id = generateID();
+
+      element = '<li id="'+ section_id +'" class="cb-relational__item">';
+      element += '<a href="/noticias/' + ui.item.content_builder_category.slug + '/' + ui.item.slug + '" class="cb-relational__link" target="blank"></a>';
+      element += '<h2 class="cb-relational__caption cb-editable">'+ ui.item.title +'</h2>';
+      element += '<div class="cb-tools">';
+      element += '<a class="cb-tools__btn cb-tools__btn--small cb-relational__btn--move fa fa-arrows" href="#"></a>';
+      element += '<a class="cb-tools__btn cb-tools__btn--small cb-tools__btn--delete fa fa-trash" href="#'+ section_id +'"></a>';
+      element += '</div>';
+      element += '</li>';
+
+      $("#" + id + ' ol').append(element);
+      activeMediumEditor();
+      activeSortable();
+
+      return false;
+    }
+  }).autocomplete("instance")._renderItem = function(ul, item) {
+    return $( "<li>" )
+        .append( "<a>" + item.title + "</a>" )
+        .appendTo( ul );
+  }
+}
