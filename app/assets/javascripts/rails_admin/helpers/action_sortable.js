@@ -13,4 +13,4 @@ function activeSortable() {
     handle: '.cb-gallery__btn--move',
     cursor: 'move',
   });
-};
+}

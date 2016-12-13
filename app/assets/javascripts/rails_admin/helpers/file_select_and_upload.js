@@ -29,4 +29,4 @@ function fileSelectAndUpload(evt) {
       alert('error: ' + e);
     });
   }
-};
+}
