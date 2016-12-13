@@ -1,5 +1,5 @@
-@import 'medium-editor/medium-editor';
-@import 'medium-editor/themes/bootstrap';
+@import "medium-editor/medium-editor";
+@import "medium-editor/themes/bootstrap";
 
 .cb-snippet {
   position: fixed;
@@ -137,12 +137,12 @@
   height: auto !important;
 
   &:after {
-    visibility: hidden;
+    clear: both;
+    content: "";
     display: block;
     font-size: 0;
-    content: " ";
-    clear: both;
     height: 0;
+    visibility: hidden;
   }
 }
 
@@ -201,7 +201,7 @@
   height: 0;
   overflow: hidden;
   padding-bottom: 56.25%;
-  background: image_url('cb-video-default.jpg') no-repeat center #e4e4e4;
+  background: image-url("cb-video-default.jpg") no-repeat center #e4e4e4;
 
   iframe {
     position: absolute;
@@ -343,13 +343,13 @@
 
   width: 100%;
   height: 100%;
-  background: image_url('cb-loading.svg') no-repeat rgba(#fff, .95);
+  background: image-url("cb-loading.svg") no-repeat rgba(255,255,255,.95);
   background-position: 98% 10px;
 }
 
 .cb-gallery {
-  min-height: 100px;
   margin-bottom: 30px;
+  min-height: 100px;
 
   &:after {
     visibility: hidden;
@@ -375,7 +375,7 @@
 }
 
 .cb-gallery__item {
-  background: image_url('cb-loading.svg') no-repeat;
+  background: image-url("cb-loading.svg") no-repeat;
   background-position: 98% 10px;
 }
 
