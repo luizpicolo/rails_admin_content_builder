@@ -67,6 +67,19 @@
   font-size: .7em;
 }
 
+.cb-body {
+  position: relative;
+
+  &:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+  }
+}
+
 .cb-row,
 .news__row {
   position: relative;
